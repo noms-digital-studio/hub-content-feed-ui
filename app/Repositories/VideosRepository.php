@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Models\Video;
 use GuzzleHttp\Client;
 
 class VideosRepository {
@@ -23,11 +24,11 @@ class VideosRepository {
     $videos = array();
 
     foreach($responseVideos as $video) {
-      array_push($videos, array(
-        'nid' => $video->nid[0]->value,
-        'title' => $video->title[0]->value,
-        'description' => $video->field_moj_description[0]->value,
-        'url' => $video->field_moj_video[0]->url,
+      array_push($videos, new Video(
+        $video->nid[0]->value,
+        $video->title[0]->value,
+        $video->field_moj_description[0]->value,
+        $video->field_moj_video[0]->url
       ));
     }
 

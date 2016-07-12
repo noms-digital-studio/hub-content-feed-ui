@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Facades\Videos;
 use App\Http\Controllers\Controller;
+use App\Models\Video;
 use App\Repositories\VideosRepository;
+use App\User;
 
 class VideosController extends Controller {
 
@@ -15,13 +17,15 @@ class VideosController extends Controller {
   }
 
   function showVideoLandingPage() {
-    // return $this->videos->all();
-    return \App\Facades\Videos::all();
+    $videos = Videos::all();
+
+    return $videos;
   }
 
   function show($nid) {
-    return \App\Facades\Videos::find($nid);
-    return "test";
+    $video = Videos::find($nid);
+
+    return $video;
   }
 
 }
