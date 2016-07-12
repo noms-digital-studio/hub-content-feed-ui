@@ -31,7 +31,7 @@ Vagrant.configure(2) do |config|
 
     laravel.vm.provision "shell", inline: <<-SHELL
       sudo apt-get update
-      sudo apt-get install -y apache2 mysql-client php5 php5-mysql php5-gd php5-curl
+      sudo apt-get install -y apache2 mysql-client php5 php5-mysql php5-gd php5-curl php5-xdebug
 
       sudo a2enmod rewrite
 
@@ -39,7 +39,7 @@ Vagrant.configure(2) do |config|
 
       sudo echo "<VirtualHost *:80>" >> /etc/apache2/sites-available/000-default.conf
       sudo echo "	ServerAdmin webmaster@localhost" >> /etc/apache2/sites-available/000-default.conf
-      sudo echo "	DocumentRoot /var/www/drupal" >> /etc/apache2/sites-available/000-default.conf
+      sudo echo "	DocumentRoot /var/www/laravel/public" >> /etc/apache2/sites-available/000-default.conf
       sudo echo "	ErrorLog \${APACHE_LOG_DIR}/error.log" >> /etc/apache2/sites-available/000-default.conf
       sudo echo "	CustomLog \${APACHE_LOG_DIR}/access.log combined" >> /etc/apache2/sites-available/000-default.conf
       sudo echo "" >> /etc/apache2/sites-available/000-default.conf
@@ -63,6 +63,9 @@ Vagrant.configure(2) do |config|
         && php installer \
         && rm installer \
         && sudo mv composer.phar /usr/local/bin/composer
+
+      cd /var/www/laravel
+      composer update && composer install
     SHELL
   end
 end
