@@ -16,7 +16,7 @@ class Video implements \JsonSerializable {
         $this->nid = $nid;
         $this->title = $title;
         $this->description = $description;
-        $this->$url = $url;
+        $this->url = $url;
     }
 
     public function getId() {
