@@ -10,24 +10,16 @@ use App\User;
 
 class VideosController extends Controller {
 
-  protected $videos;
-
-  public function __construct(VideosRepository $videos) {
-    $this->videos = $videos;
-  }
-
   function showVideoLandingPage() {
     $videos = Videos::all();
 
-    return $videos;
+    return view('video.landingPage', ['videos' => $videos]);
   }
 
   function show($nid) {
     $video = Videos::find($nid);
 
-    return $video;
+    return view('video.detail', ['video' => $video]);
   }
 
 }
-
-?>
