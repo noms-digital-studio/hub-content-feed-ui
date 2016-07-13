@@ -6,4 +6,4 @@ Homestead.json
 .env
 .vagrant
 *.swp
-*~
+.idea/

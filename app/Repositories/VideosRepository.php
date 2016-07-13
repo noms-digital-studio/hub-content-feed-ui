@@ -2,44 +2,58 @@
 
 namespace App\Repositories;
 
+use App\Models\Video;
 use GuzzleHttp\Client;
 
-class VideosRepository {
+class VideosRepository
+{
 
-  protected $client;
+    protected $client;
 
-  public function __construct() {
-    $this->client = new Client(array(
-      'base_uri' => 'http://192.168.33.9',
-      'timeout' => 60.0
-    ));
-  }
-
-  public function all() {
-    $response = $this->client->get('api/videos');
-
-    $responseVideos = json_decode($response->getBody());
-
-    $videos = array();
-
-    foreach($responseVideos as $video) {
-      array_push($videos, array(
-        'nid' => $video->nid[0]->value,
-        'title' => $video->title[0]->value,
-        'description' => $video->field_moj_description[0]->value,
-        'url' => $video->field_moj_video[0]->url,
-      ));
+    public function __construct()
+    {
+        $this->client = new Client(array(
+            'base_uri' => 'http://192.168.33.9',
+            'timeout' => 60.0
+        ));
     }
 
-    return $videos;
-  }
+    public function all()
+    {
+        $response = $this->client->get('api/videos');
 
-  public function find($nid) {
-    $response = $this->client->get('node/' . $nid);
+        $responseVideos = json_decode($response->getBody());
 
-    $responseVideo = json_decode($response->getBody());
+        $videos = array();
 
-    return $responseVideo;
-  }
+        foreach ($responseVideos as $video) {
+            array_push($videos, new Video(
+                $video->nid[0]->value,
+                $video->title[0]->value,
+                $video->field_moj_description[0]->value,
+                $video->field_moj_video[0]->url
+            ));
+        }
+
+        return $videos;
+    }
+
+    public function find($nid)
+    {
+        $response = $this->client->get('node/' . $nid, [
+            'query' => [
+                '_format' => 'json'
+            ]
+        ]);
+
+        $responseVideo = json_decode($response->getBody());
+
+        return new Video(
+            $responseVideo->nid[0]->value,
+            $responseVideo->title[0]->value,
+            $responseVideo->field_moj_description[0]->value,
+            $responseVideo->field_moj_video[0]->url
+        );
+    }
 
 }
