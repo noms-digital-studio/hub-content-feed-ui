@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+		<link rel="stylesheet" href="{{ elixir('css/app.css') }}" type="text/css"/>
         <title>OICSS - @yield('title')</title>
     </head>
 
