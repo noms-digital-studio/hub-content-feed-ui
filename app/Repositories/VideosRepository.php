@@ -18,6 +18,15 @@ class VideosRepository
         ));
     }
 
+    public function landingPageVideos()
+    {
+        $response = $this->client->get('api/video/landing');
+
+        $responseTree = json_decode($response->getBody());
+
+        return $responseTree;
+    }
+
     public function all()
     {
         $response = $this->client->get('api/videos');
