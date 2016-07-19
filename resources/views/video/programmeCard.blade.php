@@ -1,6 +1,8 @@
 <div class="card programme-card">
     <img src="{{ $programme->episodes->thumbnail }}">
-    <h3>{{ $programme->title }}</h3>
+    <div class="programme-title">
+      <h6>{{ $programme->title }}</h6>
+    </div>
 
     <div class="overlay">
         <span class="programme-name">{{ $programme->title }}</span>
