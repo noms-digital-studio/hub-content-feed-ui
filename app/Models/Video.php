@@ -10,13 +10,23 @@ class Video implements \JsonSerializable {
 
     protected $description;
 
+    protected $duration;
+
     protected $url;
 
-    public function __construct($nid, $title, $description, $url) {
+    protected $tags = array();
+
+    protected $categories;
+
+
+    public function __construct($nid, $title, $description, $duration, $url, $tags, $categories) {
         $this->nid = $nid;
         $this->title = $title;
         $this->description = $description;
+        $this->duration = $duration;
         $this->url = $url;
+        $this->tags = $tags;
+        $this->categories = $categories;
     }
 
     public function getId() {
@@ -31,8 +41,20 @@ class Video implements \JsonSerializable {
         return $this->description;
     }
 
+    public function getDuration() {
+        return $this->duration;
+    }
+
     public function getUrl() {
         return $this->url;
+    }
+
+    public function getTags() {
+        return $this->tags;
+    }
+
+    public function getCategories() {
+        return $this->categories;
     }
 
     public function jsonSerialize() {
@@ -40,7 +62,10 @@ class Video implements \JsonSerializable {
             'nid' => $this->nid,
             'title' => $this->title,
             'description' => $this->description,
-            'url' => $this->url
+            'duration' => $this->duration,
+            'url' => $this->url,
+            'tags' => $this->tags,
+            'categories' => $this->categories
         );
     }
 }

@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Video;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
 
 class VideosRepository
 {
@@ -39,30 +40,33 @@ class VideosRepository
             array_push($videos, new Video(
                 $video->nid[0]->value,
                 $video->title[0]->value,
-                $video->field_moj_description[0]->value,
-                $video->field_moj_video[0]->url
+                $video->field_moj_descriptio[0]->value,
+                $video->field_moj_duration[0]->value,
+                $video->field_moj_video[0]->url,
+                $video->field_moj_tags[0]->url
             ));
         }
-
         return $videos;
     }
 
     public function find($nid)
     {
-        $response = $this->client->get('node/' . $nid, [
-            'query' => [
-                '_format' => 'json'
-            ]
-        ]);
+        try {
+            $response = $this->client->get('/api/video/' . $nid);
+        } catch (ClientException $e) {
+           return json_decode($e->getResponse()->getBody());
+        }
 
         $responseVideo = json_decode($response->getBody());
 
         return new Video(
-            $responseVideo->nid[0]->value,
-            $responseVideo->title[0]->value,
-            $responseVideo->field_moj_description[0]->value,
-            $responseVideo->field_moj_video[0]->url
+            $responseVideo->nid,
+            $responseVideo->title,
+            $responseVideo->description[0]->value,
+            $responseVideo->duration[0]->value,
+            $responseVideo->video,
+            $responseVideo->tags,
+            $responseVideo->categories[0]
         );
     }
-
 }

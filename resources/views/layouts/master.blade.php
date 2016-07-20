@@ -3,6 +3,9 @@
     <head>
 		<link rel="stylesheet" href="{{ elixir('css/app.css') }}" type="text/css"/>
         <title>OICSS - @yield('title')</title>
+        <link href="/css/video-js.min.css" rel="stylesheet">
+        <script src="/js/video.min.js"></script>
+        <link href="{{ elixir('css/app.css') }}" rel="stylesheet" type="text/css" />
     </head>
 
     <body>

@@ -10,3 +10,5 @@ Homestead.json
 *.swp
 .idea/
 nbproject
+/nbproject/private/
+/nbproject
