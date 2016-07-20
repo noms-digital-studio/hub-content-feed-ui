@@ -18,6 +18,15 @@ class VideosRepository
 		));
 	}
 
+	public function landingPageVideos()
+	{
+		$response = $this->client->get('api/video/landing');
+
+		$responseTree = json_decode($response->getBody());
+
+		return $responseTree;
+	}
+
 	public function all()
 	{
 		$response = $this->client->get('api/videos');
@@ -64,14 +73,7 @@ class VideosRepository
 			foreach ($responseVideos as $video)
 			{
 				array_push($videos, new Video(
-					$video->nid,
-					$video->title,
-					$video->description,
-					$video->video_url,
-					!empty($video->thumbnail) ? $video->thumbnail : "",
-					!empty($video->duration) ? $video->duration : "", 
-					!empty($video->categories) ? $video->categories : "",
-					!empty($video->channel_name) ? $video->channel_name : ""
+					$video->nid, $video->title, $video->description, $video->video_url, !empty($video->thumbnail) ? $video->thumbnail : "", !empty($video->duration) ? $video->duration : "", !empty($video->categories) ? $video->categories : "", !empty($video->channel_name) ? $video->channel_name : ""
 				));
 			}
 		}

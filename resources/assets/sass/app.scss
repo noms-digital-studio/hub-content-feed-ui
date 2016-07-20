@@ -6,3 +6,12 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid-framework";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid";
+
+@import "fonts";
+@import "typography";
+@import "video/programme-card";
+
+body {
+  background: #efefef;
+  font-family: "Open Sans", sans-serif;
+}
