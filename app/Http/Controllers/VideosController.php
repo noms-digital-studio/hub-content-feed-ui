@@ -11,7 +11,7 @@ use App\User;
 class VideosController extends Controller {
 
   function showVideoLandingPage() {
-    $videos = Videos::all();
+    $videos = Videos::landingPageVideos();
 
     return view('video.landingPage', ['videos' => $videos]);
   }

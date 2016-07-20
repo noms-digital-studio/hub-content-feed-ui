@@ -4,9 +4,16 @@
 
 @section('content')
 
-    @foreach($videos as $video)
+    @foreach($videos as $channel)
+        <div class="channel">
+            <h2>{{ $channel->channel }}</h2>
 
-        @include('video.videoCard', ['video' => $video])
+            <div class="channel-programmes">
+                @foreach($channel->programmes as $programme)
+                    @include('video.programmeCard', ['programme' => $programme])
+                @endforeach
+            </div>
+        </div>
 
     @endforeach
 
