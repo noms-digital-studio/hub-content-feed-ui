@@ -59,11 +59,16 @@ class VideosRepository
 
         $responseVideo = json_decode($response->getBody());
 
+        $duration = '';
+        if (count($responseVideo->duration)) {
+          $responseVideo->duration[0]->value;
+        }
+
         return new Video(
             $responseVideo->nid,
             $responseVideo->title,
             $responseVideo->description[0]->value,
-            $responseVideo->duration[0]->value,
+            $duration,
             $responseVideo->video,
             $responseVideo->tags,
             $responseVideo->categories[0]
