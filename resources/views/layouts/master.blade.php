@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-		<link rel="stylesheet" href="{{ elixir('css/app.css') }}" type="text/css"/>
+		<link rel="stylesheet" href="{{ elixir('css/app.css') }}" type="text/css"/>		
+		<script src="/js/jquery-1.8.2.min.js"></script>		
+		<script src="/js/jquery.bxslider.min.js"></script>		
+		<script src="/js/global.js" type="text/javascript"></script>
+		<link href="/css/jquery.bxslider.css" rel="stylesheet" />
         <title>OICSS - @yield('title')</title>
     </head>
 

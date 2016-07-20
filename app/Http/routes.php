@@ -21,4 +21,6 @@ Route::get('/hello/{name?}', function ($name = "World") {
 
 Route::get('/video', 'VideosController@showVideoLandingPage');
 
+Route::get('/video/recent', 'VideosController@getRecent');
+
 Route::get('/video/{nid}', 'VideosController@show');

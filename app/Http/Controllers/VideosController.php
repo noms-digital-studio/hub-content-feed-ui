@@ -21,5 +21,11 @@ class VideosController extends Controller {
 
     return view('video.detail', ['video' => $video]);
   }
+  
+  function getRecent() {
+	  $recentVideos = Videos::getRecent();
+	  
+	  return view('video.recentVideo', ['recentVideos' => $recentVideos]);
+  }
 
 }
