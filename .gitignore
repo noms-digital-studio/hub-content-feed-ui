@@ -10,3 +10,4 @@ Homestead.json
 *.swp
 .idea/
 nbproject
+*DS_Store
