@@ -6,7 +6,7 @@
 
     <div class="overlay">
         <span class="programme-name">{{ $programme->title }}</span>
-        <a href="/video/{{ $programme->episodes->nid }}">
+        <a href="/video/{{ $programme->episodes->nid }}" id="programme-{{ $programme->episodes->nid }}">
             <h4>Play {{ $programme->episodes->title }}</h4>
         </a>
     </div>
