@@ -2,44 +2,45 @@
 
 namespace App\Models;
 
-class Video implements \JsonSerializable {
+class Video implements \JsonSerializable
+{
 
-    protected $nid;
-
-    protected $title;
-
-    protected $description;
-
-    protected $duration;
-
-    protected $url;
-
+	protected $nid;
+	protected $title;
+	protected $description;
+	protected $url;
+	protected $thumbnail;
+	protected $duration;
+	protected $categories;
+	protected $channel;
     protected $tags = array();
 
-    protected $categories;
+	public function __construct($nid, $title, $description, $url, $thumbnail, $duration, $categories, $channel) {
+		$this->nid = $nid;
+		$this->title = $title;
+		$this->description = $description;
+		$this->url = $url;
+		$this->thumbnail = $thumbnail;
+		$this->duration = $duration;
+		$this->categories = $categories;
+		$this->channel = $channel;
+	}
 
+	public function getId() {
+		return $this->nid;
+	}
 
-    public function __construct($nid, $title, $description, $duration, $url, $tags, $categories) {
-        $this->nid = $nid;
-        $this->title = $title;
-        $this->description = $description;
-        $this->duration = $duration;
-        $this->url = $url;
-        $this->tags = $tags;
-        $this->categories = $categories;
-    }
+	public function getTitle() {
+		return $this->title;
+	}
 
-    public function getId() {
-        return $this->nid;
-    }
+	public function getDescription() {
+		return $this->description;
+	}
 
-    public function getTitle() {
-        return $this->title;
-    }
-
-    public function getDescription() {
-        return $this->description;
-    }
+	public function getThumbnail() {
+		return $this->thumbnail;
+	}
 
     public function getDuration() {
         return $this->duration;
@@ -57,6 +58,10 @@ class Video implements \JsonSerializable {
         return $this->categories;
     }
 
+	public function getChannel() {
+		return $this->channel;
+	}
+
     public function jsonSerialize() {
         return array(
             'nid' => $this->nid,
@@ -68,4 +73,5 @@ class Video implements \JsonSerializable {
             'categories' => $this->categories
         );
     }
+
 }

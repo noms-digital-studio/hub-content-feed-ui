@@ -46,6 +46,7 @@ class VideosRepository
                 $video->field_moj_tags[0]->url
             ));
         }
+
         return $videos;
     }
 
@@ -54,14 +55,14 @@ class VideosRepository
         try {
             $response = $this->client->get('/api/video/' . $nid);
         } catch (ClientException $e) {
-           return json_decode($e->getResponse()->getBody());
+            return json_decode($e->getResponse()->getBody());
         }
 
         $responseVideo = json_decode($response->getBody());
 
         $duration = '';
         if (count($responseVideo->duration)) {
-          $responseVideo->duration[0]->value;
+            $responseVideo->duration[0]->value;
         }
 
         return new Video(
@@ -74,4 +75,33 @@ class VideosRepository
             $responseVideo->categories[0]
         );
     }
+
+    public function getRecent()
+	{
+		$response = $this->client->get('api/video/recent');
+
+		$responseVideos = json_decode($response->getBody());
+
+		$videos = array();
+
+		if ($responseVideos)
+		{
+			foreach ($responseVideos as $video)
+			{
+				array_push($videos, new Video(
+					$video->nid,
+                    $video->title,
+                    $video->description,
+                    $video->video_url,
+                    !empty($video->thumbnail) ? $video->thumbnail : "",
+                    !empty($video->duration) ? $video->duration : "",
+                    !empty($video->categories) ? $video->categories : "",
+                    !empty($video->channel_name) ? $video->channel_name : ""
+				));
+			}
+		}
+
+		return $videos;
+	}
+
 }
