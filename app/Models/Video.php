@@ -13,9 +13,9 @@ class Video implements \JsonSerializable
 	protected $duration;
 	protected $categories;
 	protected $channel;
-    protected $tags = array();
+  protected $tags = array();
 
-	public function __construct($nid, $title, $description, $url, $thumbnail, $duration, $categories, $channel) {
+	public function __construct($nid, $title, $description, $url, $thumbnail, $duration, $categories, $tags, $channel) {
 		$this->nid = $nid;
 		$this->title = $title;
 		$this->description = $description;
@@ -23,6 +23,7 @@ class Video implements \JsonSerializable
 		$this->thumbnail = $thumbnail;
 		$this->duration = $duration;
 		$this->categories = $categories;
+		$this->tags = $tags;
 		$this->channel = $channel;
 	}
 
@@ -70,7 +71,8 @@ class Video implements \JsonSerializable
             'duration' => $this->duration,
             'url' => $this->url,
             'tags' => $this->tags,
-            'categories' => $this->categories
+            'categories' => $this->categories,
+						'channel' => $this->channel
         );
     }
 

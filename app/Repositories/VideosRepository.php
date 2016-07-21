@@ -58,21 +58,20 @@ class VideosRepository
             return json_decode($e->getResponse()->getBody());
         }
 
-        $responseVideo = json_decode($response->getBody());
+        $video = json_decode($response->getBody());
 
-        $duration = '';
-        if (count($responseVideo->duration)) {
-            $responseVideo->duration[0]->value;
-        }
+        // var_dump($video);
 
         return new Video(
-            $responseVideo->nid,
-            $responseVideo->title,
-            $responseVideo->description[0]->value,
-            $duration,
-            $responseVideo->video,
-            $responseVideo->tags,
-            $responseVideo->categories[0]
+            $video->nid,
+            $video->title,
+            $video->description,
+            $video->video_url,
+            !empty($video->thumbnail) ? $video->thumbnail : "",
+            !empty($video->duration) ? $video->duration : "",
+            !empty($video->categories) ? $video->categories : "",
+            $video->tags,
+            !empty($video->channel_name) ? $video->channel_name : ""
         );
     }
 
@@ -89,14 +88,15 @@ class VideosRepository
 			foreach ($responseVideos as $video)
 			{
 				array_push($videos, new Video(
-					$video->nid,
-                    $video->title,
-                    $video->description,
-                    $video->video_url,
-                    !empty($video->thumbnail) ? $video->thumbnail : "",
-                    !empty($video->duration) ? $video->duration : "",
-                    !empty($video->categories) ? $video->categories : "",
-                    !empty($video->channel_name) ? $video->channel_name : ""
+				    $video->nid,
+            $video->title,
+            $video->description,
+            $video->video_url,
+            !empty($video->thumbnail) ? $video->thumbnail : "",
+            !empty($video->duration) ? $video->duration : "",
+            $video->categories,
+            $video->tags,
+            !empty($video->channel_name) ? $video->channel_name : ""
 				));
 			}
 		}

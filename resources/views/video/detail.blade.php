@@ -17,14 +17,14 @@
     </div>
 
     <div class="col-md-4">
-        <div>{{ $video->getCategories()->title}}</div>
+        <div>{{ $video->getCategories()->name}}</div>
         <h2>{{ $video->getTitle() }}</h2>
         <div>{!! $video->getDescription() !!}</div>
         <div>{{ $video->getDuration()}}</div>
           <ul>
             @foreach($video->getTags() as $tag)
             <li>
-              <a href="#">{{$tag->title}}</a>
+              <a href="#">{{$tag->name}}</a>
             </li>
             @endforeach
           </ul>
