@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-		<link rel="stylesheet" href="{{ elixir('css/app.css') }}" type="text/css"/>		
-		<script src="/js/jquery-1.8.2.min.js"></script>		
-		<script src="/js/bxslider/jquery.bxslider.min.js"></script>		
-		<script src="/js/global.js" type="text/javascript"></script>
-		<link href="/js/bxslider/jquery.bxslider.css" rel="stylesheet" />
-        <title>OICSS - @yield('title')</title>
-        <link href="/css/video-js.min.css" rel="stylesheet">
-        <script src="/js/video.min.js"></script>
-        <link href="{{ elixir('css/app.css') }}" rel="stylesheet" type="text/css" />
+		<script src="/js/jquery-1.8.2.min.js"></script>
+		<script src="/js/bxslider/jquery.bxslider.min.js"></script>
+    <script src="/js/video.min.js"></script>
+    <script src="/js/global.js" type="text/javascript"></script>
+    <title>OICSS - @yield('title')</title>
+    <link href="{{ elixir('css/app.css') }}" rel="stylesheet" type="text/css" />
+    <link href="/js/bxslider/jquery.bxslider.css" rel="stylesheet" />
     </head>
 
     <body>
@@ -26,6 +24,8 @@
                 <input type="search" id="header-search" name="search" placeholder="Search the content store&hellip;">
             </div>
         </div>
+
+        @yield('top_content')
 
         <div id="content" class="container">
             @yield('content')

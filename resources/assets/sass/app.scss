@@ -9,8 +9,15 @@
 
 @import "fonts";
 @import "typography";
+@import "video/video-detail";
 @import "video/programme-card";
 @import "video-js";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
 
 body {
   background: #efefef;
