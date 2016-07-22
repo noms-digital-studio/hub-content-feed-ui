@@ -39,11 +39,31 @@ $card-border-radius: 0.5em;
   }
 
   a {
+    display: flex;
+    align-items: center;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &::before {
+      display: block;
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      content: '';
+      margin: 0.5em;
+      background: transparent url(/img/ic_play_circle_outline_black_24dp_2x.png) top left no-repeat;
+    }
+
+    h4 {
+      flex-shrink: 1;
+    }
   }
 
   .programme-title {
@@ -59,25 +79,6 @@ $card-border-radius: 0.5em;
 
     h6 {
       margin: 0;
-    }
-  }
-
-  h4 {
-    padding-left: calc(48px + 0.25em);
-    position: absolute;
-    top: 50%;
-    margin-top: -24px;
-    left: 10px;
-    line-height: 48px;
-
-    &::before {
-      display: block;
-      width: 48px;
-      height: 48px;
-      content: '';
-      background: transparent url(/img/ic_play_circle_outline_black_24dp_2x.png) top left no-repeat;
-      position: absolute;
-      left: 0;
     }
   }
 
