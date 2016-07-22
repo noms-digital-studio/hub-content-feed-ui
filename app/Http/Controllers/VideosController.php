@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\VideoNotFoundException;
 use App\Facades\Videos;
 use App\Http\Controllers\Controller;
 use App\Models\Video;
-use App\Repositories\VideosRepository;
 use App\User;
 
 class VideosController extends Controller {
@@ -18,13 +18,13 @@ class VideosController extends Controller {
   }
 
   function show($nid) {
-    $video = Videos::find($nid);
-    $categoryEpisodes = Videos::getCategoryEpisodes($nid);
+      try {
+          $video = Videos::find($nid);
+          $categoryEpisodes = Videos::getCategoryEpisodes($nid);
 
-    if (!$video instanceof Video){
-      abort(404, $video->message);
-    }
-
-    return view('video.detail', ['video' => $video, 'categoryEpisodes' => $categoryEpisodes]);
+          return view('video.detail', ['video' => $video, 'categoryEpisodes' => $categoryEpisodes]);
+      } catch (VideoNotFoundException $ex) {
+          abort(404, $ex->getMessage());
+      }
   }
 }

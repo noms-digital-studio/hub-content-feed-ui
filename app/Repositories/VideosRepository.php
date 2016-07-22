@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Exception\VideoNotFoundException;
 use App\Models\Video;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
@@ -55,7 +56,7 @@ class VideosRepository
         try {
             $response = $this->client->get('/api/video/' . $nid);
         } catch (ClientException $e) {
-            return json_decode($e->getResponse()->getBody());
+            throw new VideoNotFoundException('Video not found: ' . $nid);
         }
 
         $video = json_decode($response->getBody());

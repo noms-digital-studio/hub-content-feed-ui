@@ -11,10 +11,30 @@ class VideoLandingPageTest extends TestCase
 {
     protected $landingPageMockData = '[{"tid":"1","channel":"Way2Learn","programmes":[{"tid":"2","title":"Minute Maths","episodes":{"nid":"9","title":"Global video 3","description":[{"value":"<p>Description of the third global video item.<\/p>\r\n","summary":"","format":"basic_html"}],"category":{"id":"2","title":"Minute Maths"},"thumbnail":"http:\/\/192.168.33.9\/sites\/default\/files\/2016-07\/minute-maths.png"}},{"tid":"3","title":"Job Smart","episodes":{"nid":"7","title":"Global video 1","description":[{"value":"<p>Description of the first global video item.<\/p>\r\n","summary":"","format":"basic_html"}],"category":{"id":"3","title":"Job Smart"},"thumbnail":"http:\/\/192.168.33.9\/sites\/default\/files\/2016-07\/job-smart.png"}}]},{"tid":"5","channel":"Prison Video Trust","programmes":[{"tid":"6","title":"PVT Series 1","episodes":{"nid":"8","title":"Global video 2","description":[{"value":"<p>The description of the second global video item.<\/p>\r\n","summary":"","format":"basic_html"}],"category":{"id":"6","title":"PVT Series 1"},"thumbnail":"http:\/\/192.168.33.9\/sites\/default\/files\/2016-07\/pvt-series-1.png"}}]}]';
     protected $mockVideo;
+    protected $mockRecentVideos = array();
+    protected $mockCategoryEpisodes = array();
 
     public function __construct() {
+      $tags = array(
+          (object) array("id" => 2, "name" => 'Documentary'),
+          (object) array("id" => 3, "name" => 'Shape')
+      );
+
+      $category = (object) array(
+          "id" => 4,
+          "name" => 'Minute Maths'
+      );
+
       $this->mockVideo = new Video(
-        9, "Video title", "<p>Video description</p>", "http://url.to/video.mp4"
+          9,
+          "Episode 1: Area - The Space inside a shape",
+          "Lorem ipsum dolor sit amet conestur adoijvcsa elit. Sed commdoino or ojoasd ds. Donec porta lcudaj funsaoir congie. Sed adjnai sfshgdfhfd hfhrthgd iuy dhgd daf .",
+          "http://192.168.33.9/sites/default/files/videos/2016-07/SampleVideo_1280x720_2mb_2.mp4",
+          "http://placehold.it/300x300",
+          "1:20",
+          $category,
+          $tags,
+          "Way2Learn"
       );
     }
 
@@ -28,6 +48,10 @@ class VideoLandingPageTest extends TestCase
         Videos::shouldReceive('landingPageVideos')
           ->once()
           ->andReturn(json_decode($this->landingPageMockData));
+
+        Videos::shouldReceive('getRecent')
+          ->once()
+          ->andReturn($this->mockRecentVideos);
 
         $this->visit('/video')
              ->seeInElement('h2', 'Way2Learn')
@@ -45,6 +69,10 @@ class VideoLandingPageTest extends TestCase
           ->once()
           ->andReturn(json_decode($this->landingPageMockData));
 
+        Videos::shouldReceive('getRecent')
+          ->once()
+          ->andReturn($this->mockRecentVideos);
+
         $this->visit('/video')
              ->seeInElement('h6', 'Minute Maths')
              ->seeInElement('h6', 'Job Smart')
@@ -61,6 +89,14 @@ class VideoLandingPageTest extends TestCase
         Videos::shouldReceive('landingPageVideos')
           ->once()
           ->andReturn(json_decode($this->landingPageMockData));
+
+        Videos::shouldReceive('getRecent')
+          ->once()
+          ->andReturn($this->mockRecentVideos);
+
+        Videos::shouldReceive('getCategoryEpisodes')
+          ->once()
+          ->andReturn($this->mockCategoryEpisodes);
 
         Videos::shouldReceive('find')
           ->with(9)
