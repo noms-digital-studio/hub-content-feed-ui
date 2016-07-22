@@ -7,32 +7,80 @@ use App\Models\Video;
 
 class VideoPlayerTest extends TestCase
 {
+    protected $mockVideo;
+    protected $mockEpisodeVideos = array();
+
+    public function __contruct()
+    {
+        $tags = array(
+            (object) array("id" =>2, "title" => 'Documentary'),
+            (object) array("id" => 3, "title" => 'Shape')
+        );
+
+        $category = (object) array(
+            "id" => 4,
+            "title" =>'Minute Maths'
+        );
+
+        $this->mockVideo = new Video(
+            "20",
+            "Episode 1: Area - The Space inside a shape",
+            "Lorem ipsum dolor sit amet conestur adoijvcsa elit. Sed commdoino or ojoasd ds. Donec porta lcudaj funsaoir congie. Sed adjnai sfshgdfhfd hfhrthgd iuy dhgd daf .",
+            "",
+            "1:20",
+            "http://192.168.33.9/sites/default/files/videos/2016-07/SampleVideo_1280x720_2mb_2.mp4",
+            $tags,
+            $category,
+            "Way2Learn"
+        );
+
+        $this->mockEpisodeVideos[] = new Video(
+            "21",
+            "Episode 1",
+            "Description",
+            "",
+            "1:20",
+            "http://192.168.33.9/sites/default/files/videos/2016-07/SampleVideo_1280x720_2mb_2.mp4",
+            $tags,
+            $category,
+            "Way2Learn"
+        );
+
+        $this->mockEpisodeVideos[] = new Video(
+            "22",
+            "Episode 2",
+            "Description",
+            "",
+            "1:20",
+            "http://192.168.33.9/sites/default/files/videos/2016-07/SampleVideo_1280x720_2mb_2.mp4",
+            $tags,
+            $category,
+            "Way2Learn"
+        );
+
+        $this->mockEpisodeVideos[] = new Video(
+            "23",
+            "Episode 3",
+            "Description",
+            "",
+            "1:20",
+            "http://192.168.33.9/sites/default/files/videos/2016-07/SampleVideo_1280x720_2mb_2.mp4",
+            $tags,
+            $category,
+            "Way2Learn"
+        );
+    }
+
     public function testMockVideoPlayer()
     {
         \App\Facades\Videos::shouldReceive('find')
           ->with(20)
           ->once()
-          ->andReturn(new Video(
-          "20",
-          "Episode 1: Area - The Space inside a shape",
-          "Lorem ipsum dolor sit amet conestur adoijvcsa elit. Sed commdoino or ojoasd ds. Donec porta lcudaj funsaoir congie. Sed adjnai sfshgdfhfd hfhrthgd iuy dhgd daf .",
-          "1:20",
-          "http://192.168.33.9/sites/default/files/videos/2016-07/SampleVideo_1280x720_2mb_2.mp4",
-          array(
-            (object) array(
-              "id"=>2,
-              "title"=>'Documentary'
-            ),
-            (object) array(
-              "id"=>3,
-              "title"=>'Shape'
-            )
-          ),
-          (object) array(
-            "id"=>4,
-            "title"=>'Minute Maths'
-          )
-        ));
+          ->andReturn($this->mockVideo);
+
+        \App\Facades\Videos::shouldReceive('getCategoryEpisodes')
+          ->once()
+          ->andReturn($this->mockEpisodeVideos);
 
         $this->visit('/video/20')
              ->seeInElement('h2', 'Episode 1: Area - The Space inside a shape')

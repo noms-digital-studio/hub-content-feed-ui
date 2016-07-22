@@ -12,17 +12,25 @@
 
     <body>
         <div id="header">
-            <h1><a href="/">OICSS</a></h1>
+            <h1><a href="/">Content Store</a></h1>
 
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/video">Video</a></li>
-                <li><a href="/radio">Radio</a></li>
-            </ul>
-
-            <div class="header-search">
-                <input type="search" id="header-search" name="search" placeholder="Search the content store&hellip;">
+            <div class="row">
+              <div class="col-xs-12">
+                <ul class="nav-menu">
+                  <li>
+                    <h2><a href="/">Home</a></h2>
+                  </li>
+                  <li>
+                   <h2><a href="/video" class="active">Video</a></h2>
+                  </li>
+                  </li>
+                  <li>
+                   <h2><a href="/radio">Radio</a></h2>
+                  </li>
+                </ul>
+              </div>
             </div>
+
         </div>
 
         @yield('top_content')
