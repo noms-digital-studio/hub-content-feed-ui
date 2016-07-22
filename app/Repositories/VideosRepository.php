@@ -60,8 +60,6 @@ class VideosRepository
 
         $video = json_decode($response->getBody());
 
-        // var_dump($video);
-
         return new Video(
             $video->nid,
             $video->title,
@@ -104,4 +102,31 @@ class VideosRepository
 		return $videos;
 	}
 
+  public function getCategoryEpisodes($nid)
+  {
+    $response = $this->client->get('/api/video/episodes/' . $nid);
+
+    $responseVideos = json_decode($response->getBody());
+
+    $videos = array();
+
+    if ($responseVideos)
+    {
+      foreach ($responseVideos as $video)
+      {
+        array_push($videos, new Video(
+            $video->nid,
+            $video->title,
+            $video->description,
+            $video->video_url,
+            !empty($video->thumbnail) ? $video->thumbnail : "",
+            !empty($video->duration) ? $video->duration : "",
+            $video->categories,
+            $video->tags,
+            !empty($video->channel_name) ? $video->channel_name : ""
+        ));
+      }
+    }
+    return $videos;
+  }
 }

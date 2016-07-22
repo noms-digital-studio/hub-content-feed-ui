@@ -19,11 +19,12 @@ class VideosController extends Controller {
 
   function show($nid) {
     $video = Videos::find($nid);
+    $categoryEpisodes = Videos::getCategoryEpisodes($nid);
 
     if (!$video instanceof Video){
       abort(404, $video->message);
     }
-    
-    return view('video.detail', ['video' => $video]);
+
+    return view('video.detail', ['video' => $video, 'categoryEpisodes' => $categoryEpisodes]);
   }
 }

@@ -38,6 +38,29 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="episodes-menu">
+      <li>
+        <h2><a href="#" class="active">Episodes</a></h2>
+      </li>
+      <li>
+       <h2><a href="#">About</a></h2>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="programme-episodes">
+      @foreach($categoryEpisodes as $episode)
+        @include('video.episodeCard', ['episode' => $episode])
+      @endforeach
+    </div>
+  </div>
+</div>
+
 @endsection
 
 @section('content')
