@@ -8,7 +8,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <video id="video_player" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" width="600" height="240" data-setup='{}'>
+        <video id="video_player" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" width="600" height="240" data-setup='{}' controls poster="{{$video->getThumbnail()}}">
           <source src="{{ $video->getUrl() }}">
           <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
         </video>
@@ -22,6 +22,7 @@
         <div class="video-description">{!! $video->getDescription() !!}</div>
         <div class="video-duration">{{ $video->getDuration() }}</div>
 
+        @if($video->getTags())
         <div class="video-tags">
           <span class="label">Tags</span>
 
@@ -32,7 +33,8 @@
               </li>
             @endforeach
           </ul>
-        </ul>
+        </div>
+        @endif
       </div>
     </div>
   </div>
@@ -41,5 +43,28 @@
 @endsection
 
 @section('content')
+
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="episodes-menu">
+      <li>
+        <h2><a href="#" class="active">Episodes</a></h2>
+      </li>
+      <li>
+       <h2><a href="#">About</a></h2>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="programme-episodes">
+      @foreach($categoryEpisodes as $episode)
+        @include('video.episodeCard', ['episode' => $episode])
+      @endforeach
+    </div>
+  </div>
+</div>
 
 @endsection

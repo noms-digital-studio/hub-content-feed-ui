@@ -1,0 +1,125 @@
+$card-gutter: 15px;     // The distance between cards
+$card-border-radius: 0.5em;
+
+.programme-episodes {
+  width: 100%;
+  margin-left: -$card-gutter * 0.5;
+  margin-right: -$card-gutter * 0.5;
+}
+
+.card.episode-card {
+  position: relative;
+  max-width: 33.3333%;
+  float:left;
+  box-sizing: border-box;
+  padding: $card-gutter * 0.5;
+
+  img {
+    max-width: 100%;
+    display: block;
+    border-radius: 0.5em;
+    box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .overlay {
+    opacity: 0;
+    position: absolute;
+    top: $card-gutter * 0.5;
+    left: $card-gutter * 0.5;
+    right: $card-gutter * 0.5;
+    bottom: $card-gutter * 0.5;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: $card-border-radius;
+  }
+
+  .episode-name {
+    display: block;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin: 1em;
+  }
+
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .episode-title {
+    position: absolute;
+    bottom: $card-gutter * 0.5;
+    left: $card-gutter * 0.5;
+    right: $card-gutter * 0.5;
+    background: white;
+    margin: 0;
+    padding: 0.75em;
+    border-bottom-left-radius: $card-border-radius;
+    border-bottom-right-radius: $card-border-radius;
+
+    h6 {
+      margin: 0;
+    }
+  }
+
+  h4 {
+    padding-left: calc(48px + 0.25em);
+    position: absolute;
+    top: 50%;
+    margin-top: -24px;
+    left: 10px;
+    line-height: 48px;
+
+    &::before {
+      display: block;
+      width: 48px;
+      height: 48px;
+      content: '';
+      background: transparent url(/img/ic_play_circle_outline_black_24dp_2x.png) top left no-repeat;
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+.episodes-menu {
+  text-align: center;
+  margin-bottom: 30px;
+  li {
+    display: inline;
+    list-style-type: none;
+    margin-right: 20px;
+    h2 {
+      display: inline;
+      a {
+        color: #000;
+        text-decoration: none;
+        padding-bottom: 15px;
+        &.active {
+          border-bottom: 1px solid green;
+        }
+      }
+    }
+  }
+}
+
+.nav-menu {
+  text-align: center;
+  margin-bottom: 20px;
+  li {
+    display: inline;
+    list-style-type: none;
+    margin-right: 50px;
+    h2 {
+      display: inline;
+      a {
+        color: #000;
+        text-decoration: none;
+        padding-bottom: 10px;
+        &.active {
+          border-bottom: 3px solid red;
+        }
+      }
+    }
+  }
+}
