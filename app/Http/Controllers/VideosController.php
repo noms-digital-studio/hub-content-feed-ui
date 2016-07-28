@@ -12,7 +12,7 @@ class VideosController extends Controller {
 
   function showVideoLandingPage() {
     $videos = Videos::landingPageVideos();
-	$recentVideos = Videos::getRecent();
+    $recentVideos = Videos::getRecent();
 
     return view('video.landingPage', ['videos' => $videos, 'recentVideos' => $recentVideos]);
   }

@@ -16,20 +16,20 @@
         @if (Request::is('/') || Request::is('hub/*'))
         @else
         <div class="container" id="header">
-            <h1><a href="/">The Hub</a></h1>
+            <h1><a href="/">{{ trans('navigation.title') }}</a></h1>
 
             <div class="row">
         				<div class="col-xs-12">
           					<ul class="nav-menu">
             						<li>
-            							  <h2><a href="/">Home</a></h2>
+            							  <h2><a href="/">{{ trans('navigation.home') }}</a></h2>
             						</li>
             						<li>
-            							  <h2><a href="/video" class="active">Video</a></h2>
+            							  <h2><a href="{{ action('VideosController@showVideoLandingPage') }}" class="active">{{ trans('navigation.video') }}</a></h2>
             						</li>
             						</li>
             						<li>
-    							          <h2><a href="/radio">Radio</a></h2>
+    							          <h2><a href="/radio">{{ trans('navigation.radio') }}</a></h2>
             						</li>
           					</ul>
         				</div>

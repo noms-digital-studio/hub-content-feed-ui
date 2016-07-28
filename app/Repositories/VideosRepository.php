@@ -10,6 +10,7 @@ use GuzzleHttp\Exception\ClientException;
 class VideosRepository
 {
     protected $client;
+    protected $locale = '';
 
     public function __construct()
     {
@@ -17,11 +18,16 @@ class VideosRepository
             'base_uri' => $_ENV['API_URI'],
             'timeout' => 60.0
         ));
+
+        $this->locale = \App::getLocale();
+        if ($this->locale == 'en') {
+          $this->locale = '';
+        }
     }
 
     public function landingPageVideos()
     {
-        $response = $this->client->get('api/video/landing');
+        $response = $this->client->get($this->locale . '/api/video/landing');
 
         $responseTree = json_decode($response->getBody());
 
@@ -53,7 +59,7 @@ class VideosRepository
     public function find($nid)
     {
         try {
-            $response = $this->client->get('/api/video/' . $nid);
+            $response = $this->client->get($this->locale . '/api/video/' . $nid);
         } catch (ClientException $e) {
             throw new VideoNotFoundException('Video not found: ' . $nid);
         }
@@ -75,7 +81,7 @@ class VideosRepository
 
     public function getRecent()
 	{
-		$response = $this->client->get('api/video/recent');
+		$response = $this->client->get($this->locale . '/api/video/recent');
 
 		$responseVideos = json_decode($response->getBody());
 

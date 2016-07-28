@@ -15,6 +15,7 @@ Route::get('/', 'HubLinksController@showHubPage');
 
 Route::get('/hub/{tid}', 'HubLinksController@showHubSubPage');
 
-Route::get('/video', 'VideosController@showVideoLandingPage');
-
-Route::get('/video/{nid}', 'VideosController@show');
+Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
+    Route::get('/video', ['as' => 'video.landing', 'uses' => 'VideosController@showVideoLandingPage']);
+    Route::get('/video/{nid}', ['as' => 'video.detail', 'uses' => 'VideosController@show']);
+});

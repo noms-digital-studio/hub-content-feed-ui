@@ -3,7 +3,7 @@
 		<li>
 			<div class="row">
 				<div class="col-xs-4">
-					<a href="../video/{{ $video->getId() }}">
+					<a href="{{ action('VideosController@show', $video->getId()) }}">
 						<img src="{{ $video->getThumbnail() }}" alt="" />
 					</a>
 				</div>
