@@ -46,6 +46,7 @@ $card-border-radius: 0.5em;
     left: 0;
     right: 0;
     bottom: 0;
+    text-decoration: none !important;
 
     &:hover {
       text-decoration: none;
@@ -63,6 +64,20 @@ $card-border-radius: 0.5em;
 
     h4 {
       flex-shrink: 1;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 20px;
+      color: #000;
+    }
+  }
+
+  &:hover {
+    .overlay {
+      opacity: 1;
+    }
+
+    .programme-title {
+      opacity: 0;
     }
   }
 
@@ -81,14 +96,12 @@ $card-border-radius: 0.5em;
       margin: 0;
     }
   }
+}
 
-  &:hover {
-    .overlay {
-      opacity: 1;
-    }
-
-    .programme-title {
-      opacity: 0;
-    }
-  }
+.card.episode-card {
+  position: relative;
+  max-width: 33.3333%;
+  float:left;
+  box-sizing: border-box;
+  padding: $card-gutter * 0.5;
 }

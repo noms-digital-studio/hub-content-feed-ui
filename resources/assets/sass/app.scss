@@ -11,7 +11,6 @@
 @import "typography";
 @import "video/video-detail";
 @import "video/programme-card";
-@import "video/episode-card";
 @import "video-js";
 
 html,
@@ -23,4 +22,26 @@ body {
 body {
   background: #efefef;
   font-family: "Open Sans", sans-serif;
+}
+
+// Navigation design - will be removed at a later stage
+.nav-menu {
+  text-align: center;
+  margin-bottom: 20px;
+  li {
+    display: inline;
+    list-style-type: none;
+    margin-right: 50px;
+    h2 {
+      display: inline;
+      a {
+        color: #000;
+        text-decoration: none;
+        padding-bottom: 10px;
+        &.active {
+          border-bottom: 3px solid red;
+        }
+      }
+    }
+  }
 }

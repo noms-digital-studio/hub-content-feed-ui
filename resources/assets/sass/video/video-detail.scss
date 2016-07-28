@@ -33,40 +33,27 @@
       }
     }
   }
+}
 
-  .video-tags {
-    border-top: 1px solid #425582 ;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+.channel-episodes {
+  display:inline-block !important;
+}
 
-    .label {
-      margin: 0.5em 0;
-      font-size: 16px;
-      font-weight: 600;
-      display: block;
-    }
-
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-
-      li {
-        display: inline-block;
-        margin-left: 0.5em;
-
-        &:first-child {
-          margin-left: 0;
-        }
-
-        a {
-          display: inline-block;
-          color: #fff;
-          border: 1px solid #425582;
-          padding: 0.5em 1.5em;
-          border-radius: 2em;
-          text-decoration: none;
+.episodes-menu {
+  text-align: center;
+  margin-bottom: 30px;
+  li {
+    display: inline;
+    list-style-type: none;
+    margin-right: 20px;
+    h2 {
+      display: inline;
+      a {
+        color: #000;
+        text-decoration: none;
+        padding-bottom: 15px;
+        &.active {
+          border-bottom: 1px solid green;
         }
       }
     }

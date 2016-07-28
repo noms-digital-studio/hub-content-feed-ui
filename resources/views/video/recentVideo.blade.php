@@ -7,13 +7,15 @@
 					<img src="{{ $video->getThumbnail() }}" alt="" />
 				</div>
 				<div class="col-xs-7">
-					<p>{{ $video->getChannel() }}</p>			
+					<p>{{ $video->getChannel() }}</p>
 					<p>{{ $video->getTitle() }}</p>
 					<p>{!! $video->getDescription() !!}</p>
-					<p>{{ $video->getDuration() }}</p>
-				</div>		
+					@if($video->getDuration())
+						<div class="video-duration">{{ $video->getDuration() }}</div>
+					@endif
+				</div>
 			</a>
-		</li>     
+		</li>
 		@endforeach
 	</ul>
 </div>

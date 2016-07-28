@@ -2,9 +2,11 @@
 
 @section('title', 'Videos')
 
-@section('content')
-
+@section('top_content')
 	@include('video.recentVideo', ['recentVideos' => $recentVideos])
+@endsection
+
+@section('content')
 
     @foreach($videos as $channel)
         <div class="channel">
