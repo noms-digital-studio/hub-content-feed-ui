@@ -15,7 +15,7 @@ class VideosRepository
     public function __construct()
     {
         $this->client = new Client(array(
-            'base_uri' => 'http://192.168.33.9',
+            'base_uri' => $_ENV['API_URI'],
             'timeout' => 60.0
         ));
     }

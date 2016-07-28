@@ -157,6 +157,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         App\Providers\VideosRepositoryServiceProvider::class,
+		App\Providers\HubLinksRepositoryServiceProvider::class,
+		
     ],
 
     /*
@@ -204,6 +206,16 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Videos' => App\Facades\Videos::class,
+		'HubLinks' => App\Facades\HubLinks::class,
     ],
 
+	/*
+    |--------------------------------------------------------------------------
+    | API Configuration
+    |--------------------------------------------------------------------------
+    | Here you configure the path to the BE api
+    | 
+    */
+    'api_uri' => env('API_URI'),
+	
 ];

@@ -1,0 +1,28 @@
+.hub-content {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-top: 125px;
+    #hub-back {
+        text-indent: -10000px;
+        display: inline-block;
+        position: absolute;
+        left: 15%;
+        background-size: 35px;
+        width: 35px;
+        height: 35px;
+    }
+    ul {
+        padding: 0px;
+        li {
+            display: inline-block;
+            list-style-type: none;                                    
+            img {
+                max-width: 100%;
+            }
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -11,13 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HubLinksController@showHubPage');
 
-Route::get('/hello/{name?}', function ($name = "World") {
-    return "Hello, " . $name . "!";
-});
+Route::get('/hub/{tid}', 'HubLinksController@showHubSubPage');
 
 Route::get('/video', 'VideosController@showVideoLandingPage');
 
