@@ -22,7 +22,8 @@ class VideoLandingPageTest extends TestCase
 
       $category = (object) array(
           "id" => 4,
-          "name" => 'Minute Maths'
+          "name" => 'Minute Maths',
+          "description" => 'The category description'
       );
 
       $this->mockVideo = new Video(
