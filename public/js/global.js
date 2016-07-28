@@ -1,3 +1,19 @@
 $(document).ready(function(){
-  $('.bxslider').bxSlider();  
+  $('.bxslider').bxSlider();
+
+  $("#AboutInfo").hide();
+  $("#EpisodeLink").click(function(e){
+    e.preventDefault();
+    $("#AboutInfo").hide();
+    $("#EpisodeInfo").show();
+    $(this).addClass("active");
+    $("#AboutLink").removeClass("active");
+  });
+  $("#AboutLink").click(function(e){
+    e.preventDefault();
+    $("#AboutInfo").show();
+    $("#EpisodeInfo").hide();
+    $("#EpisodeLink").removeClass("active");
+    $(this).addClass("active");
+  });
 });

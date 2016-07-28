@@ -5,28 +5,7 @@
 		<script src="/js/bxslider/jquery.bxslider.min.js"></script>
     <script src="/js/video.min.js"></script>
     <script src="/js/global.js" type="text/javascript"></script>
-
-
-    <script>
-    $(document).ready(function(){
-    $("#AboutInfo").hide();
-        $("#EpisodeLink").click(function(e){
-            e.preventDefault();
-            $("#AboutInfo").hide();
-            $("#EpisodeInfo").show();
-            $(this).addClass("active");
-            $("#AboutLink").removeClass("active");
-        });
-        $("#AboutLink").click(function(e){
-            e.preventDefault();
-            $("#AboutInfo").show();
-            $("#EpisodeInfo").hide();
-            $("#EpisodeLink").removeClass("active");
-            $(this).addClass("active");
-        });
-    });
-    </script>
-
+    
     <title>OICSS - @yield('title')</title>
     <link href="{{ elixir('css/app.css') }}" rel="stylesheet" type="text/css" />
     <link href="/js/bxslider/jquery.bxslider.css" rel="stylesheet" />
