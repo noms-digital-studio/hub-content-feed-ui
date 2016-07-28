@@ -110,7 +110,7 @@ class VideosRepository
 
   public function getCategoryEpisodes($nid)
   {
-    $response = $this->client->get('/api/video/episodes/' . $nid);
+    $response = $this->client->get($this->locale . '/api/video/episodes/' . $nid);
 
     $responseVideos = json_decode($response->getBody());
 

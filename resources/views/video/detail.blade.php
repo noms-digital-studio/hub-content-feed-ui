@@ -38,10 +38,10 @@
   <div class="col-xs-12">
     <ul class="episodes-menu">
       <li>
-        <h2><a href="#" id="EpisodeLink" class="active">Episodes</a></h2>
+        <h2><a href="#" id="EpisodeLink" class="active">{{ trans('video.episodes') }}</a></h2>
       </li>
       <li>
-       <h2><a href="#" id="AboutLink">About</a></h2>
+       <h2><a href="#" id="AboutLink">{{ trans('video.about') }}</a></h2>
       </li>
     </ul>
   </div>
