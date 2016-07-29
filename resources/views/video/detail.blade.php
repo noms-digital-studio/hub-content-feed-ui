@@ -20,21 +20,11 @@
         <h2 class="video-title">{{ $video->getTitle() }}</h2>
 
         <div class="video-description">{!! $video->getDescription() !!}</div>
-        <div class="video-duration">{{ $video->getDuration() }}</div>
 
-        @if($video->getTags())
-        <div class="video-tags">
-          <span class="label">Tags</span>
-
-          <ul>
-            @foreach($video->getTags() as $tag)
-              <li>
-                <a href="#">{{ $tag->name }}</a>
-              </li>
-            @endforeach
-          </ul>
-        </div>
+        @if($video->getDuration())
+          <div class="video-duration">{{ $video->getDuration() }}</div>
         @endif
+
       </div>
     </div>
   </div>
@@ -48,21 +38,36 @@
   <div class="col-xs-12">
     <ul class="episodes-menu">
       <li>
-        <h2><a href="#" class="active">Episodes</a></h2>
+        <h2><a href="#" id="EpisodeLink" class="active">Episodes</a></h2>
       </li>
       <li>
-       <h2><a href="#">About</a></h2>
+       <h2><a href="#" id="AboutLink">About</a></h2>
       </li>
     </ul>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-xs-12">
-    <div class="programme-episodes">
-      @foreach($categoryEpisodes as $episode)
-        @include('video.episodeCard', ['episode' => $episode])
-      @endforeach
+
+<!-- Lists the episodes of the programme -->
+<div id="EpisodeInfo">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="channel-programmes channel-episodes">
+        @foreach($categoryEpisodes as $episode)
+          @include('video.episodeCard', ['episode' => $episode])
+        @endforeach
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Information about the programme-->
+<div id="AboutInfo">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="channel-programmes channel-episodes">
+        <div>{!! $video->getCategories()->description !!}</div>
+      </div>
     </div>
   </div>
 </div>

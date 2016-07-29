@@ -2,14 +2,13 @@
 
 namespace App\Repositories;
 
-use App\Exception\VideoNotFoundException;
+use App\Exceptions\VideoNotFoundException;
 use App\Models\Video;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 
 class VideosRepository
 {
-
     protected $client;
 
     public function __construct()

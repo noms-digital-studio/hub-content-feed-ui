@@ -1,19 +1,22 @@
-<div class="row">
 	<ul class="bxslider">
 		@foreach($recentVideos as $video)
 		<li>
-			<a href="../video/{{ $video->getId() }}">
+			<div class="row">
 				<div class="col-xs-4">
-					<img src="{{ $video->getThumbnail() }}" alt="" />
+					<a href="../video/{{ $video->getId() }}">
+						<img src="{{ $video->getThumbnail() }}" alt="" />
+					</a>
 				</div>
+
 				<div class="col-xs-7">
-					<p>{{ $video->getChannel() }}</p>			
-					<p>{{ $video->getTitle() }}</p>
+					<p>{{ $video->getChannel() }}</p>
+					<h2>{{ $video->getTitle() }}</h2>
 					<p>{!! $video->getDescription() !!}</p>
-					<p>{{ $video->getDuration() }}</p>
-				</div>		
-			</a>
-		</li>     
+					@if($video->getDuration())
+						<div class="video-duration">{{ $video->getDuration() }}</div>
+					@endif
+				</div>
+			</div>
+		</li>
 		@endforeach
 	</ul>
-</div>

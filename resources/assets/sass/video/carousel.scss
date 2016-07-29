@@ -1,0 +1,19 @@
+.recent-video-wrap {
+  background: #E23A38;
+}
+
+.video-duration {
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 0.5em;
+    background: transparent url(/img/ic_query_builder_black_24dp_1x.png) top left no-repeat;
+
+    .dark & {
+      background: transparent url(/img/ic_query_builder_white_24dp_1x.png) top left no-repeat;
+    }
+  }
+}

@@ -2,9 +2,19 @@
 
 @section('title', 'Videos')
 
-@section('content')
+@section('top_content')
+<div class="recent-video-wrap dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+				@include('video.recentVideo', ['recentVideos' => $recentVideos])
+			</div>
+		</div>
+	</div>
+</div>
+@endsection
 
-	@include('video.recentVideo', ['recentVideos' => $recentVideos])
+@section('content')
 
     @foreach($videos as $channel)
         <div class="channel">

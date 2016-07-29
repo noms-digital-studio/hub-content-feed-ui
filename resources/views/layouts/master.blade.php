@@ -5,14 +5,15 @@
 		<script src="/js/bxslider/jquery.bxslider.min.js"></script>
     <script src="/js/video.min.js"></script>
     <script src="/js/global.js" type="text/javascript"></script>
+    
     <title>OICSS - @yield('title')</title>
     <link href="{{ elixir('css/app.css') }}" rel="stylesheet" type="text/css" />
     <link href="/js/bxslider/jquery.bxslider.css" rel="stylesheet" />
     </head>
 
     <body>
-        <div id="header">
-            <h1><a href="/">Content Store</a></h1>
+        <div class="container" id="header">
+            <h1><a href="/">The Hub</a></h1>
 
             <div class="row">
               <div class="col-xs-12">
