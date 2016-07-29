@@ -27,7 +27,7 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>MoJ Content Platform</name>
+  <name>MoJ Content Platform (frontend)</name>
   <description>Ministry of Justice In-Cell Content Platform</description>
 
   <organization>
@@ -85,7 +85,7 @@
           <changelogFile>src/changelog</changelogFile>
           <mappings>
             <mapping>
-            <directory>/usr/share/nginx/html/moj</directory>
+            <directory>/usr/share/nginx/html/moj_fe</directory>
             <filemode>755</filemode>
             <username>nginx</username>
             <groupname>nginx</groupname>
