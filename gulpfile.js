@@ -11,9 +11,15 @@ var elixir = require('laravel-elixir');
  |
  */
 
+require('laravel-elixir-spritesmith');
+
 elixir(function (mix) {   
     mix.sass([
         'app.scss',
         'global.scss'
-    ]).version('css/app.css');    
+    ]).version('css/app.css').spritesmith(
+            null, {
+                imgOutput: 'public/img',
+                cssOutput: 'public/css'
+            });    
 });

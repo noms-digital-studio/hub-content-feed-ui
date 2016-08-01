@@ -37,6 +37,31 @@ class VideoLandingPageTest extends TestCase
           $tags,
           "Way2Learn"
       );
+	  
+		$this->mockRecentVideo = array(
+			new Video(
+				9,
+				"Video title",
+				"Lorem ipsum dolor sit amet conestur adoijvcsa elit. Sed commdoino or ojoasd ds.",
+				"http://192.168.33.9/sites/default/files/videos/2016-07/SampleVideo_1280x720_2mb_2.mp4",
+				"http://placehold.it/600x600",
+				"1:20",
+				$category,
+				$tags,
+				"Way2Learn"
+			),
+			new Video(
+				10,
+				"Video title 2",
+				"Work out the space inside a shape with Ryan. This episode relates to page 3 of your Minute Maths work book.",
+				"http://192.168.33.9/sites/default/files/videos/2016-07/SampleVideo_1280x720_2mb_2.mp4",
+				"http://placehold.it/300x300",
+				"1:20",
+				$category,
+				$tags,
+				"Minute Maths"
+			)
+      );
     }
 
     /**
@@ -107,6 +132,88 @@ class VideoLandingPageTest extends TestCase
         $this->visit('/video')
              ->click('programme-9')
              ->seePageIs('/video/9');
+    }
+	
+	 /**
+     * Tests that video title is displayed on carousel slide.
+     *
+     * @return void
+     */
+    public function testCarouselSlideTitle() {
+       
+        Videos::shouldReceive('landingPageVideos')
+          ->once()
+         ->andReturn(json_decode($this->landingPageMockData));
+       
+        Videos::shouldReceive('getRecent')
+                ->once()
+                ->andReturn($this->mockRecentVideo);
+ 
+ 
+        $this->visit('/video')
+                ->seeInElement('.bxslider', 'Video title')
+                 ->seeInElement('.bxslider', 'Video title 2');
+    }
+	
+	/**
+     * Tests that video title is displayed on carousel slide.
+     *
+     * @return void
+     */
+    public function testCarouselSlideThumb() {
+       
+        Videos::shouldReceive('landingPageVideos')
+          ->once()
+         ->andReturn(json_decode($this->landingPageMockData));
+       
+        Videos::shouldReceive('getRecent')
+                ->once()
+                ->andReturn($this->mockRecentVideo);
+ 
+ 
+        $this->visit('/video')
+				->seeInElement('.bxslider', '<img src="http://placehold.it/600x600" alt="">')
+                ->seeInElement('.bxslider', '<img src="http://placehold.it/300x300" alt="">');                 
+    }
+	
+	/**
+     * Tests that video's channel name is displayed on carousel slide.
+     *
+     * @return void
+     */
+    public function testCarouselSlideChannelName() {
+       
+        Videos::shouldReceive('landingPageVideos')
+          ->once()
+         ->andReturn(json_decode($this->landingPageMockData));
+       
+        Videos::shouldReceive('getRecent')
+                ->once()
+                ->andReturn($this->mockRecentVideo);
+ 
+        $this->visit('/video')
+				->seeInElement('.bxslider', 'Minute Maths')
+                ->seeInElement('.bxslider', 'Way2Learn');                 
+    }
+	
+	/**
+     * Tests that video's channel name is displayed on carousel slide.
+     *
+     * @return void
+     */
+    public function testCarouselSlideDesciption() {
+       
+        Videos::shouldReceive('landingPageVideos')
+          ->once()
+         ->andReturn(json_decode($this->landingPageMockData));
+       
+        Videos::shouldReceive('getRecent')
+                ->once()
+                ->andReturn($this->mockRecentVideo);
+ 
+        $this->visit('/video')
+				->seeInElement('.bxslider', 'Work out the space inside a shape with Ryan. This episode relates to page 3 of your Minute Maths work book.')
+                ->seeInElement('.bxslider', 'Lorem ipsum dolor sit amet conestur adoijvcsa elit. Sed commdoino or ojoasd ds.');                 
     }
 
 }

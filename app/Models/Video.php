@@ -13,9 +13,10 @@ class Video implements \JsonSerializable
 	protected $duration;
 	protected $categories;
 	protected $channel;
-  protected $tags = array();
+	protected $tags = array();
 
-	public function __construct($nid, $title, $description, $url, $thumbnail, $duration, $categories, $tags, $channel) {
+	public function __construct($nid, $title, $description, $url, $thumbnail, $duration, $categories, $tags, $channel)
+	{
 		$this->nid = $nid;
 		$this->title = $title;
 		$this->description = $description;
@@ -27,53 +28,63 @@ class Video implements \JsonSerializable
 		$this->channel = $channel;
 	}
 
-	public function getId() {
+	public function getId()
+	{
 		return $this->nid;
 	}
 
-	public function getTitle() {
+	public function getTitle()
+	{
 		return $this->title;
 	}
 
-	public function getDescription() {
+	public function getDescription()
+	{
 		return $this->description;
 	}
 
-	public function getThumbnail() {
+	public function getThumbnail()
+	{
 		return $this->thumbnail;
 	}
 
-    public function getDuration() {
-        return $this->duration;
-    }
+	public function getDuration()
+	{
+		return $this->duration;
+	}
 
-    public function getUrl() {
-        return $this->url;
-    }
+	public function getUrl()
+	{
+		return $this->url;
+	}
 
-    public function getTags() {
-        return $this->tags;
-    }
+	public function getTags()
+	{
+		return $this->tags;
+	}
 
-    public function getCategories() {
-        return $this->categories;
-    }
+	public function getCategories()
+	{
+		return $this->categories;
+	}
 
-	public function getChannel() {
+	public function getChannel()
+	{
 		return $this->channel;
 	}
 
-    public function jsonSerialize() {
-        return array(
-            'nid' => $this->nid,
-            'title' => $this->title,
-            'description' => $this->description,
-            'duration' => $this->duration,
-            'url' => $this->url,
-            'tags' => $this->tags,
-            'categories' => $this->categories,
-						'channel' => $this->channel
-        );
-    }
+	public function jsonSerialize()
+	{
+		return array(
+			'nid' => $this->nid,
+			'title' => $this->title,
+			'description' => $this->description,
+			'duration' => $this->duration,
+			'url' => $this->url,
+			'tags' => $this->tags,
+			'categories' => $this->categories,
+			'channel' => $this->channel
+		);
+	}
 
 }
