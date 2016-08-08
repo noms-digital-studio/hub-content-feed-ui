@@ -22,9 +22,6 @@
         				<div class="col-xs-12">
           					<ul class="nav-menu">
             						<li>
-            							  <h2><a href="/">{{ trans('navigation.home') }}</a></h2>
-            						</li>
-            						<li>
             							  <h2><a href="{{ action('VideosController@showVideoLandingPage') }}" class="active">{{ trans('navigation.video') }}</a></h2>
             						</li>
             						</li>

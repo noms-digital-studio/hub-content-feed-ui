@@ -7,9 +7,9 @@
 <div class="hub-content">
 	<div class="row">
 		<div class="col-xs-12">
-			<h1>Hub</h1>
+			<h1>The Hub</h1>
 		</div>
-	</div>	
+	</div>
 	<ul class="row row-centered">
 		@foreach($links as $link)
 		<li class="col-xs-3 col-centered">
@@ -23,6 +23,6 @@
 			</a>
 		</li>
 		@endforeach
-	</ul>	
+	</ul>
 
 	@endsection

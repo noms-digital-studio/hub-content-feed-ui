@@ -1,8 +1,7 @@
 <?php
 
 return [
-  'title' => 'Content Store',
-  'home' => 'Home',
+  'title' => 'Return To The Hub',
   'video' => 'Video',
   'radio' => 'Radio'
 ];

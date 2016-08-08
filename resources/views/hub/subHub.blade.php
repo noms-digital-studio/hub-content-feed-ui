@@ -7,9 +7,9 @@
 <div class="hub-content">
 	<div class="row">
 		<div class="col-xs-12">
-			<h1><a href="../" id="hub-back" class="icon-icon-back">back</a> @if(count($links) > 0) {{ $links[0]->parent }} @else No links @endif</h1>	
+			<h1><a href="../" id="hub-back" class="icon-icon-back">Return to The Hub</a> @if(count($links) > 0) {{ $links[0]->parent }} @else No links @endif</h1>
 		</div>
-	</div>	
+	</div>
 	<ul class="row row-centered">
 		@foreach($links as $link)
 		<li class="col-xs-3 col-centered">

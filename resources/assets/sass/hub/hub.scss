@@ -4,19 +4,24 @@
     width: 100%;
     margin-top: 125px;
     #hub-back {
-        text-indent: -10000px;
         display: inline-block;
         position: absolute;
         left: 15%;
         background-size: 35px;
-        width: 35px;
         height: 35px;
+        font-size: 23px;
+        background-repeat: no-repeat;
+        padding-left: 40px;
+        width: 21%;
+        text-align: left;
+        text-decoration: none;
     }
+
     ul {
         padding: 0px;
         li {
             display: inline-block;
-            list-style-type: none;                                    
+            list-style-type: none;
             img {
                 max-width: 100%;
                 width: 100%;
