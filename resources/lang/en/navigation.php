@@ -1,7 +1,6 @@
 <?php
 
 return [
-  'title' => 'Return To The Hub',
+  'title' => 'Return to The Hub',
   'video' => 'Video',
-  'radio' => 'Radio'
 ];
