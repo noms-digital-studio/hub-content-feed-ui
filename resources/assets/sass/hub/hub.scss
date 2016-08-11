@@ -2,19 +2,35 @@
     text-align: center;
     display: inline-block;
     width: 100%;
-    margin-top: 125px;
+    margin-top: 250px;
+    position: relative;
+
+    .hub-title{
+        position: absolute;
+        top: -125px;
+        width: 100%
+    }
+
+    .hub-thumb{
+        position: absolute;
+        top: 65px;
+        width: 100%
+    }
+
     #hub-back {
         display: inline-block;
         position: absolute;
-        left: 15%;
         background-size: 35px;
-        height: 35px;
-        font-size: 23px;
         background-repeat: no-repeat;
+        left: 15%;
+        height: 35px;
+        font-size: 17px;
         padding-left: 40px;
-        width: 21%;
+        width: 11%;
         text-align: left;
         text-decoration: none;
+        margin: auto;
+        color: #696969;
     }
 
     ul {
@@ -31,4 +47,11 @@
             }
         }
     }
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 40px;
+  margin: auto;
+  padding-bottom: 25px;
 }
