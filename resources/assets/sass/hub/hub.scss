@@ -5,6 +5,11 @@
     margin-top: 250px;
     position: relative;
 
+    h4 {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
     .hub-title{
         position: absolute;
         top: -125px;
@@ -22,7 +27,7 @@
         position: absolute;
         background-size: 35px;
         background-repeat: no-repeat;
-        left: 15%;
+        left: 1%;
         height: 35px;
         font-size: 17px;
         padding-left: 40px;
