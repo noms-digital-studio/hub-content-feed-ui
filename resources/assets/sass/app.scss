@@ -45,16 +45,21 @@ body {
   padding-right: 70px;
 }
 
-.video-nav-wrap-navBarBlue {
-  padding: 3em 0;
-  background: rgb(14, 26, 53);
+.video-nav-wrap {
+  padding: 3em 0 0;
   color: #ffffff;
+
+  &.nav-bar-blue {
+    background: rgb(14, 26, 53);
+  }
+
+  &.nav-bar-red {
+    background: #E23A38;
+  }
 }
 
-.video-nav-wrap-navBarRed {
-  padding: 3em 0;
-  background: #E23A38;
-  color: #ffffff;
+.class-a.class-b {
+
 }
 
 .page-title {

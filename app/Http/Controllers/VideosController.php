@@ -13,7 +13,7 @@ class VideosController extends Controller {
   function showVideoLandingPage() {
     $videos = Videos::landingPageVideos();
     $recentVideos = Videos::getRecent();
-    $navColour = "navBarRed";
+    $navColour = "nav-bar-red";
 
     return view('video.landingPage', ['videos' => $videos, 'recentVideos' => $recentVideos, 'navColour' => $navColour]);
   }
@@ -22,7 +22,7 @@ class VideosController extends Controller {
       try {
           $video = Videos::find($nid);
           $categoryEpisodes = Videos::getCategoryEpisodes($nid);
-          $navColour = "navBarBlue";
+          $navColour = "nav-bar-blue";
 
           return view('video.detail', ['video' => $video, 'categoryEpisodes' => $categoryEpisodes, 'navColour' => $navColour]);
       } catch (VideoNotFoundException $ex) {

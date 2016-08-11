@@ -15,7 +15,7 @@
     <body>
         @if (Request::is('/') || Request::is('hub/*'))
         @else
-        <div class="video-nav-wrap-{{ $navColour or 'Default' }}">
+        <div class="video-nav-wrap {{ $navColour or '' }}">
           <div class="container" id="header">
             <div class="row">
               <div class="col-xs-12">

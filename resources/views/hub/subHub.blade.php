@@ -14,7 +14,7 @@
 		@foreach($links as $link)
 		<li class="col-xs-2 col-centered">
 			@if($link->folder)
-			<a href="hub/{{ $link->tid }}" target="_blank" rel="noopener" id="term-{{ $link->tid }}">
+			<a href="hub/{{ $link->tid }}" rel="noopener" id="term-{{ $link->tid }}">
 			@else
 			<a href="{{ $link->url }}" target="_blank" rel="noopener" id="term-{{ $link->tid }}">
 			@endif
