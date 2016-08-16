@@ -15,25 +15,25 @@
     <body>
 <!--        @if (Request::is('/') || Request::is('hub/*'))
         @else
-        <div class="container" id="header">
-            <h1><a href="/">{{ trans('navigation.title') }}</a></h1>
-
+        <div class="video-nav-wrap {{ $navColour or '' }}">
+          <div class="container" id="header">
             <div class="row">
-        				<div class="col-xs-12">
-          					<ul class="nav-menu">
-            						<li>
-            							  <h2><a href="/">{{ trans('navigation.home') }}</a></h2>
-            						</li>
-            						<li>
-            							  <h2><a href="{{ action('VideosController@showVideoLandingPage') }}" class="active">{{ trans('navigation.video') }}</a></h2>
-            						</li>
-            						</li>
-            						<li>
-    							          <h2><a href="/radio">{{ trans('navigation.radio') }}</a></h2>
-            						</li>
-          					</ul>
-        				</div>
+              <div class="col-xs-12">
+                <a href="/">
+                  <img src="/img/icon-back-white.png" id="return-to-the-hub-arrow">
+                    <div id="return-to-the-hub-text">
+                      {{ trans('navigation.title') }}
+                    </div>
+                </a>
+              	<h2 class="page-title">
+                  <a href="{{ action('VideosController@showVideoLandingPage') }}">
+                    <img src="/img/icon-video.png">
+                    {{ trans('navigation.video') }}
+                  </a>
+                </h2>
+          		</div>
             </div>
+          </div>
         </div>
 		    @endif-->
 

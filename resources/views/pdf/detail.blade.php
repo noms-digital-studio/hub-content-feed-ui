@@ -5,7 +5,7 @@
 @section('top_content')
 <div class="education-header">
 	<a href="/"  class="back-to-hub">
-		{{ trans('navigation.return_to_hub') }}
+		{{ trans('navigation.title') }}
 	</a>	
 	<div class="container">
 		<div class="row">
