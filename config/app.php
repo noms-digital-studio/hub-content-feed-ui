@@ -160,6 +160,7 @@ return [
 
         App\Providers\VideosRepositoryServiceProvider::class,
 		App\Providers\HubLinksRepositoryServiceProvider::class,
+		App\Providers\PdfsRepositoryServiceProvider::class,
 		
     ],
 
@@ -211,6 +212,7 @@ return [
 
         'Videos' => App\Facades\Videos::class,
 		'HubLinks' => App\Facades\HubLinks::class,
+		'Pdfs' => App\Facades\Pdfs::class,
     ],
 
 	/*

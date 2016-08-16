@@ -13,7 +13,7 @@
     </head>
 
     <body>
-        @if (Request::is('/') || Request::is('hub/*'))
+<!--        @if (Request::is('/') || Request::is('hub/*'))
         @else
         <div class="container" id="header">
             <h1><a href="/">{{ trans('navigation.title') }}</a></h1>
@@ -35,7 +35,7 @@
         				</div>
             </div>
         </div>
-		    @endif
+		    @endif-->
 
         @yield('top_content')
 

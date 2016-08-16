@@ -1,0 +1,103 @@
+.back-to-hub {    
+    float: left;        
+    display: inline-flex;    
+    text-decoration: none;
+    color: #fff;
+    margin: 15px 0 0 100px; 
+    position: relative;
+    width: 70px;
+    text-align: left;
+    &::before {
+        background-image: url(../../img/sprite.png);
+        background-position: 0px 0px;
+        height: 50px;
+        width: 50px;
+        position: absolute;
+        left: -60px;
+        top: -5px;
+        content: "";
+    }
+}
+
+.education-header {
+    background-color: #8A2BE2;
+    background: #8A2BE2 url("../../img/edu_banner.png") no-repeat 50%;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    height: 400px;
+    padding-top: 30px;
+    margin-bottom: 50px;
+    h1 {
+        color: #fff;
+        margin-bottom: 40px;
+    }
+    .education-title {
+        font-size: 24px;
+        color: #fff;
+        display: inline-flex;
+        line-height: 48px;
+        span {
+            display: inline-block;
+            margin-right: 15px;
+        }
+    }
+}
+
+.education-container {
+    h3 {
+        font-weight: bold;
+        margin-top: 40px;
+    }
+    .icon-icon-back {
+        padding-left: 60px;
+        text-decoration: none;
+        color: #000;
+        font-size: 24px;
+        font-weight: bold;
+        background-repeat: no-repeat;     
+        display: inline-block;
+        width: auto;
+        line-height: 50px;
+    }
+    ul {
+        margin: 30px 0 0 0;
+        padding: 0px;
+        li {
+            list-style-type: none;
+            display: block;
+            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 15px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.35);
+            -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.35);
+            box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.35);
+            a {
+                color: #000;
+                font-weight: bold;
+                text-decoration: none;                                                
+                display: block;    
+                position: relative;
+                padding-left: 40px;
+                &::before {
+                    background-image: url(../../img/sprite.png);
+                    background-position: -48px -50px;
+                    height: 24px;
+                    width: 30px;
+                    position: absolute;
+                    content: "";                    
+                    left: 0;
+                    top: 0;
+                }
+                &.pdf-link {
+                    &::before {
+                        background-position: -48px -74px;
+                    }
+                }
+            }
+        }
+    }    
+}
