@@ -10,7 +10,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">				
-				<p class="education-title"><span class="icon-icon-courses"></span> {{ trans('pdf.title')}}</p>
+				<p class="education-title"><span class="icon icon-icon-courses"></span> {{ trans('pdf.title')}}</p>
 			</div>
 		</div>
 		<div class="row">
@@ -36,6 +36,7 @@
 				@foreach($categories->children as $category)
 				<li>						
 					<a href="{{ action('PdfsController@show', $category->tid) }}" id="course-{{ $category->tid }}">
+						<span class="icon icon-icon-folder-purple"></span>
 						{{ $category->name }}
 					</a>
 				</li>

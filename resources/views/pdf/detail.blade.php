@@ -10,7 +10,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
-				<p class="education-title"><span class="icon-icon-courses"></span> {{ trans('pdf.title')}}</p>
+				<p class="education-title"><span class="icon icon-icon-courses"></span> {{ trans('pdf.title')}}</p>
 			</div>
 		</div>
 		<div class="row">
@@ -29,12 +29,12 @@
 <div class="container education-container">
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2">			
-			<a href="{{ action('PdfsController@showPdfLandingPage', $pdfs->parent->parent_tid) }}" class="icon-icon-back" id="back-to-cat">{{ $pdfs->parent->parent_name }}</a>			
+			<a href="{{ action('PdfsController@showPdfLandingPage', $pdfs->parent->parent_tid) }}" id="back-to-cat"><span class="icon icon-icon-back"></span>{{ $pdfs->parent->parent_name }}</a>			
 			<ul>
 				@foreach($pdfs->pdfs as $pdf)
 				<li>					
 					<a class="pdf-link" href="{{ $pdf->pdf_url}}" id="course-{{ $pdf->nid }}" target="_blank">
-						<span class="icon-icon-certificate"></span>
+						<span class="icon icon-icon-certificate"></span>
 						{{ $pdf->title }}
 					</a>
 				</li>
