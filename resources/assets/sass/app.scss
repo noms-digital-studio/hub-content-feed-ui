@@ -14,6 +14,8 @@
 @import "video/carousel";
 @import "video-js";
 @import "hub/hub";
+@import "news/news";
+@import "jquery.modal";
 
 html,
 body {
@@ -26,17 +28,26 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-.video-nav-wrap {
+.header-nav-wrap {
   padding: 3em 0 0;
   color: #ffffff;
 
-  &.nav-bar-blue {
+  &.blue {
     background: rgb(14, 26, 53);
   }
 
-  &.nav-bar-red {
+  &.red {
     background: #E23A38;
   }
+
+  &.yellow {
+    background: #FFD700;
+  }
+}
+
+#page-icon {
+  height: 26px;
+  width: auto;
 }
 
 .page-title {
@@ -44,8 +55,19 @@ body {
   margin-bottom: 20px;
   margin: auto;
   a {
-    color: #ffffff;
     text-decoration: none;
     padding-bottom: 10px;
+  }
+
+  &.white {
+    a {
+      color: #ffffff;
+    }
+  }
+
+  &.black {
+    a {
+      color: #000000;
+    }
   }
 }

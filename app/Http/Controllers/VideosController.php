@@ -13,18 +13,16 @@ class VideosController extends Controller {
   function showVideoLandingPage() {
     $videos = Videos::landingPageVideos();
     $recentVideos = Videos::getRecent();
-    $navColour = "nav-bar-red";
 
-    return view('video.landingPage', ['videos' => $videos, 'recentVideos' => $recentVideos, 'navColour' => $navColour]);
+    return view('video.landingPage', ['videos' => $videos, 'recentVideos' => $recentVideos]);
   }
 
   function show($nid) {
       try {
           $video = Videos::find($nid);
           $categoryEpisodes = Videos::getCategoryEpisodes($nid);
-          $navColour = "nav-bar-blue";
 
-          return view('video.detail', ['video' => $video, 'categoryEpisodes' => $categoryEpisodes, 'navColour' => $navColour]);
+          return view('video.detail', ['video' => $video, 'categoryEpisodes' => $categoryEpisodes]);
       } catch (VideoNotFoundException $ex) {
           abort(404, $ex->getMessage());
       }
