@@ -2,10 +2,14 @@
 
 namespace App\Repositories;
 
+use App\Exceptions\ClientErrorException;
+use App\Exceptions\ForbiddenException;
 use App\Exceptions\VideoNotFoundException;
+use App\Exceptions\ServerErrorException;
 use App\Models\Video;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\ServerException;
 
 class VideosRepository
 {
@@ -61,7 +65,16 @@ class VideosRepository
         try {
             $response = $this->client->get($this->locale . '/api/video/' . $nid);
         } catch (ClientException $e) {
-            throw new VideoNotFoundException('Video not found: ' . $nid);
+            switch($e->getResponse()->getStatusCode()) {
+                case 404:
+                    throw new VideoNotFoundException('Video not found: ' . $nid);
+                case 403:
+                    throw new ForbiddenException('You are forbidden from viewing this video.');
+                default:
+                    throw new ClientErrorException();
+            }     
+        } catch (ServerException $e) {
+            throw new ServerErrorException();
         }
 
         $video = json_decode($response->getBody());

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\ClientErrorException;
+use App\Exceptions\ForbiddenException;
 use App\Exceptions\VideoNotFoundException;
 use App\Facades\Videos;
 use App\Http\Controllers\Controller;
@@ -19,14 +21,10 @@ class VideosController extends Controller {
   }
 
   function show($nid) {
-      try {
-          $video = Videos::find($nid);
-          $categoryEpisodes = Videos::getCategoryEpisodes($nid);
-          $navColour = "nav-bar-blue";
+    $video = Videos::find($nid);
+    $categoryEpisodes = Videos::getCategoryEpisodes($nid);
+    $navColour = "nav-bar-blue";
 
-          return view('video.detail', ['video' => $video, 'categoryEpisodes' => $categoryEpisodes, 'navColour' => $navColour]);
-      } catch (VideoNotFoundException $ex) {
-          abort(404, $ex->getMessage());
-      }
+    return view('video.detail', ['video' => $video, 'categoryEpisodes' => $categoryEpisodes, 'navColour' => $navColour]);
   }
 }

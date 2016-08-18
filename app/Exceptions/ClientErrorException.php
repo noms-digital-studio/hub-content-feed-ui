@@ -4,10 +4,10 @@ namespace App\Exceptions;
 
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
-class VideoNotFoundException extends HttpException {
+class ClientErrorException extends HttpException {
 
     public function __construct($message = NULL) {
-        parent::__construct(404, $message);
+        parent::__construct(400, $message);
     }
 
 }
