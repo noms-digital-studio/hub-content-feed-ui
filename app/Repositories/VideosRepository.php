@@ -62,20 +62,20 @@ class VideosRepository
 
     public function find($nid)
     {
-        try {
+        // try {
             $response = $this->client->get($this->locale . '/api/video/' . $nid);
-        } catch (ClientException $e) {
-            switch($e->getResponse()->getStatusCode()) {
-                case 404:
-                    throw new VideoNotFoundException('Video not found: ' . $nid);
-                case 403:
-                    throw new ForbiddenException('You are forbidden from viewing this video.');
-                default:
-                    throw new ClientErrorException();
-            }     
-        } catch (ServerException $e) {
-            throw new ServerErrorException();
-        }
+        // } catch (ClientException $e) {
+        //     switch($e->getResponse()->getStatusCode()) {
+        //         case 404:
+        //             throw new VideoNotFoundException('Video not found: ' . $nid);
+        //         case 403:
+        //             throw new ForbiddenException('You are forbidden from viewing this video.');
+        //         default:
+        //             throw new ClientErrorException();
+        //     }     
+        // } catch (ServerException $e) {
+        //     throw new ServerErrorException();
+        // }
 
         $video = json_decode($response->getBody());
 

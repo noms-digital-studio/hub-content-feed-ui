@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Exceptions\ClientErrorException;
-use App\Exceptions\ForbiddenException;
-use App\Exceptions\VideoNotFoundException;
 use App\Facades\Videos;
 use App\Http\Controllers\Controller;
 use App\Models\Video;

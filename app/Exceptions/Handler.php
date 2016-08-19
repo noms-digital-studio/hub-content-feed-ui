@@ -43,8 +43,29 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $e
      * @return \Illuminate\Http\Response
      */
-    public function render($request, Exception $e)
-    {
-        return parent::render($request, $e);
-    }
+	public function render($request, Exception $e)
+	{
+        // Convert a Guzzle BadResponseException to an HttpException before rendering
+        if ($e instanceof \GuzzleHttp\Exception\BadResponseException) {
+            $response = $e->getResponse();
+            
+            $message = $response->getReasonPhrase();
+
+            $contentType = $response->getHeader('Content-Type');
+            $contentType = array_shift($contentType);
+
+            // Pull the message from a JSON response body
+            if ($contentType == 'application/json') {
+                $body = json_decode($response->getBody());
+
+                if (property_exists($body, 'message')) {
+                    $message = $body->message;
+                }
+            }
+
+            return $this->render($request, new HttpException($e->getCode(), $message));
+        }
+
+		return parent::render($request, $e);
+	}
 }
