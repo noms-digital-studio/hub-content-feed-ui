@@ -2,19 +2,6 @@
 
 @section('title', 'News')
 
-@section('top_content')
-<div class="news-header">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <h1 align="center">News and Announcements</h1>
-        <p align="center">The place to go if you want to find the latest news and accouncements about your prison.</p>
-			</div>
-		</div>
-	</div>
-</div>
-@endsection
-
 @section('header')
 
 <div class="header-nav-wrap yellow">
@@ -34,6 +21,16 @@
           </a>
         </h2>
       </div>
+    </div>
+    <div class="news-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1 align="center">News and Announcements</h1>
+            <p align="center">The place to go if you want to find the latest news and accouncements about your prison.</p>
+    			</div>
+    		</div>
+    	</div>
     </div>
   </div>
 </div>

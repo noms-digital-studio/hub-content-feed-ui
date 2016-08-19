@@ -30,7 +30,6 @@ body {
 
 .header-nav-wrap {
   padding: 3em 0 0;
-  color: #ffffff;
 
   &.blue {
     background: rgb(14, 26, 53);
@@ -41,7 +40,11 @@ body {
   }
 
   &.yellow {
-    background: #FFD700;
+    background-color: #FFD700;
+    background: #FFD700 url(/img/img_news-announcements.png) no-repeat 50%;
+    background-size: cover;
+    height: 400px;
+
   }
 }
 
