@@ -3,6 +3,9 @@
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+
+use Symfony\Component\HttpKernel\Exception\HttpException;
+
 use App\Models\Video;
 
 class VideoPlayerTest extends TestCase
@@ -98,13 +101,13 @@ class VideoPlayerTest extends TestCase
         \App\Facades\Videos::shouldReceive('find')
           ->with(202)
           ->once()
-          ->andThrow(new \App\Exceptions\VideoNotFoundException("Video not found"));
+          ->andThrow(new HttpException(404, "Video not found"));
 
-        try {
-            $this->visit('/video/202');
-        } catch (Exception $e) {
-            $this->assertContains("Received status code [404]", $e->getMessage());
-        }
+
+        $response = $this->call('GET', '/video/202');
+        $this->assertEquals(404, $response->status());
+        $this->assertContains('Page 404 error.', $response->content());
+        $this->assertContains('Video not found', $response->content());
     }
 
     public function testMockVideoPlayerRelatedEpisodes()

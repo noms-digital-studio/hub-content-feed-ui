@@ -1,40 +1,42 @@
 <?php
 
 use App\Facades\HubLinks;
+use App\Models\Video;
 
 class HubTest extends TestCase
 {
+	protected $mockVideo;
 
 	protected $hubLandingPageMockData = '[{
 		"tid": 7,
 		"name": "Video",
 		"thumbnail": "http://192.168.33.9/sites/default/files/2016-07/hubthumb_2.png",
-		"url": "video",
-		"external_link": false,
+		"url": "/video",
+		"folder": false,
 		"parent": ""
 		},
 		 {
 		"tid": 6,
 		"name": "Radio",
 		"thumbnail": "http://192.168.33.9/sites/default/files/2016-07/hubthumb_1.png",
-		"url": "radio",
-		"external_link": false,
+		"url": "/radio",
+		"folder": false,
 		"parent": ""
 		},
 		 {
 		"tid": 8,
 		"name": "Education",
 		 "thumbnail": "http://192.168.33.9/sites/default/files/2016-07/folderthumb_2.png",
-		 "url": "hub/8",
-		 "external_link": false,
+		 "url": null,
+		 "folder": true,
 		 "parent": ""
 		},
 		 {
 		"tid": 9,
 		"name": "Local News",
 		 "thumbnail": "http://192.168.33.9/sites/default/files/2016-07/folderthumb_3.png",
-		 "url": "hub/9",
-		 "external_link": false,
+		 "url": "null",
+		 "folder": true,
 		 "parent": ""
 		}
 	]';
@@ -43,8 +45,8 @@ class HubTest extends TestCase
 	    "tid": 10,
 		"name": "Minute Maths",
 		"thumbnail": "http://192.168.33.9/sites/default/files/2016-07/mathsthumb.jpg",
-		"url": "video/195",
-		"external_link": false,
+		"url": "/video/195",
+		"folder": false,
 		"parent": "Education"
 		},
 		{
@@ -52,14 +54,35 @@ class HubTest extends TestCase
 		"name": "BBC Bitesize",
 		"thumbnail": "http://192.168.33.9/sites/default/files/2016-07/bitesize.png",
 		"url": "http://www.bbc.co.uk/education",
-		"external_link": true,
+		"folder": false,
 		"parent": "Education"
 		}
 	]';
 
 	public function __construct()
 	{
-		
+		$tags = array(
+			(object) array("id" => 1, "name" => 'Documentary'),
+			(object) array("id" => 2, "name" => 'Shape')
+		);
+
+		$category = (object) array(
+			"id" => 1,
+			"name" => 'Minute Maths',
+			"description" => 'The category description'
+		);
+
+		$this->mockVideo = new Video(
+			1,
+			"Episode 1: Area - The Space inside a shape",
+			"Lorem ipsum dolor sit amet conestur adoijvcsa elit. Sed commdoino or ojoasd ds. Donec porta lcudaj funsaoir congie. Sed adjnai sfshgdfhfd hfhrthgd iuy dhgd daf .",
+			"http://192.168.33.9/sites/default/files/videos/2016-07/SampleVideo_1280x720_2mb_2.mp4",
+			"http://placehold.it/300x300",
+			"1:20",
+			$category,
+			$tags,
+			"Way2Learn"
+		);
 	}
 
 	/**
@@ -74,10 +97,10 @@ class HubTest extends TestCase
 			->andReturn(json_decode($this->hubLandingPageMockData));
 
 		$this->visit('/')
-			->seeInElement('h2', 'Video')
-			->seeInElement('h2', 'Radio')
-			->seeInElement('h2', 'Education')
-			->seeInElement('h2', 'Local News');
+			->seeInElement('h4', 'Video')
+			->seeInElement('h4', 'Radio')
+			->seeInElement('h4', 'Education')
+			->seeInElement('h4', 'Local News');
 	}
 
 	/**
@@ -141,6 +164,16 @@ class HubTest extends TestCase
 	 */
 	public function testSubHubLinkPaths()
 	{
+		\App\Facades\Videos::shouldReceive('find')
+			->with(195)
+			->once()
+			->andReturn($this->mockVideo);
+
+		\App\Facades\Videos::shouldReceive('getCategoryEpisodes')
+			->with(195)
+			->once()
+			->andReturn(array());
+		
 		HubLinks::shouldReceive('subLevelItems')
 			->once()
 			->andReturn(json_decode($this->hubSubPageMockedData));
