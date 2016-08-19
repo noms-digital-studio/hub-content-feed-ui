@@ -1,7 +1,10 @@
 .news-header {
-  padding:  0 0 3em;
-  background: #FFD700;
-  color: #000000;
+  padding:  3em 0 3em;
+
+  h1 {
+    margin-bottom: 50px;
+
+  }
 }
 
 .news-item {
