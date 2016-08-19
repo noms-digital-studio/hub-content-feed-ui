@@ -43,8 +43,13 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $e
      * @return \Illuminate\Http\Response
      */
-    public function render($request, Exception $e)
-    {
-        return parent::render($request, $e);
-    }
+	public function render($request, Exception $e)
+	{
+		if ($e->getCode() == 403)
+		{
+			return response(view('errors.403', ['exception' => $e]), 403);
+		}
+
+		return parent::render($request, $e);
+	}
 }
