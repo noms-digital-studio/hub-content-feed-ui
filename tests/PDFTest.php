@@ -230,7 +230,7 @@ class PdfLandingPageTest extends TestCase
 			->andReturn(json_decode($this->pdfPageMockData));
 
 		$this->visit('/education/course/18')
-			->seeInElement('.education-container .icon-icon-back', 'Art & Literature');
+			->seeInElement('#back-to-cat', 'Art & Literature');
 	}
 
 	/**
