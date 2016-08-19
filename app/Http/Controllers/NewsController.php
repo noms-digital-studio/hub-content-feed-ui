@@ -2,23 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Exceptions\VideoNotFoundException;
-use App\Facades\Videos;
 use App\Http\Controllers\Controller;
-use App\Models\News;
-use App\User;
-use App\Repositories\NewsRepository;
+use App\Models\News as NewsItem;
+use App\Facades\News;
 
 class NewsController extends Controller {
 
-  protected $newsRepository;
-
-  function __construct(NewsRepository $newsRepository) {
-    $this->newsRepository = $newsRepository;
-  }
-
   function showNewsLandingPage() {
-    $news = $this->newsRepository->landingPageNews();
+    $news = News::landingPageNews();
 
     $groupedNews = array();
 

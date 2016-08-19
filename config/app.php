@@ -159,8 +159,9 @@ return [
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
 
         App\Providers\VideosRepositoryServiceProvider::class,
-		App\Providers\HubLinksRepositoryServiceProvider::class,
-		
+        App\Providers\HubLinksRepositoryServiceProvider::class,
+        App\Providers\NewsRepositoryServiceProvider::class,
+
     ],
 
     /*
@@ -210,7 +211,8 @@ return [
         'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
 
         'Videos' => App\Facades\Videos::class,
-		'HubLinks' => App\Facades\HubLinks::class,
+		    'HubLinks' => App\Facades\HubLinks::class,
+		    'News' => App\Facades\News::class,
     ],
 
 	/*
@@ -218,8 +220,8 @@ return [
     | API Configuration
     |--------------------------------------------------------------------------
     | Here you configure the path to the BE api
-    | 
+    |
     */
     'api_uri' => env('API_URI'),
-	
+
 ];
