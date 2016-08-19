@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 use App\Facades\Videos;
 use App\Models\Video;
@@ -29,13 +30,12 @@ class ErrorPageTest extends TestCase
         \App\Facades\Videos::shouldReceive('find')
           ->with(12345)
           ->once()
-          ->andThrow(new \App\Exceptions\VideoNotFoundException('Video not found: 12345'));
-        
-        try {
-            $this->visit('/video/12345');
-        } catch (Exception $e) {
-            $this->assertContains("Received status code [404]", $e->getMessage());
-        }
+          ->andThrow(new HttpException(404, 'There is no video with this ID.'));
+
+        $response = $this->call('GET', '/video/12345');
+        $this->assertEquals(404, $response->status());
+        $this->assertContains('Page 404 error.', $response->content());
+        $this->assertContains('There is no video with this ID.', $response->content());
     }
 
     /**
@@ -46,13 +46,12 @@ class ErrorPageTest extends TestCase
         \App\Facades\Videos::shouldReceive('find')
           ->with(12345)
           ->once()
-          ->andThrow(new \App\Exceptions\ForbiddenException('Forbidden'));
+          ->andThrow(new HttpException(403, 'You do not have permission to view this video.'));
         
-        try {
-            $this->visit('/video/12345');
-        } catch (Exception $e) {
-            $this->assertContains("Received status code [403]", $e->getMessage());
-        }
+        $response = $this->call('GET', '/video/12345');
+        $this->assertEquals(403, $response->status());
+        $this->assertContains('Page 403 error.', $response->content());
+        $this->assertContains('You do not have permission to view this video.', $response->content());
     }
 
     /**
@@ -63,12 +62,11 @@ class ErrorPageTest extends TestCase
         \App\Facades\Videos::shouldReceive('find')
           ->with(12345)
           ->once()
-          ->andThrow(new Symfony\Component\HttpKernel\Exception\HttpException(500, 'Server error'));
+          ->andThrow(new HttpException(500, 'Internal server error.'));
         
-        try {
-            $this->visit('/video/12345');
-        } catch (Exception $e) {
-            $this->assertContains("Received status code [500]", $e->getMessage());
-        }
+        $response = $this->call('GET', '/video/12345');
+        $this->assertEquals(500, $response->status());
+        $this->assertContains('Page 500 error.', $response->content());
+        $this->assertContains('Internal server error.', $response->content());
     }
 }
