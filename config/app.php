@@ -161,7 +161,7 @@ return [
         App\Providers\VideosRepositoryServiceProvider::class,
 		App\Providers\HubLinksRepositoryServiceProvider::class,
 		App\Providers\PdfsRepositoryServiceProvider::class,
-		
+        App\Providers\NewsRepositoryServiceProvider::class,
     ],
 
     /*
@@ -213,6 +213,7 @@ return [
         'Videos' => App\Facades\Videos::class,
 		'HubLinks' => App\Facades\HubLinks::class,
 		'Pdfs' => App\Facades\Pdfs::class,
+        'News' => App\Facades\News::class,
     ],
 
 	/*
@@ -220,8 +221,8 @@ return [
     | API Configuration
     |--------------------------------------------------------------------------
     | Here you configure the path to the BE api
-    | 
+    |
     */
     'api_uri' => env('API_URI'),
-	
+
 ];

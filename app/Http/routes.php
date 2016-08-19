@@ -21,3 +21,5 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
 	Route::get('/education/{tid}', ['as' => 'pdf.landing', 'uses' => 'PdfsController@showPdfLandingPage']);
 	Route::get('/education/course/{tid}', ['as' => 'pdf.detail', 'uses' => 'PdfsController@show']);
 });
+
+Route::get('/news', 'NewsController@showNewsLandingPage');

@@ -63,7 +63,7 @@
     color: #696969;
 }
 
-#return-to-the-hub-text {
+.return-to-the-hub-text {
     display: inline-block;
     position: absolute;
     font-size: 17px;
@@ -71,7 +71,14 @@
     width: 11%;
     text-align: left;
     text-decoration: none;
-    color: #ffffff;
+
+    &.white {
+      color: #ffffff;
+    }
+
+    &.black {
+      color: #000000;
+    }
 }
 
 #return-to-the-hub-arrow {
