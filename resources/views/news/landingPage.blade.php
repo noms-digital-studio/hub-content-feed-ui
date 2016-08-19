@@ -47,13 +47,13 @@
       @foreach($news as $daysAgo => $group)
 
           @if ($daysAgo == 0)
-              <h4 id="posts-{{$daysAgo}}-ago"><span>Today</span></h4>
+              <span class="posted-ago" id="posts-{{$daysAgo}}-ago"><span>Today</span></span>
           @elseif ($daysAgo == 1)
-              <h4 id="posts-{{$daysAgo}}-ago"><span>Yesterday</span></h4>
+              <span class="posted-ago" id="posts-{{$daysAgo}}-ago"><span>Yesterday</span></span>
           @elseif ($daysAgo > 7)
-              <h4 id="posts-{{$daysAgo}}-ago"><span>Over 1 week ago</span></h4>
+              <span class="posted-ago" id="posts-{{$daysAgo}}-ago"><span>Over 1 week ago</span></span>
           @else
-              <h4 id="posts-{{$daysAgo}}-ago"><span>{{ $daysAgo }} days ago</span></h4>
+              <span class="posted-ago" id="posts-{{$daysAgo}}-ago"><span>{{ $daysAgo }} days ago</span></span>
           @endif
 
           @foreach($group as $newsItem)

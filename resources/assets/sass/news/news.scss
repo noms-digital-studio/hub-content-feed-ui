@@ -11,18 +11,19 @@
 .news-items {
   padding:  4em 0 0;
 
-  h4 {
+  .posted-ago {
      color: #b3b3b3;
      width: 100%;
      text-align: center;
      border-bottom: 1px solid #b3b3b3;
      line-height: 0.1em;
      margin: 10px 0 20px;
-  }
+     display: block;
 
-  h4 span {
-      background:#efefef;
-      padding:0 10px;
+     span {
+         background:#efefef;
+         padding:0 10px;
+     }
   }
 
   hr {
@@ -34,7 +35,7 @@
     padding:  0 0 1em;
   }
 
-  h4 + hr {
+  .posted-ago + hr {
     display: none;
   }
 }
