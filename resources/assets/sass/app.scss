@@ -51,7 +51,10 @@ body {
     background: #FFD700 url(/img/img_news-announcements.png) no-repeat 50%;
     background-size: cover;
     height: 400px;
+  }
 
+  &.light-blue {
+    background-color: #66ccff;
   }
 }
 
