@@ -17,7 +17,7 @@
         <h2 class="page-title white">
             <a href="{{ action('RadiosController@showRadioLandingPage') }}">
               <img src="/img/icon-radio.png" id="page-icon">
-              Radio
+              {{ trans('navigation.radio') }}
             </a>
         </h2>
       </div>
@@ -27,7 +27,7 @@
         <div class="row">
           <div class="col-xs-12">
             <div class="radio-description">
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+              <p>{{ trans('radio.description') }}</p>
             </div>
           </div>
         </div>
@@ -40,6 +40,12 @@
 
 @section('content')
 
+
+        <div class="channel-programmes">
+            @foreach($radios as $radio)
+                @include('radio.programmeCard', ['radio' => $radio])
+            @endforeach
+        </div>
 
 
 

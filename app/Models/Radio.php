@@ -9,15 +9,15 @@ class Radio implements \JsonSerializable
 	protected $title;
 	protected $description;
 	protected $thumbnail;
-	protected $channel;
+	protected $programme;
 
-	public function __construct($nid, $title, $description, $thumbnail, $channel)
+	public function __construct($nid, $title, $description, $thumbnail, $programme)
 	{
 		$this->nid = $nid;
 		$this->title = $title;
 		$this->description = $description;
 		$this->thumbnail = $thumbnail;
-		$this->channel = $channel;
+		$this->programme = $programme;
 	}
 
 	public function getId()
@@ -40,9 +40,9 @@ class Radio implements \JsonSerializable
 		return $this->thumbnail;
 	}
 
-	public function getChannel()
+	public function getProgramme()
 	{
-		return $this->channel;
+		return $this->programme;
 	}
 
 	public function jsonSerialize()
@@ -51,7 +51,7 @@ class Radio implements \JsonSerializable
 			'nid' => $this->nid,
 			'title' => $this->title,
 			'description' => $this->description,
-			'channel' => $this->channel
+			'programme' => $this->programme
 		);
 	}
 
