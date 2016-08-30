@@ -162,6 +162,7 @@ return [
 		App\Providers\HubLinksRepositoryServiceProvider::class,
 		App\Providers\PdfsRepositoryServiceProvider::class,
         App\Providers\NewsRepositoryServiceProvider::class,
+        App\Providers\RadiosRepositoryServiceProvider::class,
     ],
 
     /*
