@@ -71,4 +71,15 @@ class RadioLandingPageTest extends TestCase
             ->seeInElement('p', 'Welcome to the radio section. Please select a radio programme below to start listening to your favorite show. Our programmes will be updated on a regular basis.')
             ->see('Send us your song requests and we will play them on the radio.');
     }
+
+    public function testRadioThumbNailLinks()
+    {
+        Radios::shouldReceive('landingPageRadios')
+          ->once()
+          ->andReturn(json_decode($this->landingPageMockData));
+
+        $this->visit('/radio')
+             ->seeElement('a', ['href' => 'radio/34'])
+             ->seeElement('a', ['href' => 'radio/36']);
+    }
   }
