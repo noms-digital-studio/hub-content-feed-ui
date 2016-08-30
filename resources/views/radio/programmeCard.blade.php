@@ -6,7 +6,7 @@
 
     <div class="overlay">
         <span class="programme-name">{{ $radio->title }}</span>
-        <a href="#" id="programme-{{ $radio->tid }}">
+        <a href="radio/{{ $radio->episode_nid }}" id="programme-{{ $radio->tid }}">
             <h4>{{ trans('radio.play') }} {{ $radio->description }}</h4>
         </a>
     </div>
