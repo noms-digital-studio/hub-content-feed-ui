@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    		<script src="/js/jquery-1.8.2.min.js"></script>
-    		<script src="/js/bxslider/jquery.bxslider.min.js"></script>
+    <head> 
+		<script src="/js/jquery-1.8.2.min.js"></script>
+		<script src="/js/bxslider/jquery.bxslider.min.js"></script>
         <script src="/js/video.min.js"></script>
         <script src="/js/global.js" type="text/javascript"></script>
         <script src="/js/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
@@ -16,8 +16,8 @@
     <body>
         @if (Request::is('/') || Request::is('hub/*'))
         @else
-            @yield('header')
-		    @endif
+		@yield('header')
+		@endif
 
         @yield('top_content')
 

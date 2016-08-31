@@ -25,3 +25,5 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
 Route::get('/news', 'NewsController@showNewsLandingPage');
 
 Route::get('/radio', 'RadiosController@showRadioLandingPage');
+
+Route::get('/radio/{nid}', 'RadiosController@show');

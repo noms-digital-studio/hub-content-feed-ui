@@ -7,11 +7,21 @@ use App\Http\Controllers\Controller;
 use App\Models\Radio;
 use App\User;
 
-class RadiosController extends Controller {
+class RadiosController extends Controller
+{
 
-  function showRadioLandingPage() {
-    $radios = Radios::landingPageRadios();
+	function showRadioLandingPage()
+	{
+		$radios = Radios::landingPageRadios();
 
-    return view('radio.landingPage', ['radios' => $radios]);
-  }
+		return view('radio.landingPage', ['radios' => $radios]);
+	}
+
+	function show($nid)
+	{
+		$radioShow = Radios::show($nid);
+
+		return view('radio.detail', ['radioShow' => $radioShow]);
+	}
+
 }

@@ -37,5 +37,14 @@ class RadiosRepository
 
         return $responseTree;
     }
+		
+	public function show($nid)
+    {
+        $response = $this->client->get($this->locale . '/api/radio/show/' . $nid);
+
+        $responseTree = json_decode($response->getBody());
+
+        return $responseTree;
+    }
 
 }
