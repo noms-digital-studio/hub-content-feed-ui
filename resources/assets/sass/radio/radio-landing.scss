@@ -8,7 +8,106 @@
   }
 }
 
+.channel-programmes {
+  padding-top: 30px;
+}
+
 .radio-description {
   text-align: center;
-  margin: 0px 150px;
+  margin: 80px 150px;
+}
+
+.programme-description {
+  display: block;
+  margin-left: 1em;
+  line-height: 110%;
+
+  p {
+    color: black;
+    font-size: 11px;
+  }
+}
+
+.programme-text {
+  padding-top: 119px;
+  padding-left: 48px;
+
+  h4 {
+    font-size: 12px !important;
+  }
+}
+
+.shadow {
+  box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5em;
+}
+
+.card.radio-card {
+  position: relative;
+  max-width: 19%;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: $card-gutter * 0.5;
+
+  img {
+    max-width: 100%;
+    display: block;
+    border-radius: 0.5em 0.5em 0 0;
+    box-shadow: none;
+  }
+
+  a {
+    display: inline-block;
+
+    &::before {
+      width: 36px;
+      height: 36px;
+      background-size: 36px;
+      position: absolute;
+      left: 8px;
+      bottom: 0px;
+      margin: 0px;
+    }
+  }
+
+  .programme-name {
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-bottom: 0px;
+    font-size: 13px;
+  }
+
+  p {
+    margin-top: 0px;
+  }
+
+  .programme-title {
+    position: relative;
+    bottom: $card-gutter * 0;
+    left: $card-gutter * 0;
+    right: $card-gutter * 0;
+    background: white;
+    margin: 0;
+    padding: 0.75em;
+    border-bottom-left-radius: $card-border-radius;
+    border-bottom-right-radius: $card-border-radius;
+
+  }
+}
+
+#equaliser {
+  float: left;
+  margin-top: -52px;
+  border-radius: 0.5em;
+}
+
+.radio-title {
+  text-align: center;
+  margin-bottom: 20px;
+  margin: auto;
+  a {
+    text-decoration: none;
+    padding-bottom: 10px;
+    color: #ffffff;
+  }
 }
