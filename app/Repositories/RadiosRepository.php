@@ -13,38 +13,49 @@ use GuzzleHttp\Exception\ServerException;
 
 class RadiosRepository
 {
-    protected $client;
-    protected $locale = '';
 
-    public function __construct()
-    {
-        $this->client = new Client(array(
-            'base_uri' => $_ENV['API_URI'],
-            'timeout' => 60.0
-        ));
+	protected $client;
+	protected $locale = '';
 
-        $this->locale = \App::getLocale();
-        if ($this->locale == 'en') {
-          $this->locale = '';
-        }
-    }
+	public function __construct()
+	{
+		$this->client = new Client(array(
+			'base_uri' => $_ENV['API_URI'],
+			'timeout' => 60.0
+		));
 
-    public function landingPageRadios()
-    {
-        $response = $this->client->get($this->locale . '/api/radio/landing');
+		$this->locale = \App::getLocale();
+		if ($this->locale == 'en')
+		{
+			$this->locale = '';
+		}
+	}
 
-        $responseTree = json_decode($response->getBody());
+	public function landingPageRadios()
+	{
+		$response = $this->client->get($this->locale . '/api/radio/landing');
 
-        return $responseTree;
-    }
-		
+		$responseTree = json_decode($response->getBody());
+
+		return $responseTree;
+	}
+
 	public function show($nid)
-    {
-        $response = $this->client->get($this->locale . '/api/radio/show/' . $nid);
+	{
+		$response = $this->client->get($this->locale . '/api/radio/show/' . $nid);
 
-        $responseTree = json_decode($response->getBody());
+		$responseTree = json_decode($response->getBody());
 
-        return $responseTree;
-    }
+		return $responseTree;
+	}
+
+	public function channelRadioShows($nid)
+	{
+		$response = $this->client->get($this->locale . '/api/radio/shows/' . $nid);
+
+		$responseTree = json_decode($response->getBody());
+
+		return $responseTree;
+	}
 
 }

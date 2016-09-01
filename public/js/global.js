@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $('.bxslider').bxSlider();
-
     $("#AboutInfo").hide();
     $("#EpisodeLink").click(function (e) {
         e.preventDefault();
@@ -17,49 +16,59 @@ $(document).ready(function () {
         $(this).addClass("active");
     });
 });
-
 (function ($) {
 
     $(function () {
 
         var setup = {
-            'controls': true,                        
-                'controlBar': {
-                    'children': {                        
-                        'muteToggle': {},
-                        'playToggle': {},
-                        'volumeControl': {},                 
-                        'durationDisplay': {},                        
-                        'currentTimeDisplay': {},
-                        'progressControl': {
-                            'children': {
-                                'seekBar': {
-                                    'children': {
-                                        'playProgressBar': {}                                        
-                                    }
+            'controls': true,
+            'controlBar': {
+                'children': {
+                    'muteToggle': {},
+                    'playToggle': {},
+                    'volumeControl': {},
+                    'durationDisplay': {},
+                    'currentTimeDisplay': {},
+                    'progressControl': {
+                        'children': {
+                            'seekBar': {
+                                'children': {
+                                    'playProgressBar': {}
                                 }
                             }
                         }
                     }
                 }
-            
+            }
+
         };
-
-        var player = videojs('#radio-player', setup, function(){
-            
+        var player = videojs('#radio-player', setup, function () {
         });
-
-//        $(".vjs-progress-control.").on('click', function (e) {
-//            e.preventDefault;
-//        });
-
-        //Play show
-//        $('[data-audio-src]').on('click.moj-audio-play', function (e) {
-//            e.preventDefault();
-//            player.src([
-//                {type: 'audio/mp3', src: $(this).data('audio-src')}
-//            ]).play();
-//        });
+                
+        $('[data-audio-src]').on('click.play-radio-show', function (e) {
+            e.preventDefault();
+            if ($(this).hasClass('moj-audio-paused')) {
+                player.play();
+            } else if ($(this).hasClass('moj-audio-playing')) {
+                player.pause();
+            } else {
+                player.src([
+                    {type: 'audio/mp3', src: $(this).data('audio-src')}
+                ]).play();
+            }
+        });
+                
+        player.on('play', function () {
+            var src = player.src();
+            $('.moj-audio-paused, .moj-audio-playing').removeClass('moj-audio-paused moj-audio-playing');
+            $('[data-audio-src="' + src + '"]').addClass('moj-audio-playing');
+        });
+        
+        player.on('pause', function (e) {
+            var src = player.src();
+            $('.moj-audio-paused, .moj-audio-playing').removeClass('moj-audio-paused moj-audio-playing');
+            $('[data-audio-src="' + src + '"]').addClass('moj-audio-paused');
+        });
 
     });
 }(jQuery));

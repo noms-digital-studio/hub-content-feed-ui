@@ -37,4 +37,21 @@
 
 @section('content')
 
+<div class="container education-container">
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-2">
+			<ul>
+			@foreach($shows as $show)
+				<li>
+					<a href="#" data-audio-src="{{ $show->radio_show_url }}" class="play-radio-show">
+						{{ $show->title }}: {{ date('l jS F', $show->date) }} Duration: {{ $show->duration }}
+					</a>
+				</li>
+			@endforeach
+			</ul>
+			
+		</div>
+	</div>
+</div>
+
 @endsection

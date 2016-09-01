@@ -20,8 +20,9 @@ class RadiosController extends Controller
 	function show($nid)
 	{
 		$radioShow = Radios::show($nid);
-
-		return view('radio.detail', ['radioShow' => $radioShow]);
+		$shows = Radios::channelRadioShows($nid);
+		
+		return view('radio.detail', ['radioShow' => $radioShow, 'shows' => $shows]);
 	}
 
 }
