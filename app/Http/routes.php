@@ -26,4 +26,4 @@ Route::get('/news', 'NewsController@showNewsLandingPage');
 
 Route::get('/radio', 'RadiosController@showRadioLandingPage');
 
-Route::get('/radio/{nid}', 'RadiosController@show');
+Route::get('/radio/{nid}', 'RadiosController@find');
