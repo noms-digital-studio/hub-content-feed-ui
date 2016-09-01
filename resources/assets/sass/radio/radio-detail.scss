@@ -127,11 +127,14 @@
 }
 
 .radio-container {
-    a.moj-audio-play {
-        &::before {
-            
-        }
+    .icon {
+        zoom: 0.5;        
     }
-    
+    .show-playing {
+        background-color: #1E90FF;
+        a {
+            color: #fff;
+        }
+    }    
 }
 
