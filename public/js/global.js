@@ -16,6 +16,7 @@ $(document).ready(function () {
         $(this).addClass("active");
     });
 });
+
 (function ($) {
 
     $(function () {
@@ -40,22 +41,51 @@ $(document).ready(function () {
                     }
                 }
             }
-
         };
+
+
+//        TODO - move repetative stuff in to functions - make better
+
         var player = videojs('#radio-player', setup, function () {
         });
 
         $('[data-audio-src]').on('click.play-radio-show', function (e) {
             e.preventDefault();
+            var src = $(this).data('audio-src');
+            var currentShow = $('[data-audio-src="' + src + '"]').parent();            
+            if (!currentShow.next().length) {
+                $('#play-next-show').hide();
+            } else {
+                $('#play-next-show').show();
+            }
+            if (!currentShow.prev().length) {
+                $('#play-prev-show').hide();
+            } else {
+                $('#play-prev-show').show();
+            }
             if ($(this).hasClass('moj-audio-paused')) {
                 player.play();
             } else if ($(this).hasClass('moj-audio-playing')) {
                 player.pause();
             } else {
                 player.src([
-                    {type: 'audio/mp3', src: $(this).data('audio-src')}
+                    {type: 'audio/mp3', src: src}
                 ]).play();
             }
+        });
+
+        $('#play-next-show').on('click', function () {
+            var src = player.src();
+            var currentShow = $('[data-audio-src="' + src + '"]').parent();
+            var nextShow = currentShow.next();
+            nextShow.find('a').click();
+        });
+
+        $('#play-prev-show').on('click', function () {
+            var src = player.src();
+            var currentShow = $('[data-audio-src="' + src + '"]').parent();
+            var prevShow = currentShow.prev();
+            prevShow.find('a').click();
         });
 
         player.on('play', function () {
@@ -73,9 +103,22 @@ $(document).ready(function () {
             var src = player.src();
             $('.radio-container ul li a').removeClass('moj-audio-paused moj-audio-playing');
             $('[data-audio-src="' + src + '"]').addClass('moj-audio-paused');
-            var selectedShow = $('[data-audio-src="' + src + '"]');            
+            var selectedShow = $('[data-audio-src="' + src + '"]');
             selectedShow.parent().find('.icon').removeClass('icon-pause-button').addClass('icon-play-button');
         });
+
+        //Highlight selected show on page load
+        var src = player.src();
+        var selectedShow = $('[data-audio-src="' + src + '"]');
+        selectedShow.parent().addClass('show-playing');
+
+        if (!selectedShow.parent().next().length) {
+            $('#play-next-show').hide();
+        }
+
+        if (!selectedShow.parent().prev().length) {
+            $('#play-prev-show').hide();
+        }
 
     });
 }(jQuery));

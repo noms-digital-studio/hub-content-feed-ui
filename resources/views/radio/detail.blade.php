@@ -30,6 +30,8 @@
 	<audio id="radio-player" class="video-js">
 		<source src="{{ $radioShow->episode->radio_show_url}}" type="audio/mp3" />
 	</audio>	
+	<a href="#" id="play-prev-show">PREV</a>
+	<a href="#" id="play-next-show">NEXT</a>
 	<div id="equaliser"></div>
 </div>
 
@@ -43,11 +45,11 @@
 			<ul>
 			@foreach($shows as $show)
 				<li>					
-					<a href="#" data-audio-src="{{ $show->radio_show_url }}" class="play-radio-show">
+					<a href="#" data-audio-src="{{ $show->radio_show_url }}" class="play-radio-show" id="show-{{ $show->nid }}">
 						<span class="icon icon-play-button"></span>
 						{{ $show->title }}: {{ date('l jS F', $show->date) }} {{ $show->duration }}
 						@if($show->added_today)
-						Added today
+						(Added today)
 						@endif()
 					</a>
 				</li>
