@@ -1,13 +1,13 @@
 <div class="card programme-card">
-    <img src="{{ $programme->episodes->thumbnail }}">
+    <img src="{{ $radio->thumbnail }}">
     <div class="programme-title">
-      <h6>{{ $programme->title }}</h6>
+      <h6>{{ $radio->title }}</h6>
     </div>
 
     <div class="overlay">
-        <span class="programme-name">{{ $programme->title }}</span>
-        <a href="{{ action('RadiosController@show', $programme->episodes->nid) }}" id="programme-{{ $programme->episodes->nid }}">
-            <h4>{{ trans('radio.play') }} {{ $programme->episodes->title }}</h4>
+        <span class="programme-name">{{ $radio->title }}</span>
+        <a href="radio/{{ $radio->episode_nid }}" id="programme-{{ $radio->tid }}">
+            <h4>{{ trans('radio.play') }} {{ $radio->description }}</h4>
         </a>
     </div>
 </div>
