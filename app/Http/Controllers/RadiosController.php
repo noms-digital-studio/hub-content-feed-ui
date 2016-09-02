@@ -17,11 +17,11 @@ class RadiosController extends Controller
 		return view('radio.landingPage', ['radios' => $radios]);
 	}
 
-	function show($nid)
+	function find($nid)
 	{
 		$radioShow = Radios::show($nid);
 		$shows = Radios::channelRadioShows($nid);
-		
+
 		return view('radio.detail', ['radioShow' => $radioShow, 'shows' => $shows]);
 	}
 

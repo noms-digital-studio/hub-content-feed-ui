@@ -20,7 +20,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
     Route::get('/video/{nid}', ['as' => 'video.detail', 'uses' => 'VideosController@show']);
 	Route::get('/education/{tid}', ['as' => 'pdf.landing', 'uses' => 'PdfsController@showPdfLandingPage']);
 	Route::get('/education/course/{tid}', ['as' => 'pdf.detail', 'uses' => 'PdfsController@show']);
-	Route::get('/radio/{nid}', ['as' => 'radio.detail', 'uses' => 'RadiosController@show']);
+	Route::get('/radio/{nid}', ['as' => 'radio.detail', 'uses' => 'RadiosController@find']);
 });
 
 Route::get('/news', 'NewsController@showNewsLandingPage');

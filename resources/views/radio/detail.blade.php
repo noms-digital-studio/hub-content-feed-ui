@@ -11,7 +11,7 @@
 				<a href="/"  class="back-to-hub">
 					<img src="/img/icon-back-white.png" id="radio-return-to-the-hub-arrow">
 					{{ trans('navigation.title') }}
-				</a>	
+				</a>
 				<h2 class="page-title white">
 					<a href="{{ action('RadiosController@showRadioLandingPage') }}">
 						<img src="/img/icon-video.png" id="page-icon">
@@ -22,14 +22,14 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<h1>{{ $radioShow->parent->channel_name }}</h1>
-					<p>{!! $radioShow->parent->channel_description !!}</p>										
+					<p>{!! $radioShow->parent->channel_description !!}</p>
 				</div>
 			</div>
 		</div>
 	</div>
 	<audio id="radio-player" class="video-js">
 		<source src="{{ $radioShow->episode->radio_show_url}}" type="audio/mp3" />
-	</audio>	
+	</audio>
 	<a href="#" id="play-prev-show">PREV</a>
 	<a href="#" id="play-next-show">NEXT</a>
 	<div id="equaliser"></div>
@@ -44,7 +44,7 @@
 		<div class="col-xs-8 col-xs-offset-2">
 			<ul>
 			@foreach($shows as $show)
-				<li>					
+				<li>
 					<a href="#" data-audio-src="{{ $show->radio_show_url }}" class="play-radio-show" id="show-{{ $show->nid }}">
 						<span class="icon icon-play-button"></span>
 						{{ $show->title }}: {{ date('l jS F', $show->date) }} {{ $show->duration }}
@@ -55,7 +55,7 @@
 				</li>
 			@endforeach
 			</ul>
-			
+
 		</div>
 	</div>
 </div>
