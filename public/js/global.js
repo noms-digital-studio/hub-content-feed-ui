@@ -44,7 +44,8 @@ $(document).ready(function () {
         };
 
 
-//        TODO - move repetative stuff in to functions - make better
+//        TODO - move repetative stuff in to functions - make better during the ticket to style radio player
+//          TODO - remove from global.js - only load on radio player page.
 
         var player = videojs('#radio-player', setup, function () {
         });

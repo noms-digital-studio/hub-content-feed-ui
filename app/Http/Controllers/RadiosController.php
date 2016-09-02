@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Facades\Radios;
 use App\Http\Controllers\Controller;
-use App\Models\Radio;
-use App\User;
 
 class RadiosController extends Controller
 {

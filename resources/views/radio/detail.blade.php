@@ -1,4 +1,4 @@
-@extends('layouts.master'   )
+@extends('layouts.master')
 
 @section('title', 'Radio')
 
@@ -14,8 +14,8 @@
 				</a>
 				<h2 class="page-title white">
 					<a href="{{ action('RadiosController@showRadioLandingPage') }}">
-						<img src="/img/icon-video.png" id="page-icon">
-						Radio
+						<img src="/img/icon-radio.png" id="page-icon">
+						{{ trans('navigation.radio') }}
 					</a>
 				</h2>
 			</div>

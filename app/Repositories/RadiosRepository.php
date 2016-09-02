@@ -2,13 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Exceptions\ClientErrorException;
-use App\Exceptions\ForbiddenException;
-use App\Exceptions\RadioNotFoundException;
-use App\Exceptions\ServerErrorException;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Exception\ServerException;
 
 class RadiosRepository
 {
