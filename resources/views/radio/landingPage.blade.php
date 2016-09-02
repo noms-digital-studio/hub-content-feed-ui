@@ -14,7 +14,7 @@
               {{ trans('navigation.title') }}
             </div>
         </a>
-        <h2 class="page-title white">
+        <h2 class="radio-title">
             <a href="{{ action('RadiosController@showRadioLandingPage') }}">
               <img src="/img/icon-radio.png" id="page-icon">
               {{ trans('navigation.radio') }}
@@ -41,7 +41,7 @@
 @section('content')
 
 
-        <div class="channel-programmes">
+        <div class="channel-programmes channel-episodes">
             @foreach($radios as $radio)
                 @include('radio.programmeCard', ['radio' => $radio])
             @endforeach
