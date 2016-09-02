@@ -17,7 +17,7 @@ class RadiosController extends Controller
 		return view('radio.landingPage', ['radios' => $radios]);
 	}
 
-	function find($nid)
+	function show($nid)
 	{
 		$radioShow = Radios::show($nid);
 		$shows = Radios::channelRadioShows($nid);
