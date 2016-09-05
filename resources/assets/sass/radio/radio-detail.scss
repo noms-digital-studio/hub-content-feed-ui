@@ -4,8 +4,8 @@
     text-align: center;
     position: relative;
     h1 {
-        color: #fff;   
-    }    
+        color: #fff;
+    }
     p {
         color: #fff;
     }
@@ -14,7 +14,7 @@
         position: relative;
     }
     .back-to-hub {
-        width: 130px;    
+        width: 130px;
         #radio-return-to-the-hub-arrow {
             height: 35px;
             width: 45px;
@@ -23,14 +23,14 @@
     }
 
     .video-js {
-        width: 100%;            
+        width: 100%;
         background-color: transparent;
         display: block;
         position: absolute;
         height:  400px;
         top: 0;
         .vjs-control-bar {
-            top: 0;            
+            top: 0;
             height: 100%;
             .vjs-play-control {
                 z-index: 99;
@@ -47,14 +47,14 @@
                 width: 100px;
                 z-index: 99;
                 height: auto;
-                top: 65%;
+                top: 75%;
                 .vjs-slider-horizontal {
-                    width: 100%;                    
+                    width: 100%;
                     margin: 0px;
                 }
             }
             .vjs-current-time {
-                display:block;             
+                display:block;
                 height: auto;
                 position: absolute;
                 top: 400px;
@@ -64,7 +64,7 @@
                     position: absolute;
                     right: 0;
                 }
-                .vjs-current-time-display {                    
+                .vjs-current-time-display {
                     height: auto;
                 }
             }
@@ -95,7 +95,7 @@
                         background:rgba(0,0,0,0.3);
                         &::before {
                             top: auto;
-                            bottom: -0.5em;                         
+                            bottom: -0.5em;
                         }
                     }
                 }
@@ -106,11 +106,11 @@
             }
         }
         .vjs-big-play-button {
-            display: none;       
+            display: none;
         }
 
         .vjs-control-bar {
-            display: block !important;        
+            display: block !important;
             background: transparent;
         }
     }
@@ -132,13 +132,12 @@
 
 .radio-container {
     .icon {
-        zoom: 0.5;        
+        zoom: 0.5;
     }
     .show-playing {
         background-color: #1E90FF;
         a {
             color: #fff;
         }
-    }    
+    }
 }
-
