@@ -71,6 +71,28 @@ class RadioPlayerPageTest extends TestCase
       ->seeInElement('li', 'Porridge: Friday 12th May');
   }
 
+  public function testMockRadioPlayer()
+  {
+    Radios::shouldReceive('show')
+    ->with(34)
+    ->once()
+    ->andReturn(json_decode($this->playerPageMockPlayerData));
+
+    Radios::shouldReceive('channelRadioShows')
+    ->with(34)
+    ->once()
+    ->andReturn(json_decode($this->playerPageMockEpisodeData));
+
+    $this->visit('/radio/34')
+      ->see('Porridge: Thursday 11th May')
+      ->see('')
+      ->see('')
+      ->see('')
+      ->see('')
+      ->see('')
+      ->seeElement('source', ['src' => 'http://192.168.33.9/sites/default/files/audio/2016-08/fire_bow_sound-mike-koenig_0.mp3']);
+  }
+
   public function testRadioHeader()
   {
     Radios::shouldReceive('show')
@@ -122,6 +144,4 @@ class RadioPlayerPageTest extends TestCase
       $this->assertContains('Page 404 error.', $response->content());
       $this->assertContains('Radio not found', $response->content());
   }
-
-
 }

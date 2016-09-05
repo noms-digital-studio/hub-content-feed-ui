@@ -38,10 +38,10 @@ class RadioLandingPageTest extends TestCase
           ->andReturn(json_decode($this->landingPageMockData));
 
         $this->visit('/radio')
-            ->seeInElement('h4', "The worlds first national breakfast show made by and for prisoners. Includes the quiz, 7:40 Shout Out and the Work Out Song..")
-            ->seeInElement('h4', 'Start the week by listening to our presenters on the Monday Special show airing every Monday giving you updates on the week ahead.')
-            ->seeInElement('h4', 'Keep up to date with the most popular music around and listen to our Hot 20 tracks.')
-            ->seeInElement('h4', 'Send us your song requests and we will play them on the radio.');
+            ->seeInElement('p', "The worlds first national breakfast show made by and for prisoners. Includes the quiz, 7:40 Shout Out and the Work Out Song..")
+            ->seeInElement('p', 'Start the week by listening to our presenters on the Monday Special show airing every Monday giving you updates on the week ahead.')
+            ->seeInElement('p', 'Keep up to date with the most popular music around and listen to our Hot 20 tracks.')
+            ->seeInElement('p', 'Send us your song requests and we will play them on the radio.');
     }
 
     public function testProgrammeThumbNails()
