@@ -40,7 +40,7 @@ class PdfLandingPageTest extends TestCase
 			}
 		]
 	}';
-	protected $pdfPageMockData = '{		
+	protected $pdfPageMockData = '{
 		"parent": {
 			"parent_name": "Art & Literature",
 			"parent_tid": "17",
@@ -78,8 +78,8 @@ class PdfLandingPageTest extends TestCase
 			->seeInElement('.education-header p', 'Educational Courses');
 	}
 
-	/** 	 
-	 * Tests that parent category name is displayed in H1 tag in header	 
+	/**
+	 * Tests that parent category name is displayed in H1 tag in header
 	 */
 	public function testParentCatTitle()
 	{
@@ -176,9 +176,9 @@ class PdfLandingPageTest extends TestCase
 	}
 
 	/*	 * ********************************
-	 * 
+	 *
 	 * DETAIL PAGE TESTS
-	 * 
+	 *
 	 * ******************************** */
 
 	/**
@@ -194,8 +194,8 @@ class PdfLandingPageTest extends TestCase
 			->seeInElement('.education-header p', 'Educational Courses');
 	}
 
-	/** 	 
-	 * Tests that parent category name is displayed in H1 tag in header	 
+	/**
+	 * Tests that parent category name is displayed in H1 tag in header
 	 */
 	public function testDetailPageParentCatTitle()
 	{
@@ -289,6 +289,6 @@ class PdfLandingPageTest extends TestCase
 
 		$this->visit('/education/course/18')
 			->seeElement('a', ['href' => 'http://192.168.33.9/sites/default/files/2016-08/dummyPDF1467882498.pdf'])
-			->seeElement('a', ['href' => 'http://192.168.33.9/sites/default/files/2016-08/dummyPDF_0.pdf']);			
+			->seeElement('a', ['href' => 'http://192.168.33.9/sites/default/files/2016-08/dummyPDF_0.pdf']);
 	}
 }

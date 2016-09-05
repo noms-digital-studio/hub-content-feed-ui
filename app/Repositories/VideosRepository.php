@@ -106,14 +106,14 @@ class VideosRepository
 			{
 				array_push($videos, new Video(
 				    $video->nid,
-            $video->title,
-            $video->description,
-            $video->video_url,
-            !empty($video->thumbnail) ? $video->thumbnail : "",
-            !empty($video->duration) ? $video->duration : "",
-            $video->categories,
-            $video->tags,
-            !empty($video->channel_name) ? $video->channel_name : ""
+					$video->title,
+					$video->description,
+					$video->video_url,
+					!empty($video->thumbnail) ? $video->thumbnail : "",
+					!empty($video->duration) ? $video->duration : "",
+					$video->categories,
+					$video->tags,
+					!empty($video->channel_name) ? $video->channel_name : ""
 				));
 			}
 		}

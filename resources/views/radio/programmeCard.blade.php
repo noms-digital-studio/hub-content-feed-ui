@@ -14,7 +14,7 @@
           <div class="programme-text">
             <h4>{{ trans('radio.play') }}</h4>
           </div>
-          <img src="/img/equaliser.png" id="equaliser">
+          <img src="/img/equaliser.png" class="equaliser" />
         </a>
     </div>
   </div>
