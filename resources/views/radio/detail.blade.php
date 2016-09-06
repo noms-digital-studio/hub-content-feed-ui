@@ -46,11 +46,11 @@
 			@foreach($shows as $show)
 				<li>
 					<a href="#" data-audio-src="{{ $show->radio_show_url }}" class="play-radio-show" id="show-{{ $show->nid }}">
-						<span class="icon icon-play-button"></span>
+						<span class="icon icon-play-button play-show-button"></span>
 						{{ $show->title }}: {{ date('l jS F', $show->date) }}
 						<div class="duration">
 							@if($show->duration)
-								<span class="icon icon-clock"></span>
+								<span class="icon icon-clock play-show-icon-clock"></span>
 								{{ $show->duration }}
 							@endif()
 						</div>
