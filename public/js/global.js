@@ -53,7 +53,7 @@ $(document).ready(function () {
         $('[data-audio-src]').on('click.play-radio-show', function (e) {
             e.preventDefault();
             var src = $(this).data('audio-src');
-            var currentShow = $('[data-audio-src="' + src + '"]').parent();            
+            var currentShow = $('[data-audio-src="' + src + '"]').parent();
             if (!currentShow.next().length) {
                 $('#play-next-show').hide();
             } else {
@@ -92,12 +92,19 @@ $(document).ready(function () {
         player.on('play', function () {
             var src = player.src();
             $('.radio-container ul li a').removeClass('moj-audio-paused moj-audio-playing');
-            $('.radio-container ul li a span').removeClass('icon-pause-button').addClass('icon-play-button');
+            $('.radio-container ul li a span.icon-pause-button-white').removeClass('icon-pause-button-white').addClass('icon-play-button-white').addClass('icon-play-button');
             var selectedShow = $('[data-audio-src="' + src + '"]');
             selectedShow.addClass('moj-audio-playing');
-            selectedShow.parent().find('.icon').removeClass('icon-play-button').addClass('icon-pause-button');
+            selectedShow.parent().find('.icon.icon-play-button').removeClass('icon-play-button').removeClass('icon-play-button-white').addClass('icon-pause-button-white');
+            selectedShow.parent().find('.icon.icon-play-button-white').removeClass('icon-play-button').removeClass('icon-play-button-white').addClass('icon-pause-button-white');
             $('.radio-container ul li').removeClass('show-playing');
             selectedShow.parent().addClass('show-playing');
+
+            $('.radio-container ul li a span.icon-clock').addClass('icon-clock-white').addClass('icon-clock');
+            $('.radio-container ul li a span.icon-clock-white').addClass('icon-clock-white').addClass('icon-clock');
+
+            selectedShow.parent().find('.icon.icon-clock-white').addClass('icon-clock-white').removeClass('icon-clock');
+            selectedShow.parent().find('.icon.icon-clock').addClass('icon-clock').removeClass('icon-clock-white');
         });
 
         player.on('pause', function (e) {
@@ -105,7 +112,10 @@ $(document).ready(function () {
             $('.radio-container ul li a').removeClass('moj-audio-paused moj-audio-playing');
             $('[data-audio-src="' + src + '"]').addClass('moj-audio-paused');
             var selectedShow = $('[data-audio-src="' + src + '"]');
-            selectedShow.parent().find('.icon').removeClass('icon-pause-button').addClass('icon-play-button');
+            selectedShow.parent().find('.icon.icon-pause-button-white').removeClass('icon-pause-button-white').addClass('icon-play-button-white').addClass('icon-play-button');
+
+
+            selectedShow.parent().find('.icon.icon-clock-white').addClass('icon-clock-white').removeClass('icon-clock');
         });
 
         //Highlight selected show on page load

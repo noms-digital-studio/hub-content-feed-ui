@@ -47,9 +47,17 @@
 				<li>
 					<a href="#" data-audio-src="{{ $show->radio_show_url }}" class="play-radio-show" id="show-{{ $show->nid }}">
 						<span class="icon icon-play-button"></span>
-						{{ $show->title }}: {{ date('l jS F', $show->date) }} {{ $show->duration }}
+						{{ $show->title }}: {{ date('l jS F', $show->date) }}
+						<div class="duration">
+							@if($show->duration)
+								<span class="icon icon-clock"></span>
+								{{ $show->duration }}
+							@endif()
+						</div>
 						@if($show->added_today)
-						(Added today)
+						<div class="added-today">
+								{{ trans('radio.addedtoday') }}
+						</div>
 						@endif()
 					</a>
 				</li>

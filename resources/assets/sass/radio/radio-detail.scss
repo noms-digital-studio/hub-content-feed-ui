@@ -139,5 +139,25 @@
         a {
             color: #fff;
         }
+        .duration {
+          color: #ffffff;
+        }
     }
+}
+
+.added-today {
+    display: inline-block;
+    background-color: orange;
+    padding: 6px 15px 6px 15px;
+    border-radius: 1em;
+    margin-left: 20px;
+    color: #000;
+}
+
+.duration {
+    display: inline-block;
+    float: right;
+    margin-right: 15px;
+    margin-top: 7px;
+    color: #a6a6a6;
 }
