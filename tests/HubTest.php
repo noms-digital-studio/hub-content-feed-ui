@@ -2,11 +2,12 @@
 
 use App\Facades\HubLinks;
 use App\Models\Video;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class HubTest extends TestCase
 {
-	protected $mockVideo;
 
+	protected $mockVideo;
 	protected $hubLandingPageMockData = '[{
 		"tid": 7,
 		"name": "Video",
@@ -67,21 +68,13 @@ class HubTest extends TestCase
 		);
 
 		$category = (object) array(
-			"id" => 1,
-			"name" => 'Minute Maths',
-			"description" => 'The category description'
+				"id" => 1,
+				"name" => 'Minute Maths',
+				"description" => 'The category description'
 		);
 
 		$this->mockVideo = new Video(
-			1,
-			"Episode 1: Area - The Space inside a shape",
-			"Lorem ipsum dolor sit amet conestur adoijvcsa elit. Sed commdoino or ojoasd ds. Donec porta lcudaj funsaoir congie. Sed adjnai sfshgdfhfd hfhrthgd iuy dhgd daf .",
-			"http://192.168.33.9/sites/default/files/videos/2016-07/SampleVideo_1280x720_2mb_2.mp4",
-			"http://placehold.it/300x300",
-			"1:20",
-			$category,
-			$tags,
-			"Way2Learn"
+			1, "Episode 1: Area - The Space inside a shape", "Lorem ipsum dolor sit amet conestur adoijvcsa elit. Sed commdoino or ojoasd ds. Donec porta lcudaj funsaoir congie. Sed adjnai sfshgdfhfd hfhrthgd iuy dhgd daf .", "http://192.168.33.9/sites/default/files/videos/2016-07/SampleVideo_1280x720_2mb_2.mp4", "http://placehold.it/300x300", "1:20", $category, $tags, "Way2Learn"
 		);
 	}
 
@@ -173,7 +166,7 @@ class HubTest extends TestCase
 			->with(195)
 			->once()
 			->andReturn(array());
-		
+
 		HubLinks::shouldReceive('subLevelItems')
 			->once()
 			->andReturn(json_decode($this->hubSubPageMockedData));
@@ -248,4 +241,22 @@ class HubTest extends TestCase
 			->click('hub-back')
 			->seePageIs('/');
 	}
+
+	/**
+	 * Test that the sub hub page throws 404 with invalid term id
+	 */
+	public function testSubHub404()
+	{
+
+		HubLinks::shouldReceive('subLevelItems')
+			->with(666)
+			->once()
+			->andThrow(new HttpException(404, "Term ID not found"));
+
+		$response = $this->call('GET', '/hub/666');
+		$this->assertEquals(404, $response->status());
+		$this->assertContains('Page 404 error.', $response->content());
+		$this->assertContains('Term ID not found', $response->content());
+	}
+
 }
