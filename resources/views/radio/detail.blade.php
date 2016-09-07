@@ -42,7 +42,7 @@
 <div class="container education-container radio-container">
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2">
-			<h2>Episodes</h2>
+			<h2>{{ trans('radio.episodestitle') }}</h2>
 			<ul>
 			@foreach($shows as $show)
 				<li>
