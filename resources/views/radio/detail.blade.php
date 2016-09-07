@@ -42,12 +42,13 @@
 <div class="container education-container radio-container">
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2">
+			<h2>Episodes</h2>
 			<ul>
 			@foreach($shows as $show)
 				<li>
 					<a href="#" data-audio-src="{{ $show->radio_show_url }}" class="play-radio-show" id="show-{{ $show->nid }}">
 						<span class="icon icon-play-button play-show-button"></span>
-						{{ $show->title }}: {{ date('l jS F', $show->date) }}
+						{{ $show->title }}: {{ date('j/m/Y', $show->date) }}
 						<div class="duration">
 							@if($show->duration)
 								<span class="icon icon-clock play-show-icon-clock"></span>
@@ -63,7 +64,6 @@
 				</li>
 			@endforeach
 			</ul>
-
 		</div>
 	</div>
 </div>
