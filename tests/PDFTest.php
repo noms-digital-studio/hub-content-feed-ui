@@ -1,6 +1,7 @@
 <?php
 
 use App\Facades\Pdfs;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class PdfLandingPageTest extends TestCase
 {
@@ -175,6 +176,21 @@ class PdfLandingPageTest extends TestCase
 			->seePageIs('/education/course/18');
 	}
 
+	/**
+	 * Tests 404 is thrown with invalid term id on PDF landing page
+	 */
+	public function testLandingPage404()
+	{
+		Pdfs::shouldReceive('landingPagePdfs')
+			->once()
+			->andThrow(new HttpException(404, "Not a valid pdf category term id"));
+
+		$response = $this->call('GET', '/education/17');
+		$this->assertEquals(404, $response->status());
+		$this->assertContains('Page 404 error.', $response->content());
+		$this->assertContains('Not a valid pdf category term id', $response->content());
+	}
+
 	/*	 * ********************************
 	 *
 	 * DETAIL PAGE TESTS
@@ -291,4 +307,5 @@ class PdfLandingPageTest extends TestCase
 			->seeElement('a', ['href' => 'http://192.168.33.9/sites/default/files/2016-08/dummyPDF1467882498.pdf'])
 			->seeElement('a', ['href' => 'http://192.168.33.9/sites/default/files/2016-08/dummyPDF_0.pdf']);
 	}
+
 }
