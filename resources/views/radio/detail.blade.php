@@ -42,20 +42,28 @@
 <div class="container education-container radio-container">
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2">
+			<h2>{{ trans('radio.episodestitle') }}</h2>
 			<ul>
 			@foreach($shows as $show)
 				<li>
 					<a href="#" data-audio-src="{{ $show->radio_show_url }}" class="play-radio-show" id="show-{{ $show->nid }}">
-						<span class="icon icon-play-button"></span>
-						{{ $show->title }}: {{ date('l jS F', $show->date) }} {{ $show->duration }}
+						<span class="icon icon-play-button play-show-button"></span>
+						{{ $show->title }}: {{ date('j/m/Y', $show->date) }}
+						<div class="duration">
+							@if($show->duration)
+								<span class="icon icon-clock play-show-icon-clock"></span>
+								{{ $show->duration }}
+							@endif()
+						</div>
 						@if($show->added_today)
-						(Added today)
+						<div class="added-today">
+								{{ trans('radio.addedtoday') }}
+						</div>
 						@endif()
 					</a>
 				</li>
 			@endforeach
 			</ul>
-
 		</div>
 	</div>
 </div>
