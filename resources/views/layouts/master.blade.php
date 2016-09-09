@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ LaravelLocalization::getCurrentLocale() }}">
     <head> 
 		<script src="/js/jquery-1.8.2.min.js"></script>
 		<script src="/js/bxslider/jquery.bxslider.min.js"></script>

@@ -4,7 +4,7 @@
 			<div class="row">
 				<div class="col-xs-4">
 					<a href="{{ action('VideosController@show', $video->getId()) }}">
-						<img src="{{ $video->getThumbnail() }}" alt="" />
+						<img src="{{ $video->getThumbnail() }}" alt="{{ $video->getTitle() }}" />
 					</a>
 				</div>
 

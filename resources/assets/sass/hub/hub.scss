@@ -67,8 +67,9 @@
     display: inline-block;
     position: absolute;
     font-size: 17px;
-    padding-left: 40px;
-    width: 11%;
+    left: 80px;
+    top: 3px;
+    width: 100px;
     text-align: left;
     text-decoration: none;
 
@@ -82,9 +83,5 @@
 }
 
 #return-to-the-hub-arrow {
-    display: inline-block;
     position: absolute;
-    background-size: 35px;
-    background-repeat: no-repeat;
-    padding-right: 70px;
 }
