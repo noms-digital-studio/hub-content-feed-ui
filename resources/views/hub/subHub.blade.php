@@ -18,7 +18,7 @@
 			@else
 			<a href="{{ $link->url }}" target="_blank" rel="noopener" id="term-{{ $link->tid }}">
 			@endif
-				<img src="{{ $link->thumbnail }}" alt="" />
+				<img src="{{ $link->thumbnail }}" alt="{{ $link->name }}" />
 				<h4>{{ $link->name }}</h4>
 			</a>
 		</li>
