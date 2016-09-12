@@ -21,11 +21,16 @@
 }
 
 .card.radio-card {   
-    .programme-text {
-        h4 {        
-            padding-top: 10px;
+    .overlay {
+        a {
+            .programme-text {
+                h4 {        
+                    padding-top: 10px;
+                    margin-top: 20px;
+                }
+            }       
         }
-    }
+    }    
 }
 
 .equaliser {
