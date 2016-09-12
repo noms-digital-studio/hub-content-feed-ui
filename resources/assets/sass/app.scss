@@ -44,7 +44,7 @@ body {
   }
 
   &.red {
-    background: #E23A38;
+    background: #d13634;
   }
 
   &.yellow {
@@ -59,6 +59,14 @@ body {
     background: #FFD700 url(/img/radio-landing.png) no-repeat 50%;
     background-size: cover;
     height: 400px;
+  }
+
+  .back-to-hub {
+    display: inline-block;
+    float: left;
+    width: 150px;
+    height: 50px;
+    margin-right: -150px;
   }
 }
 

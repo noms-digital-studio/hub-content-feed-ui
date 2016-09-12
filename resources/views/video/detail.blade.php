@@ -8,7 +8,7 @@
   <div class="container" id="header">
     <div class="row">
       <div class="col-xs-12">
-        <a href="/">
+        <a href="/" class="back-to-hub">
           <span class="icon icon-icon-back-white" id="return-to-the-hub-arrow" aria-hidden="true"></span>
           <div class="return-to-the-hub-text white">
             {{ trans('navigation.title') }}
