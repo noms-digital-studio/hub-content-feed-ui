@@ -1,62 +1,90 @@
 .video-player-wrap {
-  padding: 3em 0;
-  background: rgb(14, 26, 53);
-  color: #ffffff;
+    padding: 3em 0;
+    background: rgb(14, 26, 53);
+    color: #ffffff;
 }
 
 #video_player {
-  width: 650px;
-  height: 370px;
+    width: 650px;
+    height: 370px;
 }
 
 .video-details {
-  font-weight: 300;
-  height: 382px;
-  position: relative;
+    font-weight: 300;
+    height: 382px;
+    position: relative;
 
-  .video-title {
-    margin-top: 0.5em;
-  }
-
-  .video-duration {
-    &::before {
-      content: '';
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      vertical-align: middle;
-      margin-right: 0.5em;
-      background: transparent url(/img/ic_query_builder_black_24dp_1x.png) top left no-repeat;
-
-      .dark & {
-        background: transparent url(/img/ic_query_builder_white_24dp_1x.png) top left no-repeat;
-      }
+    .video-title {
+        margin-top: 0.5em;
     }
-  }
-}
 
-.channel-episodes {
-  display:inline-block !important;
+    .video-duration {
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 0.5em;
+            background: transparent url(/img/ic_query_builder_black_24dp_1x.png) top left no-repeat;
+
+            .dark & {
+                background: transparent url(/img/ic_query_builder_white_24dp_1x.png) top left no-repeat;
+            }
+        }
+    }
 }
 
 .episodes-menu {
-  text-align: center;
-  margin-bottom: 30px;
-  li {
-    display: inline;
-    list-style-type: none;
-    margin-right: 20px;
-    h2 {
-      display: inline;
-      a {
-        color: #000;
-        text-decoration: none;
-        padding: 15px 60px;
-        display: inline-block;
-        &.active {
-          border-bottom: 4px solid #32B39C;
+    text-align: center;
+    margin-bottom: 30px;
+    li {
+        display: inline;
+        list-style-type: none;
+        margin-right: 20px;
+        h2 {
+            display: inline;
+            a {
+                color: #000;
+                text-decoration: none;
+                padding: 15px 60px;
+                display: inline-block;
+                &.active {
+                    border-bottom: 4px solid #32B39C;
+                }
+            }
         }
-      }
     }
-  }
 }
+
+
+.card.programme-card.episode-card {    
+    max-width: 25%;            
+    width: 25%;    
+    .programme-title {
+        h6 {
+            margin-right: 65px;
+        }
+    }
+    .icon-play-button-white {
+        position: absolute;
+        left: 50%;
+        top: 45px;        
+        margin-left: -35px;
+        background-color: rgba(0,0,0,0.2);
+        border-radius: 35px;
+    }
+    .duration {
+        .icon {
+            zoom: 0.5;
+            height: 30px;
+            margin-right: 5px;
+        }
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-size: 12px;
+        color: #A1AAC;
+    }
+}
+
