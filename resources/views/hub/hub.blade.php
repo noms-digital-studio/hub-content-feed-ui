@@ -7,7 +7,7 @@
 <div class="hub-content">
 	<div class="row hub-title">
 		<div class="col-xs-12">
-      <img src="/img/icon-hub.png">
+      <img src="/img/icon-hub-medium.png">
 			<h1>The Hub</h1>
 		</div>
 	</div>

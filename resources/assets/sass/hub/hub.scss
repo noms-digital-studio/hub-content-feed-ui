@@ -13,7 +13,10 @@
     .hub-title {
         position: absolute;
         top: -160px;
-        width: 100%
+        width: 100%;
+        img {
+          width: 95px;
+        }
     }
 
     .hub-thumb {
