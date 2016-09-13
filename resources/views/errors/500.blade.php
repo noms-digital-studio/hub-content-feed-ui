@@ -12,7 +12,7 @@
                   <div class="title">0</div>
                   <div class ="error">Server error</div>
                   <p>Sorry, something went wrong. Please try back later.</p>
-                  <a href ="/"><button id="back">{{ trans('navigation.title') }}</button</a>
+                  <a href={{Request::url()}}><button id="back">Try again</button</a>
             </div>
           </div>
         </div>
