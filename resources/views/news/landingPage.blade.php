@@ -8,17 +8,17 @@
   <div class="container" id="header">
     <div class="row">
       <div class="col-xs-12">
-        <a href="/">
-          <img src="/img/icon-back-black.png" id="return-to-the-hub-arrow">
-            <div class="return-to-the-hub-text black">
-              {{ trans('navigation.title') }}
-            </div>
+        <a href="/" class="back-to-hub">
+          <span class="icon icon-icon-back-black" id="return-to-the-hub-arrow" aria-hidden="true"></span>
+          <div class="return-to-the-hub-text black">
+            {{ trans('navigation.title') }}
+          </div>
         </a>
         <h2 class="page-title black">
-          <a href="{{ action('NewsController@showNewsLandingPage') }}">
-            <img src="/img/icon-news.png" id="page-icon">
-            Wayland News
-          </a>
+            <a href="{{ action('NewsController@showNewsLandingPage') }}">
+              <span class="icon icon-icon-news" aria-hidden="true"></span>
+              Wayland News
+            </a>
         </h2>
       </div>
     </div>
