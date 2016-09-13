@@ -96,3 +96,8 @@ $card-border-radius: 0.5em;
         }
     }    
 }
+
+.radio-card .overlay a {
+    background: transparent url(/img/equaliser.png) bottom center no-repeat;
+    background-size: contain;
+}
