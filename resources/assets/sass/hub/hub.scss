@@ -63,6 +63,15 @@
     color: #696969;
 }
 
+.back-to-hub {
+  display: inline-block;
+  text-align: left;
+  float: left;
+  width: 150px;
+  height: 50px;
+  margin-right: -150px;
+}
+
 .return-to-the-hub-text {
     display: inline-block;
     position: absolute;
@@ -80,8 +89,4 @@
     &.black {
       color: #000000;
     }
-}
-
-#return-to-the-hub-arrow {
-    position: absolute;
 }
