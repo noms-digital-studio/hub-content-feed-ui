@@ -5,4 +5,6 @@ return [
   'play' => "Chwarae'r bennod heddiw",
   'addedtoday' => 'Heddiw ychwanegwyd',
   'episodestitle' => 'penodau',
+  'previousshow' => 'Sioe blaenorol',
+  'nextshow' => 'Sioe nesaf'
 ];

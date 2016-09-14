@@ -19,17 +19,17 @@
 					</a>
 				</h2>
 			</div>
-			<div class="row">
-				<div class="col-xs-12">
-					<h1>{{ $radioShow->parent->channel_name }}</h1>
-					{!! $radioShow->parent->channel_description !!}
-				</div>
+			<div class="col-xs-12">
+				<h1>{{ $radioShow->parent->channel_name }}</h1>
+				{!! $radioShow->parent->channel_description !!}
 			</div>
 		</div>
 	</div>
+
 	<audio id="radio-player" class="video-js">
 		<source src="{{ $radioShow->episode->radio_show_url}}" type="audio/mp3" />
 	</audio>
+
 	<a href="#" id="play-prev-show"><span class="icon icon-prev-small"></span></a>
 	<a href="#" id="play-next-show"><span class="icon icon-next-small"></span></a>
 	<div id="equaliser"></div>
