@@ -1,12 +1,13 @@
 	<ul class="bxslider">
 		@foreach($recentVideos as $video)
 		<li>
-			<div class="content-wrap">
+			<div class="carousel-wrap">
 					<div class="row">
 							<div class="col-xs-6">
 									<a href="{{ action('VideosController@show', $video->getId()) }}">
+										<div class="new-video">New video</div>
 										<span class="icon icon-play-button-white"></span>
-											<img src="{{ $video->getThumbnail() }}" alt="" />
+										<img src="{{ $video->getThumbnail() }}" alt="" />
 									</a>
 							</div>
 

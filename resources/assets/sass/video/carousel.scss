@@ -2,7 +2,7 @@
   background: #E23A38;
 }
 
-.content-wrap {
+.carousel-wrap {
   background: #0e1a35;
   border-radius: 1em;
 
@@ -12,6 +12,17 @@
     left: 50%;
     margin-top: -35px;
     margin-left: -35px;
+  }
+
+  .new-video {
+    position: absolute;
+    background: #FFC200;
+    border-radius: 1em 0em 1em 0em;
+    color: black;
+    display: inline;
+    padding: 5px 22px;
+    float: left;
+    font-weight: bold;
   }
 }
 
