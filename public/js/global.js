@@ -55,14 +55,14 @@ $(document).ready(function () {
             var src = $(this).data('audio-src');
             var currentShow = $('[data-audio-src="' + src + '"]').parent();
             if (!currentShow.next().length) {
-                $('#play-next-show').hide();
+                $('#play-next-show span').addClass('icon-next-small-grey').removeClass('icon-next-small');
             } else {
-                $('#play-next-show').show();
+                $('#play-next-show span').addClass('icon-next-small').removeClass('icon-next-small-grey');
             }
             if (!currentShow.prev().length) {
-                $('#play-prev-show').hide();
+                $('#play-prev-show span').addClass('icon-prev-small-grey').removeClass('icon-prev-small');
             } else {
-                $('#play-prev-show').show();
+                $('#play-prev-show span').addClass('icon-prev-small').removeClass('icon-prev-small-grey');
             }
             if ($(this).hasClass('moj-audio-paused')) {
                 player.play();
@@ -120,6 +120,15 @@ $(document).ready(function () {
             selectedShow.find('.icon.icon-pause-button-white').removeClass('icon-pause-button-white').addClass('icon-play-button-white');
         });
 
+        player.on('timeupdate', function (e){
+          var progressPosition = $('.vjs-progress-control .vjs-slider-horizontal .vjs-play-progress').width();
+          var currentTime = progressPosition - 27;
+          var duration = progressPosition;
+
+          $('.vjs-current-time').css({'left': currentTime + 'px'});
+          $('.vjs-duration').css({'left': duration + 'px'});
+      });
+
         //Highlight selected show on page load
         var src = player.src();
         var selectedShow = $('[data-audio-src="' + src + '"]');
@@ -128,12 +137,21 @@ $(document).ready(function () {
         selectedShow.find('.icon.icon-play-button').addClass('icon-play-button-white').removeClass('icon-play-button');
 
         if (!selectedShow.parent().next().length) {
-            $('#play-next-show').hide();
+            $('#play-next-show span').addClass('icon-next-small-grey').removeClass('icon-next-small');
         }
 
         if (!selectedShow.parent().prev().length) {
-            $('#play-prev-show').hide();
+          $('#play-prev-show span').addClass('icon-prev-small-grey').removeClass('icon-prev-small');
         }
 
+        //Position player button/icons on the screen
+        var controlsPosition = $('#play-next-show').position().top;
+        var playPosition = controlsPosition + 5;
+        var volumePosition = controlsPosition + 70;
+        var mutePosition = controlsPosition + 57;
+
+        $('.vjs-play-control').css({'top': playPosition + 'px'});
+        $('.vjs-volume-control').css({'top': volumePosition + 'px'});
+        $('.vjs-mute-control').css({'top': mutePosition + 'px'});
     });
 }(jQuery));

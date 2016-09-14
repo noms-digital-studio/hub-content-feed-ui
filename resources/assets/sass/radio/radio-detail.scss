@@ -5,9 +5,11 @@
     position: relative;
     h1 {
         color: #fff;
+        margin-top: 10px;
     }
     p {
         color: #fff;
+        margin: -24px 220px 14px 220px;
     }
     #header {
         z-index: 999999;
@@ -21,7 +23,6 @@
             margin-right: 10px;
         }
     }
-
     .video-js {
         width: 100%;
         background-color: transparent;
@@ -34,11 +35,23 @@
             height: 100%;
             .vjs-play-control {
                 z-index: 99;
-                height: 50px;
+                height: 70px;
+                width: 70px;
+                text-indent: -999px;
+                overflow: hidden;
+                background-image: url("/img/play-button-white.png");
+                margin-top: -31px;
+
+                &.vjs-playing {
+                  background-image: url("/img/pause-button-white.png");
+                }
             }
             .vjs-mute-control {
+              position: relative;
                 z-index: 99;
                 height: 50px;
+                position: absolute;
+                margin-left: -63px;
             }
             .vjs-volume-control {
                 margin-left: -50px;
@@ -47,7 +60,6 @@
                 width: 100px;
                 z-index: 99;
                 height: auto;
-                top: 75%;
                 .vjs-slider-horizontal {
                     width: 100%;
                     margin: 0px;
@@ -62,7 +74,8 @@
                 &::after {
                     content: "/";
                     position: absolute;
-                    right: 0;
+                    right: 5px;
+                    margin-top: -30px;
                 }
                 .vjs-current-time-display {
                     height: auto;
@@ -74,7 +87,7 @@
                 position: absolute;
                 bottom: -30px;
                 color: black;
-                left: 37px;
+                left: 27px;
             }
             .vjs-progress-control {
                 position: absolute;
@@ -108,13 +121,11 @@
         .vjs-big-play-button {
             display: none;
         }
-
         .vjs-control-bar {
             display: block !important;
             background: transparent;
         }
     }
-
     #equaliser {
         background: url("/img/img-equaliser.png") 50% no-repeat;
         background-size: cover;
@@ -124,9 +135,23 @@
         width: 100%;
         height: 155px;
     }
-    #play-next-show, #play-prev-show {
-        position: relative;
-        z-index: 99;
+    #play-next-show {
+      position: relative;
+      z-index: 99;
+      margin-left: 60px;
+      top: 38px;
+      .icon-next-small-grey {
+          cursor: default;
+      }
+    }
+    #play-prev-show {
+      position: relative;
+      z-index: 99;
+      margin-right: 60px;
+      top: 38px;
+      .icon-prev-small-grey {
+          cursor: default;
+        }
     }
 }
 
@@ -143,7 +168,7 @@
           color: #ffffff;
         }
     }
-    
+
     h2 {
         margin: 54px 0px -7px 0px;
     }
