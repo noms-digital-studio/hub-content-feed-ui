@@ -1,8 +1,13 @@
 .radio-header {
+    background-color: #226699;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 400px;
     background-size: cover !important;
     text-align: center;
     position: relative;
+    color: #fff;
     h1 {
         color: #fff;
         margin-top: 10px;
@@ -11,18 +16,14 @@
         color: #fff;
         margin: -24px 220px 14px 220px;
     }
+    a {
+        color: #fff;
+    }
     #header {
         z-index: 999999;
         position: relative;
     }
-    .back-to-hub {
-        width: 130px;
-        #radio-return-to-the-hub-arrow {
-            height: 35px;
-            width: 45px;
-            margin-right: 10px;
-        }
-    }
+
     .video-js {
         width: 100%;
         background-color: transparent;

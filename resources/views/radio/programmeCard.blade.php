@@ -1,6 +1,6 @@
 <div class="card programme-card radio-card">
 	<div class="shadow">
-		<img src="{{ $radio->thumbnail }}">
+		<img src="{{ $radio->thumbnail }}" alt="{{ $radio->title }}">
 		<div class="programme-title">
 			<h6>{{ $radio->title }}</h6>
 		</div>
@@ -13,9 +13,8 @@
 				</div>
 
 				<div class="programme-text">
-					<h4><span class="icon icon-play-button"></span>{{ trans('radio.play') }}</h4>
+					<h4><span class="icon icon-play-button" aria-hidden="true"></span>{{ trans('radio.play') }}</h4>
 				</div>
-				<img src="/img/equaliser.png" class="equaliser" />
 			</a>
 		</div>
 	</div>

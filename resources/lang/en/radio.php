@@ -6,5 +6,6 @@ return [
   'addedtoday' => 'Added Today',
   'episodestitle' => 'Episodes',
   'previousshow' => 'Previous show',
-  'nextshow' => 'Next show'
+  'nextshow' => 'Next show',
+  'playshow' => 'Play',
 ];

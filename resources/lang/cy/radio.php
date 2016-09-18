@@ -6,5 +6,6 @@ return [
   'addedtoday' => 'Heddiw ychwanegwyd',
   'episodestitle' => 'penodau',
   'previousshow' => 'Sioe blaenorol',
-  'nextshow' => 'Sioe nesaf'
+  'nextshow' => 'Sioe nesaf',
+  'playshow' => 'Chwarae'
 ];

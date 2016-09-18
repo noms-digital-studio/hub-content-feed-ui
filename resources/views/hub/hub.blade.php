@@ -7,10 +7,11 @@
 <div class="hub-content">
 	<div class="row hub-title">
 		<div class="col-xs-12">
-      <img src="/img/icon-hub-medium.png">
+			<img src="/img/icon-hub.png" alt="The Hub">
 			<h1>The Hub</h1>
 		</div>
 	</div>
+
 	<ul class="row row-centered hub-thumb">
 		@foreach($links as $link)
 		<li class="col-xs-2 col-centered">
@@ -19,7 +20,7 @@
 			@else
 			<a href="{{ $link->url }}" target="_blank" rel="noopener" id="term-{{ $link->tid }}">
 			@endif
-				<img src="{{ $link->thumbnail }}" alt="" />
+				<img src="{{ $link->thumbnail }}" alt="{{ $link->name }}" />
 				<h4>{{ $link->name }}</h4>
 			</a>
 		</li>
@@ -27,4 +28,4 @@
 	</ul>
 </div>
 
-	@endsection
+@endsection

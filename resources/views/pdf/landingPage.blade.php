@@ -3,23 +3,31 @@
 @section('title', 'Education')
 
 @section('top_content')
-<div class="education-header">	
-	<a href="/"  class="back-to-hub">
-		{{ trans('navigation.title') }}
-	</a>	
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">				
-				<p class="education-title"><span class="icon icon-icon-courses"></span> {{ trans('pdf.title')}}</p>
-			</div>
-		</div>
+<div class="education-header">
+  <div class="container" id="header">
+    <div class="row">
+      <div class="col-xs-12">
+        <a href="/" class="back-to-hub">
+          <span class="icon icon-icon-back-white" id="return-to-the-hub-arrow" aria-hidden="true"></span>
+          <div class="return-to-the-hub-text white">
+            {{ trans('navigation.title') }}
+          </div>
+        </a>
+        <h2 class="page-title white">
+					<span class="icon icon-icon-courses" aria-hidden="true"></span>
+					Education
+        </h2>
+      </div>
+    </div>
 		<div class="row">
 			<div class="col-xs-12">				
 				<h1>{{ $categories->parent->cat_name }}</h1>
-				<p>{{ $categories->parent->cat_tagline_description }}</p>				
+				@if($categories->parent->cat_description)
+					<p>{{ $categories->parent->cat_description }}</p>
+				@endif				
 			</div>
 		</div>
-	</div>
+  </div>
 </div>
 
 @endsection
@@ -29,14 +37,16 @@
 <div class="container education-container">
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2">
-			<p>{!! $categories->parent->cat_description !!}</p>
+			@if($categories->parent->cat_description)
+				<p>{{ $categories->parent->cat_description }}</p>
+			@endif
 
 			<h3>{{ trans('pdf.subjects') }}</h3>
 			<ul>
 				@foreach($categories->children as $category)
 				<li>						
 					<a href="{{ action('PdfsController@show', $category->tid) }}" id="course-{{ $category->tid }}">
-						<span class="icon icon-icon-folder-purple"></span>
+						<span class="icon icon-icon-folder-purple" aria-hidden="true"></span>
 						{{ $category->name }}
 					</a>
 				</li>

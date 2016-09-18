@@ -8,28 +8,24 @@
 	<div class="container" id="header">
 		<div class="row">
 			<div class="col-xs-12">
-				<a href="/">
-					<img src="/img/icon-back-white.png" id="return-to-the-hub-arrow">
+				<a href="/" class="back-to-hub">
+					<span class="icon icon-icon-back-white" id="return-to-the-hub-arrow" aria-hidden="true"></span>
 					<div class="return-to-the-hub-text white">
 						{{ trans('navigation.title') }}
 					</div>
 				</a>
 				<h2 class="radio-title">
 					<a href="{{ action('RadiosController@showRadioLandingPage') }}">
-						<img src="/img/icon-radio.png" id="page-icon">
+						<span class="icon icon-icon-radio" aria-hidden="true"></span>
 						{{ trans('navigation.radio') }}
 					</a>
 				</h2>
 			</div>
 		</div>
-		<div class="radio-header">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="radio-description">
-							<p>{{ trans('radio.description') }}</p>
-						</div>
-					</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="radio-description">
+					<p>{{ trans('radio.description') }}</p>
 				</div>
 			</div>
 		</div>

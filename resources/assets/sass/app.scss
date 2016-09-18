@@ -45,21 +45,20 @@ body {
   }
 
   &.red {
-    background: #E23A38;
+    background: #d13634;
   }
 
   &.yellow {
-    background-color: #FFD700;
     background: #FFD700 url(/img/img_news-announcements.png) no-repeat 50%;
     background-size: cover;
     height: 400px;
   }
 
   &.light-blue {
-    background-color: #66ccff;
-    background: #FFD700 url(/img/radio-landing.png) no-repeat 50%;
+    background: #226699 url(/img/radio-landing.png) no-repeat 50%;
     background-size: cover;
     height: 400px;
+    color: #fff;
   }
 }
 
@@ -78,12 +77,16 @@ body {
   }
 
   &.white {
+    color: #ffffff;
+    
     a {
       color: #ffffff;
     }
   }
 
   &.black {
+    color: #000000;
+
     a {
       color: #000000;
     }
