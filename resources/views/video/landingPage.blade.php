@@ -17,7 +17,7 @@
         <h2 class="page-title white">
             <a href="{{ action('VideosController@showVideoLandingPage') }}">
               <img src="/img/icon-video.png" id="page-icon">
-              Video
+              {{ trans('video.title') }}
             </a>
         </h2>
       </div>

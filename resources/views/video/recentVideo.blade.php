@@ -5,9 +5,9 @@
 					<div class="row">
 							<div class="col-xs-6">
 									<a href="{{ action('VideosController@show', $video->getId()) }}">
-										<div class="new-video">New video</div>
+										<div class="new-video">{{ trans('video.newvideo') }}</div>
 										<span class="icon icon-play-button-white"></span>
-										<img src="{{ $video->getThumbnail() }}" alt="" />
+										<img src="{{ $video->getThumbnail() }}" alt="{{ $video->getTitle() }}" />
 									</a>
 							</div>
 
