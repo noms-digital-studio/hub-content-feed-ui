@@ -1,48 +1,19 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>404 Error</title>
+@extends('layouts.master')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@section('title', '404 Error')
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+@section('content')
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                color: #B0BEC5;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 72px;
-                margin-bottom: 40px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
+        <div class="error-container">
+          <div class="col-xs-12">
             <div class="content">
-                <div class="title">Page 404 error.</div>
-                <p>{{ $exception->getMessage() }}</p>
+                  <div class="title">4</div>
+                  <img src="/img/icon-hub-medium.png">
+                  <div class="title">4</div>
+                  <div class ="error">Page not found</div>
+                  <p>The page you are looking for cannot be found.</p>
+                  <a href ="/"><button id="back">{{ trans('navigation.title') }}</button</a>
             </div>
+          </div>
         </div>
-    </body>
-</html>
+	@endsection
