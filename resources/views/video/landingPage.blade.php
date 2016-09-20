@@ -21,22 +21,19 @@
             </a>
         </h2>
       </div>
-    </div>
-  </div>
-</div>
-
-@endsection
-
-@section('top_content')
-<div class="recent-video-wrap dark">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        @include('video.recentVideo', ['recentVideos' => $recentVideos])
+      <div class="recent-video-wrap dark">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              @include('video.recentVideo', ['recentVideos' => $recentVideos])
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 @endsection
 
 @section('content')

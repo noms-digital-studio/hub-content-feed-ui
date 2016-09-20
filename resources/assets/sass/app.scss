@@ -45,7 +45,10 @@ body {
   }
 
   &.red {
-    background: #d13634;
+    background: #d13634 url(/img/video-landing.png) no-repeat 50%;
+    background-size: cover;
+    height: 456px;
+
   }
 
   &.yellow {
@@ -78,7 +81,7 @@ body {
 
   &.white {
     color: #ffffff;
-    
+
     a {
       color: #ffffff;
     }
