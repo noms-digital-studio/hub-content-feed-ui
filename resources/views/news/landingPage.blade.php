@@ -9,8 +9,8 @@
     <div class="row">
       <div class="col-xs-12">
         <a href="/" class="back-to-hub">
-          <span class="icon icon-icon-back-black" id="return-to-the-hub-arrow" aria-hidden="true"></span>
-          <div class="return-to-the-hub-text black">
+          <span class="icon icon-icon-back-black" aria-hidden="true"></span>
+          <div class="back-to-the-hub-text black">
             {{ trans('navigation.title') }}
           </div>
         </a>

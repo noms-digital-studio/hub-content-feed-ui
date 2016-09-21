@@ -50,22 +50,6 @@
     padding-bottom: 13px;
 }
 
-#hub-back {
-    display: inline-block;
-    position: absolute;
-    background-size: 35px;
-    background-repeat: no-repeat;
-    left: 1%;
-    height: 35px;
-    font-size: 17px;
-    padding-left: 40px;
-    width: 11%;
-    text-align: left;
-    text-decoration: none;
-    margin: auto;
-    color: #696969;
-}
-
 .back-to-hub {
   display: inline-block;
   text-align: left;
@@ -75,7 +59,7 @@
   margin-right: -150px;
 }
 
-.return-to-the-hub-text {
+.back-to-the-hub-text {
     display: inline-block;
     position: absolute;
     font-size: 17px;
@@ -91,5 +75,9 @@
 
     &.black {
       color: #000000;
+    }
+
+    &.blue {
+      color: #425582;
     }
 }

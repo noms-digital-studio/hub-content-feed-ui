@@ -8,8 +8,8 @@
     <div class="row">
       <div class="col-xs-12">
         <a href="/" class="back-to-hub">
-          <span class="icon icon-icon-back-white" id="return-to-the-hub-arrow" aria-hidden="true"></span>
-          <div class="return-to-the-hub-text white">
+          <span class="icon icon-icon-back-white" aria-hidden="true"></span>
+          <div class="back-to-the-hub-text white">
             {{ trans('navigation.title') }}
           </div>
         </a>
@@ -20,11 +20,11 @@
       </div>
     </div>
 		<div class="row">
-			<div class="col-xs-12">				
+			<div class="col-xs-12">
 				<h1>{{ $categories->parent->cat_name }}</h1>
 				@if($categories->parent->cat_description)
 					<p>{{ $categories->parent->cat_description }}</p>
-				@endif				
+				@endif
 			</div>
 		</div>
   </div>
@@ -44,7 +44,7 @@
 			<h3>{{ trans('pdf.subjects') }}</h3>
 			<ul>
 				@foreach($categories->children as $category)
-				<li>						
+				<li>
 					<a href="{{ action('PdfsController@show', $category->tid) }}" id="course-{{ $category->tid }}">
 						<span class="icon icon-icon-folder-purple" aria-hidden="true"></span>
 						{{ $category->name }}
