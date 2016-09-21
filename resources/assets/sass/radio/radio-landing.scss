@@ -31,7 +31,7 @@
 .equaliser {
     position: absolute;
     bottom: 0;
-    left: 0;    
+    left: 0;
 }
 
 .radio-title {
@@ -42,5 +42,16 @@
         text-decoration: none;
         padding-bottom: 10px;
         color: #ffffff;
+    }
+}
+
+.radio-episodes {
+    .overlay {
+        a {
+            h4 {
+                position: absolute !important;
+                bottom: -7px !important;
+            }
+        }
     }
 }

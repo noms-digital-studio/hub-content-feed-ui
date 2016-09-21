@@ -38,7 +38,7 @@
 
 <br />
 <br />
-<div class="channel-programmes channel-episodes">
+<div class="channel-programmes channel-episodes radio-episodes">
 	@foreach($radios as $radio)
 		@include('radio.programmeCard', ['radio' => $radio])
 	@endforeach
