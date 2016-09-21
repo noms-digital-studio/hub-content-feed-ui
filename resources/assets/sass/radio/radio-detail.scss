@@ -42,16 +42,16 @@
                 overflow: hidden;
                 background-image: url("/img/play-button-white.png");
                 margin-top: -31px;
+                left: 11px;
 
                 &.vjs-playing {
                   background-image: url("/img/pause-button-white.png");
                 }
             }
             .vjs-mute-control {
-              position: relative;
+                position: relative;
                 z-index: 99;
                 height: 50px;
-                position: absolute;
                 margin-left: -63px;
             }
             .vjs-volume-control {
