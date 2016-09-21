@@ -13,6 +13,7 @@
 					{{ trans('navigation.title') }}
 				</div>
 			</a>
+			<h1 class="page-title">@if(count($links) > 0) {{ $links[0]->parent }} @else No links @endif</h1>
 		</div>
 	</div>
 	<ul class="row row-centered">
