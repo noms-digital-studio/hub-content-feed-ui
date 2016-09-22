@@ -15,7 +15,7 @@
         </a>
         <h2 class="page-title white">
 					<span class="icon icon-icon-courses" aria-hidden="true"></span>
-					Education
+					Educational Courses
         </h2>
       </div>
     </div>
@@ -23,7 +23,7 @@
 			<div class="col-xs-12">
 				<h1>{{ $categories->parent->cat_name }}</h1>
 				@if($categories->parent->cat_description)
-					<p>{{ $categories->parent->cat_description }}</p>
+					<p>{!! $categories->parent->cat_description !!}</p>
 				@endif
 			</div>
 		</div>
@@ -37,10 +37,7 @@
 <div class="container education-container">
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2">
-			@if($categories->parent->cat_description)
-				<p>{{ $categories->parent->cat_description }}</p>
-			@endif
-
+			<p>{!! $categories->parent->additional_description !!}</p>
 			<h3>{{ trans('pdf.subjects') }}</h3>
 			<ul>
 				@foreach($categories->children as $category)
