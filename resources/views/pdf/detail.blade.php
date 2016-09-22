@@ -23,7 +23,7 @@
 		<div class="row">
 			<div class="col-xs-12">
 				<h1>{{ $pdfs->parent->cat_name }}</h1>
-				<p>{!! $pdfs->parent->cat_description !!}</p>
+				{!! $pdfs->parent->cat_description !!}
 			</div>
 		</div>
   </div>
@@ -36,8 +36,9 @@
 <div class="container education-container">
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2">
-      <p>{!! $pdfs->parent->additional_description !!}</p>
-			<a href="{{ action('PdfsController@showPdfLandingPage', $pdfs->parent->parent_tid) }}" id="back-to-cat"><span class="icon icon-icon-back" aria-hidden="true"></span>{{ $pdfs->parent->parent_name }}</a>
+      {!! $pdfs->parent->additional_description !!}
+			<div class="pdf-back"><a href="{{ action('PdfsController@showPdfLandingPage', $pdfs->parent->parent_tid) }}" id="back-to-cat"><span class="icon icon-icon-back" aria-hidden="true"></span>Back</a></div>
+      <h3>{{ $pdfs->parent->parent_name }}</h3>
 			<ul>
 				@foreach($pdfs->pdfs as $pdf)
 				<li>

@@ -23,7 +23,7 @@
 			<div class="col-xs-12">
 				<h1>{{ $categories->parent->cat_name }}</h1>
 				@if($categories->parent->cat_description)
-					<p>{!! $categories->parent->cat_description !!}</p>
+					{!! $categories->parent->cat_description !!}
 				@endif
 			</div>
 		</div>
@@ -37,7 +37,7 @@
 <div class="container education-container">
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2">
-			<p>{!! $categories->parent->additional_description !!}</p>
+			{!! $categories->parent->additional_description !!}
 			<h3>{{ trans('pdf.subjects') }}</h3>
 			<ul>
 				@foreach($categories->children as $category)
