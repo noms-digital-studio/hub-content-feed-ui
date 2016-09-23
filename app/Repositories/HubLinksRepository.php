@@ -7,9 +7,7 @@ use App\Models\Video;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 
-class HubLinksRepository
-{
-
+class HubLinksRepository {
 	protected $client;
 
 	public function __construct()
@@ -18,6 +16,13 @@ class HubLinksRepository
 			'base_uri' => $_ENV['API_URI'],
 			'timeout' => 60.0
 		));
+	}
+
+	public function getItem($id = NULL, $user_id = NULL) {
+		$url = 'api/test-hub/' . $id;
+		$response	= $this->client->get($url, [ 'headers' => [ 'custom-auth-id' => $user_id ] ]);
+
+		return json_decode($response->getBody());
 	}
 
 	public function topLevelItems()
