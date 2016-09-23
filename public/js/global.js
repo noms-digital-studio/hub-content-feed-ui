@@ -53,6 +53,7 @@ $(document).ready(function () {
         $('[data-audio-src]').on('click.play-radio-show', function (e) {
             e.preventDefault();
             var src = $(this).data('audio-src');
+            var title = $(this).data('audio-title');
             var currentShow = $('[data-audio-src="' + src + '"]').parent();
             if (!currentShow.next().length) {
                 $('#play-next-show span').addClass('icon-next-small-grey').removeClass('icon-next-small');
@@ -72,6 +73,8 @@ $(document).ready(function () {
                 player.src([
                     {type: 'audio/mp3', src: src}
                 ]).play();
+                
+                $('#radio-player-title').text(title);
             }
         });
 

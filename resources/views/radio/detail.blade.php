@@ -24,7 +24,7 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-12">
-				<h1>{{ $radioShow->parent->channel_name }}</h1>
+				<h1 id="radio-player-title">{{ $radioShow->episode->title}}</h1>
 				{!! $radioShow->parent->channel_description !!}
 			</div>
 		</div>
@@ -51,7 +51,7 @@
 			<ul>
 			@foreach($shows as $show)
 				<li>
-					<a href="#" data-audio-src="{{ $show->radio_show_url }}" class="play-radio-show" id="show-{{ $show->nid }}">
+					<a href="#" data-audio-src="{{ $show->radio_show_url }}" data-audio-title="{{ $show->title }}" class="play-radio-show" id="show-{{ $show->nid }}">
 						<span class="icon icon-play-button play-show-button">{{ trans('radio.playshow') }}</span>
 						{{ $show->title }}: {{ date('j/m/Y', $show->date) }}
 						<div class="duration">
