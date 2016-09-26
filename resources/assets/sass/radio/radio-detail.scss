@@ -42,16 +42,16 @@
                 overflow: hidden;
                 background-image: url("/img/play-button-white.png");
                 margin-top: -31px;
+                left: 11px;
 
                 &.vjs-playing {
                   background-image: url("/img/pause-button-white.png");
                 }
             }
             .vjs-mute-control {
-              position: relative;
+                position: relative;
                 z-index: 99;
                 height: 50px;
-                position: absolute;
                 margin-left: -63px;
             }
             .vjs-volume-control {
@@ -173,21 +173,18 @@
     h2 {
         margin: 54px 0px -7px 0px;
     }
-}
-
-.added-today {
-    display: inline-block;
-    background-color: orange;
-    padding: 6px 15px 6px 15px;
-    border-radius: 1em;
-    margin-left: 20px;
-    color: #000;
-}
-
-.duration {
-    display: inline-block;
-    float: right;
-    margin-right: 15px;
-    margin-top: 7px;
-    color: #a6a6a6;
+    .added-today {
+        display: inline-block;
+        background-color: orange;
+        padding: 6px 15px 6px 15px;
+        border-radius: 1em;
+        margin-left: 20px;
+        color: #000;
+    }
+    .duration {
+        display: inline-block;
+        float: right;
+        margin-top: 7px;
+        color: #a6a6a6;
+    }
 }

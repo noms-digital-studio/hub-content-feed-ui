@@ -149,7 +149,7 @@ $(document).ready(function () {
 
         //Position player button/icons on the screen
         var controlsPosition = $('#play-next-show').position().top;
-        var playPosition = controlsPosition + 5;
+        var playPosition = controlsPosition - 5;
         var volumePosition = controlsPosition + 70;
         var mutePosition = controlsPosition + 57;
 

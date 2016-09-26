@@ -1,8 +1,7 @@
 <?php
 
 return [
-  'title' => 'Storfa Cynnwys',
-  'home' => 'Cartref',
+  'title' => 'Yn ôl i The Hub',
   'video' => 'Fideo',
   'radio' => 'Radio'
 ];

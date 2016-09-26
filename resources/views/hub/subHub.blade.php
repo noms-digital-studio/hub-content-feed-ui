@@ -7,7 +7,13 @@
 <div class="hub-content">
 	<div class="row">
 		<div class="col-xs-12 page-title">
-			<a href="../" id="hub-back" class="icon-icon-back">Return to The Hub</a><h1 class="page-title">@if(count($links) > 0) {{ $links[0]->parent }} @else No links @endif</h1>
+			<a href="/" class="back-to-hub">
+				<span class="icon icon-icon-back" aria-hidden="true"></span>
+				<div class="back-to-the-hub-text blue">
+					{{ trans('navigation.title') }}
+				</div>
+			</a>
+			<h1 class="page-title">@if(count($links) > 0) {{ $links[0]->parent }} @else No links @endif</h1>
 		</div>
 	</div>
 	<ul class="row row-centered">

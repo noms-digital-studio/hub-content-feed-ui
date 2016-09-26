@@ -44,26 +44,7 @@
 
 .page-title {
     top: -35px;
-    text-align: center;
-    margin-bottom: 40px;
-    margin: auto;
     padding-bottom: 13px;
-}
-
-#hub-back {
-    display: inline-block;
-    position: absolute;
-    background-size: 35px;
-    background-repeat: no-repeat;
-    left: 1%;
-    height: 35px;
-    font-size: 17px;
-    padding-left: 40px;
-    width: 11%;
-    text-align: left;
-    text-decoration: none;
-    margin: auto;
-    color: #696969;
 }
 
 .back-to-hub {
@@ -75,13 +56,13 @@
   margin-right: -150px;
 }
 
-.return-to-the-hub-text {
+.back-to-the-hub-text {
     display: inline-block;
     position: absolute;
     font-size: 17px;
     left: 80px;
     top: 3px;
-    width: 100px;
+    width: 68px;
     text-align: left;
     text-decoration: none;
 
@@ -91,5 +72,9 @@
 
     &.black {
       color: #000000;
+    }
+
+    &.blue {
+      color: #425582;
     }
 }
