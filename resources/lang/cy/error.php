@@ -2,7 +2,7 @@
 
 return [
   //403 error
-  '403-title' => 'gwahardd mynediad',
+  '403-title' => 'Gwahardd mynediad',
   '403-message' => "Mae'n ddrwg gennym, ond nid ydych wedi'ch awdurdodi i weld y dudalen.",
 
   //404 error
@@ -10,8 +10,8 @@ return [
   '404-message' => "Ni all y dudalen yr ydych yn chwilio am i'w cael.",
 
   //500 error
-  '500-title' => 'gwall gweinydd',
-  '500-message' => "Mae'n ddrwg gennym, aeth rhywbeth o'i le. Ceisiwch Ã´l yn nes ymlaen.",
+  '500-title' => 'Gwall gweinydd',
+  '500-message' => "Mae'n ddrwg gennym, aeth rhywbeth o'i le. Ceisiwch ôl yn nes ymlaen.",
   '500-button' => 'Ceisio eto',
 
 ];
