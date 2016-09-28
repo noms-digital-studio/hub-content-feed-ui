@@ -10,9 +10,9 @@
       <div class="title">5</div>
       <img src="/img/icon-hub-medium.png">
       <div class="title">0</div>
-      <div class ="error">Server error</div>
-      <p>Sorry, something went wrong. Please try back later.</p>
-      <a href="/" id="back">Try again</a>
+      <div class ="error">{{ trans('error.500-title') }}</div>
+      <p>{{ trans('error.500-message') }}</p>
+      <a href="/" id="back">{{ trans('error.500-button') }}n</a>
     </div>
   </div>
 </div>
