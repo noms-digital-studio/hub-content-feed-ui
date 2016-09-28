@@ -8,7 +8,7 @@
 	<div class="row hub-title">
 		<div class="col-xs-12">
 			@if ($page->id)
-				<a href="/new/{{ $page->parent->id }}">
+				<a href="{{ action('HubLinksController@getItem', $page->parent->id) }}">
 					Back to {{ $page->parent->title }}
 				</a>
 				<h1><img src="{{ $page->icon }}" alt="{{ $page->title }}" style="height:1.5em;width:auto;vertical-align:middle;"> {{ $page->title }}</h1>
@@ -23,7 +23,7 @@
 		@foreach($page->links as $link)
 		<li class="col-xs-2 col-centered">
 			@if(!$link->url)
-			<a href="/new/{{ $link->nid }}" rel="noopener" id="term-{{ $link->nid }}">
+			<a href="{{ action('HubLinksController@getItem', $link->nid) }}" rel="noopener" id="term-{{ $link->nid }}">
 			@else
 			<a href="{{ $link->url }}" target="_blank" rel="noopener" id="term-{{ $link->nid }}">
 			@endif

@@ -11,19 +11,18 @@
 |
 */
 
-Route::get('/', 'HubLinksController@showHubPage');
-
-Route::get('/hub/{tid}', 'HubLinksController@showHubSubPage');
-
-Route::get('/new/{id?}', 'HubLinksController@getItem');
-
 Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
+    Route::get('/', 'HubLinksController@getItem');
+    Route::get('/hub/{id?}', 'HubLinksController@getItem');
+
     Route::get('/video', ['as' => 'video.landing', 'uses' => 'VideosController@showVideoLandingPage']);
-    Route::get('/radio', ['as' => 'radio.landing', 'uses' => 'RadiosController@showRadioLandingPage']);
     Route::get('/video/{nid}', ['as' => 'video.detail', 'uses' => 'VideosController@show']);
+
+    Route::get('/radio', ['as' => 'radio.landing', 'uses' => 'RadiosController@showRadioLandingPage']);
+	Route::get('/radio/{nid}', ['as' => 'radio.detail', 'uses' => 'RadiosController@show']);
+
 	Route::get('/education/{tid}', ['as' => 'pdf.landing', 'uses' => 'PdfsController@showPdfLandingPage']);
 	Route::get('/education/course/{tid}', ['as' => 'pdf.detail', 'uses' => 'PdfsController@show']);
-	Route::get('/radio/{nid}', ['as' => 'radio.detail', 'uses' => 'RadiosController@show']);
 });
 
 Route::get('/news', 'NewsController@showNewsLandingPage');

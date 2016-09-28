@@ -9,6 +9,7 @@ use GuzzleHttp\Exception\ClientException;
 
 class HubLinksRepository {
 	protected $client;
+	protected $locale = '';
 
 	public function __construct()
 	{
@@ -16,11 +17,22 @@ class HubLinksRepository {
 			'base_uri' => $_ENV['API_URI'],
 			'timeout' => 60.0
 		));
+
+		$this->locale = \App::getLocale();
+		if ($this->locale == 'en') {
+			$this->locale = '';
+		}
 	}
 
 	public function getItem($id = NULL, $user_id = NULL) {
-		$url = 'api/test-hub/' . $id;
-		$response	= $this->client->get($url, [ 'headers' => [ 'custom-auth-id' => $user_id ] ]);
+		$url = $this->locale . '/api/test-hub/' . $id;
+		$headers = [];
+
+		if ($user_id) {
+			$headers['custom-auth-id'] = $user_id;
+		}
+
+		$response	= $this->client->get($url, [ 'headers' => $headers ]);
 
 		return json_decode($response->getBody());
 	}
