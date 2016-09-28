@@ -7,35 +7,32 @@ use App\Models\Video;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 
-class HubLinksRepository
-{
-
+class HubLinksRepository {
 	protected $client;
+	protected $locale = '';
 
-	public function __construct()
-	{
+	public function __construct() {
 		$this->client = new Client(array(
 			'base_uri' => $_ENV['API_URI'],
 			'timeout' => 60.0
 		));
+
+		$this->locale = \App::getLocale();
+		if ($this->locale == 'en') {
+			$this->locale = '';
+		}
 	}
 
-	public function topLevelItems()
-	{
-		$response = $this->client->get('api/hub');
+	public function getItem($id = NULL, $user_id = NULL) {
+		$url = $this->locale . '/api/hub/' . $id;
+		$headers = [];
 
-		$responseLinks = json_decode($response->getBody());
+		if ($user_id) {
+			$headers['custom-auth-id'] = $user_id;
+		}
 
-		return $responseLinks;
+		$response	= $this->client->get($url, [ 'headers' => $headers ]);
+
+		return json_decode($response->getBody());
 	}
-
-	public function subLevelItems($tid)
-	{
-		$response = $this->client->get('api/hub/sub/' . $tid);
-
-		$responseLinks = json_decode($response->getBody());
-
-		return $responseLinks;
-	}
-
 }
