@@ -10,8 +10,8 @@
       <div class="title">4</div>
       <img src="/img/icon-hub-medium.png">
       <div class="title">3</div>
-      <div class ="error">Access forbidden</div>
-      <p>Sorry, but you are not authorised to access this page.</p>
+      <div class ="error">{{ trans('error.403-title') }}</div>
+      <p>{{ trans('error.403-message') }}</p>
       <a href="/" id="back">{{ trans('navigation.title') }}</a> 
     </div>
   </div>

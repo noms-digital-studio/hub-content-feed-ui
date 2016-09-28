@@ -10,8 +10,8 @@
       <div class="title">4</div>
       <img src="/img/icon-hub-medium.png">
       <div class="title">4</div>
-      <div class ="error">Page not found</div>
-      <p>The page you are looking for cannot be found.</p>
+      <div class ="error">{{ trans('error.404-title') }}</div>
+      <p>{{ trans('error.404-message') }}</p>
       <a href="/" id="back">{{ trans('navigation.title') }}</a> 
     </div>
   </div>
