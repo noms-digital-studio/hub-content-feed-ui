@@ -48,12 +48,21 @@
 }
 
 .back-to-hub {
-  display: inline-block;
-  text-align: left;
-  float: left;
-  width: 150px;
-  height: 50px;
-  margin-right: -150px;
+    display: inline-block;
+    text-align: left;
+    float: left;
+    width: 150px;
+    height: 50px;
+    margin-right: -150px;
+
+    .hub-content & {
+        margin-top: 32px;
+        position: relative;
+
+        .back-to-the-hub-text {
+            left: 60px;
+        }
+    }
 }
 
 .back-to-the-hub-text {
