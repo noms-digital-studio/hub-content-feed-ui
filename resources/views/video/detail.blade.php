@@ -61,16 +61,12 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <ul class="episodes-menu">
+    <div class="episodes-menu">
     @if(  count($categoryEpisodes) > 1 )
-      <li>
-        <h2><a href="#" id="EpisodeLink" class="active">{{ trans('video.episodes') }}</a></h2>
-      </li>
+      <a href="#" id="EpisodeLink" class="active">{{ trans('video.episodes') }}</a>
     @endif
-      <li>
-       <h2><a href="#" id="AboutLink" class="{{count($categoryEpisodes) > 1 ? '' : 'active'}}">{{ trans('video.about') }}</a></h2>
-      </li>
-    </ul>
+      <a href="#" id="AboutLink" class="{{count($categoryEpisodes) > 1 ? '' : 'active'}}">{{ trans('video.about') }}</a>
+    </div>
   </div>
 </div>
 
