@@ -4,22 +4,10 @@
 
 @section('top_content')
 
+@include('stickyNavigation', ['title' => 'NEC Courses', 'icon' => 'icon-icon-education', 'titleLink' => action('PdfsController@showPdfLandingPage', $pdfs->parent->parent_tid), 'colour' => 'purple' ])
+
 <div class="education-header">
   <div class="container" id="header">
-    <div class="row">
-      <div class="col-xs-12">
-        <a href="/" class="back-to-hub">
-          <span class="icon icon-icon-back-white" aria-hidden="true"></span>
-          <div class="back-to-the-hub-text white">
-            {{ trans('navigation.title') }}
-          </div>
-        </a>
-        <h2 class="page-title white">
-					<span class="icon icon-icon-courses" aria-hidden="true"></span>
-					Educational Courses
-        </h2>
-      </div>
-    </div>
 		<div class="row">
 			<div class="col-xs-12">
 				<h1>{{ $pdfs->parent->cat_name }}</h1>

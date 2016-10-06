@@ -4,24 +4,10 @@
 
 @section('header')
 
+@include('stickyNavigation', ['title' => trans('navigation.radio'), 'icon' => 'icon-icon-radio', 'titleLink' => action('RadiosController@showRadioLandingPage'), 'colour' => 'blue' ])
+
 <div class="header-nav-wrap radio-header" style="background-image: url({{ $radioShow->parent->channel_banner}})">
 	<div class="container" id="header">
-		<div class="row">
-			<div class="col-xs-12">
-				<a href="/" class="back-to-hub">
-					<span class="icon icon-icon-back-white" aria-hidden="true"></span>
-					<div class="back-to-the-hub-text white">
-						{{ trans('navigation.title') }}
-					</div>
-				</a>
-				<h2 class="radio-title">
-					<a href="{{ action('RadiosController@showRadioLandingPage') }}">
-						<span class="icon icon-icon-radio" aria-hidden="true"></span>
-						{{ trans('navigation.radio') }}
-					</a>
-				</h2>
-			</div>
-		</div>
 		<div class="row">
 			<div class="col-xs-12">
 				<h1 id="radio-player-title">{{ $radioShow->episode->title}}</h1>

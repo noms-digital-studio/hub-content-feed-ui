@@ -20,6 +20,7 @@
 @import "radio/radio-detail";
 @import "jquery.modal";
 @import "errors/errors";
+@import "sticky-navigation";
 
 html,
 body {
@@ -39,6 +40,8 @@ body {
 
 .header-nav-wrap {
   padding: 3em 0 0;
+  z-index: 1;
+  margin-top: 96px;
 
   &.blue {
     background: rgb(14, 26, 53);
