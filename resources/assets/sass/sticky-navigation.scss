@@ -5,7 +5,7 @@
     background: #fff;
     height: 96px;
     z-index: 10;
-    box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.20);
 
     .navigation-title {
         text-align: center;
@@ -23,26 +23,30 @@
 
         &.red {
             a:hover {
-            padding: 36px 100px;
-            border-bottom: solid 3px #E23A38;
+                padding: 36px 100px;
+                border-bottom: solid 3px #E23A38;
+                color: #E23A38;
             }
         }
         &.blue {
             a:hover {
-            padding: 32px 100px;
-            border-bottom: solid 3px #3498DB;
+                padding: 32px 100px;
+                border-bottom: solid 3px #3498DB;
+                color: #3498DB;
             }
         }
         &.yellow {
             a:hover {
-            padding: 33px 100px;
-            border-bottom: solid 3px #F5A623;
+                padding: 33px 100px;
+                border-bottom: solid 3px #F5A623;
+                color: #F5A623;
             }
         }
         &.purple {
             a:hover {
-            padding: 32px 100px;
-            border-bottom: solid 3px #895BB8;
+                padding: 32px 100px;
+                border-bottom: solid 3px #895BB8;
+                color: #895BB8;
             }
         }
     }
@@ -61,6 +65,14 @@
                 left: 60px;
             }
         }
+
+        :hover {
+            color: #32B39C;
+        }
+
+        :active {
+            color: #A1AAC1;
+        }
     }
 
     .back-to-the-hub-text {
@@ -75,7 +87,6 @@
         text-align: left;
         text-decoration: none;
         color: #425582;
-        
     }
 
     .icon {
