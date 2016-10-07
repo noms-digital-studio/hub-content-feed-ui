@@ -9,9 +9,9 @@
 		<div class="col-xs-12">
 			@if ($page->id)
 				<a href="{{ action('HubLinksController@getItem', $page->parent->id) }}" class="back-to-hub">
-					<span class="icon icon-icon-back" aria-hidden="true"></span>
+					<span class="icon icon-icon-hub" aria-hidden="true"></span>
 					<div class="back-to-the-hub-text">
-						{{ trans('navigation.back', ['page' => $page->parent->title]) }}
+						{{ trans('navigation.title', ['page' => $page->parent->title]) }}
 					</div>
 				</a>
 				<h1><img src="{{ $page->icon }}" alt="{{ $page->title }}" style="height:1.5em;width:auto;vertical-align:middle;"> {{ $page->title }}</h1>
