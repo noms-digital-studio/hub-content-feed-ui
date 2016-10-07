@@ -35,11 +35,12 @@ class NewsRepository
 
         foreach ($responseNews as $item) {
             array_push($news, new News(
-            $item->nid,
-            $item->title,
-            $item->description,
-            $item->date
-          ));
+                $item->nid,
+                $item->title,
+                $item->description,
+                $item->date,
+                $item->sticky
+            ));
         }
 
         return $news;

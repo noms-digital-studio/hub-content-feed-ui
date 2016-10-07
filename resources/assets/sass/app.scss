@@ -7,6 +7,9 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid";
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/grid";
 
+@import "public/css/sprite.css";
+
+@import "colours";
 @import "fonts";
 @import "typography";
 @import "video/video-detail";

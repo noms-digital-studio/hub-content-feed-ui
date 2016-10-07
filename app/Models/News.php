@@ -11,13 +11,15 @@ class News implements \JsonSerializable
 	protected $title;
 	protected $description;
 	protected $timestamp;
+	protected $sticky;
 
-	public function __construct($nid, $title, $description, $timestamp)
+	public function __construct($nid, $title, $description, $timestamp, $sticky)
 	{
 		$this->nid = $nid;
 		$this->title = $title;
 		$this->description = $description;
 		$this->timestamp = $timestamp;
+		$this->sticky = $sticky;
 	}
 
 	public function postAge()
@@ -53,12 +55,12 @@ class News implements \JsonSerializable
 
 	public function getTrimmedDescription()
 	{
-		$amountOfWords = str_word_count($this->description);
+		$numberOfWords = str_word_count($this->description);
 
-		if ($amountOfWords > LONG_DESCRIPTION_COUNT) {
-					$words = preg_split("/\s+/", $this->description);
-					$words = array_slice($words, 0, LONG_DESCRIPTION_COUNT);
-					return implode(" ", $words) . '...';
+		if ($numberOfWords > LONG_DESCRIPTION_COUNT) {
+			$words = preg_split("/\s+/", $this->description);
+			$words = array_slice($words, 0, LONG_DESCRIPTION_COUNT);
+			return implode(" ", $words) . '...';
 		}
 		else {
 			return $this->description;
@@ -73,6 +75,11 @@ class News implements \JsonSerializable
 	public function getTime()
 	{
 		return date('H:i', $this->timestamp);
+	}
+
+	public function isSticky()
+	{
+		return $this->sticky;
 	}
 
 	public function jsonSerialize()

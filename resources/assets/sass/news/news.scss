@@ -1,32 +1,88 @@
+$news-border-radius: 0.75em;
+
 .news-header {
-  padding:  3em 0 3em;
+  padding:  3em 0;
 
   h1 {
     margin-bottom: 50px;
-
   }
 }
 
 .news-item {
-  padding:  0 0 3em;
+  position: relative;
+  padding: 2em 2em 2em 10em;
+  margin-bottom: 3em;
+
+  &.important {
+    border-radius: $news-border-radius;
+    background: $colour-yellow;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-read-more {
+    color: $colour-ink;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid #b3b3b3;
+    padding: 0.5em 1.5em;
+    border-radius: 2em;
+
+    &:focus,
+    &:hover {
+      background: $colour-green;
+      border-color: $colour-green;
+    }
+
+    &:active {
+      background: $colour-pastel-blue;
+      border-color: $colour-pastel-blue;
+    }
+  }
+}
+
+.news-item--icon {
+  position: absolute;
+  top: 1.5em;
+  left: 2.5em;
+}
+
+.news-item--title {
+  margin: 0;
+}
+
+.news-item--posted {
+  font-size: 14px;
+  text-align: right;
+  color: $colour-dark-grey;
+  float: right;
+}
+
+.news-item--pinned {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+.news-item--body {
+  margin-bottom: 2em;
 }
 
 .news-items {
-  padding:  4em 0 0;
-
   .posted-ago {
-     color: #b3b3b3;
-     width: 100%;
-     text-align: center;
-     border-bottom: 1px solid #b3b3b3;
-     line-height: 0.1em;
-     margin: 10px 0 20px;
-     display: block;
+    color: #b3b3b3;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid #b3b3b3;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+    display: block;
 
-     span {
-         background:#efefef;
-         padding:0 10px;
-     }
+    span {
+      font-weight: 600;
+      background: $colour-light-grey;
+      padding: 0 1em;
+    }
   }
 
   hr {
@@ -35,7 +91,7 @@
     border: 0;
     border-top: 1px solid #b3b3b3;
     margin: 1em 0;
-    padding:  0 0 1em;
+    padding: 0 0 1em;
   }
 
   .posted-ago + hr {
@@ -43,31 +99,32 @@
   }
 }
 
-.jump-to {
-  background: #FFFFFF;
-  padding:  0.5em 0 0.5em;
-  margin: 60px 0px 0px;
-  border-radius: 15px;
+.news-jump-to {
+  background: #ffffff;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  border-radius: $news-border-radius;
+
+  h5 {
+    margin: 0;
+  }
 
   a {
     color: #00cccc;
+    font-weight: 600;
     text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
-  p {
-      font-weight: bold;
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 0.5em;
+    }
   }
-
-  li {
-      margin: 5px 0;
-  }
-}
-
-h1 {
-  color: #000000;
-}
-
-h3 {
-  font-weight: bold;
-  color: #000000;
 }
