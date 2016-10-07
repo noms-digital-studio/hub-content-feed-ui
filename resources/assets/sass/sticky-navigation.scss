@@ -99,6 +99,11 @@
         width: 194px;
     }
 
+    .icon-dropdown {
+        position: absolute;
+        right: 5px;
+        top: 6px;  
+    }
 
     .language-button {
         font-size: 16px;
@@ -125,18 +130,6 @@
     .language-button:active {
         color: #A1AAC1;
         border: 1px solid #425582;
-    }
-
-    .caret {
-        display: inline-block;
-        width: 0;
-        height: 0;
-        margin-left: 96px;
-        vertical-align: middle;
-        border-top: 4px dashed;
-        border-top: 4px solid \9;
-        border-right: 4px solid transparent;
-        border-left: 4px solid transparent;
     }
 }
 
