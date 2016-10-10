@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $('.bxslider').bxSlider();
-    $("#AboutInfo").hide();
     $("#EpisodeLink").click(function (e) {
         e.preventDefault();
         $("#AboutInfo").hide();
@@ -15,6 +14,9 @@ $(document).ready(function () {
         $("#EpisodeLink").removeClass("active");
         $(this).addClass("active");
     });
+    if (!$("#AboutLink").hasClass("active")) {
+        $("#AboutInfo").hide();
+    }
 });
 
 (function ($) {

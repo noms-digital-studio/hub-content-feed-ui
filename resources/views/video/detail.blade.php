@@ -61,18 +61,17 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <ul class="episodes-menu">
-      <li>
-        <h2><a href="#" id="EpisodeLink" class="active">{{ trans('video.episodes') }}</a></h2>
-      </li>
-      <li>
-       <h2><a href="#" id="AboutLink">{{ trans('video.about') }}</a></h2>
-      </li>
-    </ul>
+    <div class="episodes-menu">
+    @if(  count($categoryEpisodes) > 1 )
+      <a href="#" id="EpisodeLink" class="active">{{ trans('video.episodes') }}</a>
+    @endif
+      <a href="#" id="AboutLink" class="{{count($categoryEpisodes) > 1 ? '' : 'active'}}">{{ trans('video.about') }}</a>
+    </div>
   </div>
 </div>
 
 
+@if(  count($categoryEpisodes) > 1 )
 <!-- Lists the episodes of the programme -->
 <div id="EpisodeInfo">
   <div class="row">
@@ -85,6 +84,7 @@
     </div>
   </div>
 </div>
+@endif
 
 <!-- Information about the programme-->
 <div id="AboutInfo">
