@@ -1,7 +1,7 @@
 body {
-  font-size: 14px;
-  line-height: 20px;
-  color: #444444;
+  font-size: 16px;
+  line-height: 24px;
+  color: $colour-ink;
 }
 
 h1 {
@@ -38,10 +38,10 @@ h3 {
 }
 
 h4 {
-  font-size: 18px;
-  line-height: 24px;
-  color: #444444;
-  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  color: $colour-ink;
+  font-weight: bold;
 
   .dark & {
     color: #ffffff;
@@ -51,7 +51,7 @@ h4 {
 h5 {
   font-size: 18px;
   line-height: 24px;
-  color: #0e1a35;
+  color: $colour-ink;
   font-weight: 700;
 
   .dark & {

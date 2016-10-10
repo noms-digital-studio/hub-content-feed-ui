@@ -12,13 +12,19 @@ class NewsController extends Controller {
     $news = News::landingPageNews();
 
     $groupedNews = array();
+    $promotedNews = array();
 
     foreach($news as $item) {
+      if ($item->isSticky()) {
+        $promotedNews[] = $item;
+        continue;
+      }
+
       $daysAgo = $item->postAge();
       $daysAgo = $daysAgo > 7 ? 8 : $daysAgo;
       $groupedNews[$daysAgo][] = $item;
     }
 
-    return view('news.landingPage', ['news' => $groupedNews]);
+    return view('news.landingPage', ['promoted' => $promotedNews, 'news' => $groupedNews]);
   }
 }
