@@ -4,24 +4,10 @@
 
 @section('header')
 
+@include('stickyNavigation', ['title' => 'Wayland News', 'icon' => 'icon-icon-news', 'titleLink' => action('NewsController@showNewsLandingPage'), 'colour' => 'yellow' ])
+
 <div class="header-nav-wrap yellow">
   <div class="container" id="header">
-    <div class="row">
-      <div class="col-xs-12">
-        <a href="/" class="back-to-hub">
-          <span class="icon icon-icon-back-black" aria-hidden="true"></span>
-          <div class="back-to-the-hub-text black">
-            {{ trans('navigation.title') }}
-          </div>
-        </a>
-        <h2 class="page-title black">
-            <a href="{{ action('NewsController@showNewsLandingPage') }}">
-              <span class="icon icon-icon-news" aria-hidden="true"></span>
-              Wayland News
-            </a>
-        </h2>
-      </div>
-    </div>
     <div class="news-header">
       <div class="container">
         <div class="row">

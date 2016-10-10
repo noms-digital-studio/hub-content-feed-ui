@@ -2,7 +2,7 @@
     text-align: center;
     display: inline-block;
     width: 100%;
-    margin-top: 250px;
+    margin-top: 202px;
     position: relative;
 
     h4 {
@@ -45,45 +45,4 @@
 .page-title {
     top: -35px;
     padding-bottom: 13px;
-}
-
-.back-to-hub {
-    display: inline-block;
-    text-align: left;
-    float: left;
-    width: 150px;
-    height: 50px;
-    margin-right: -150px;
-
-    .hub-content & {
-        margin-top: 32px;
-        position: relative;
-
-        .back-to-the-hub-text {
-            left: 60px;
-        }
-    }
-}
-
-.back-to-the-hub-text {
-    display: inline-block;
-    position: absolute;
-    font-size: 17px;
-    left: 80px;
-    top: 3px;
-    width: 68px;
-    text-align: left;
-    text-decoration: none;
-
-    &.white {
-      color: #ffffff;
-    }
-
-    &.black {
-      color: #000000;
-    }
-
-    &.blue {
-      color: #425582;
-    }
 }

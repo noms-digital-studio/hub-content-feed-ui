@@ -4,24 +4,10 @@
 
 @section('header')
 
+@include('stickyNavigation', ['title' => trans('navigation.radio'), 'icon' => 'icon-icon-radio', 'titleLink' => action('RadiosController@showRadioLandingPage'), 'colour' => 'blue' ])
+
 <div class="header-nav-wrap light-blue">
 	<div class="container" id="header">
-		<div class="row">
-			<div class="col-xs-12">
-				<a href="/" class="back-to-hub">
-					<span class="icon icon-icon-back-white" aria-hidden="true"></span>
-					<div class="back-to-the-hub-text white">
-						{{ trans('navigation.title') }}
-					</div>
-				</a>
-				<h2 class="radio-title">
-					<a href="{{ action('RadiosController@showRadioLandingPage') }}">
-						<span class="icon icon-icon-radio" aria-hidden="true"></span>
-						{{ trans('navigation.radio') }}
-					</a>
-				</h2>
-			</div>
-		</div>
 		<div class="row">
 			<div class="col-xs-12">
 				<div class="radio-description">

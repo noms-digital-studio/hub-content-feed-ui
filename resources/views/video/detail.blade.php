@@ -2,32 +2,9 @@
 
 @section('title', $video->getTitle())
 
-@section('header')
-
-<div class="header-nav-wrap blue">
-  <div class="container" id="header">
-    <div class="row">
-      <div class="col-xs-12">
-        <a href="/" class="back-to-hub">
-          <span class="icon icon-icon-back-white" aria-hidden="true"></span>
-          <div class="back-to-the-hub-text white">
-            {{ trans('navigation.title') }}
-          </div>
-        </a>
-        <h2 class="page-title white">
-            <a href="{{ action('VideosController@showVideoLandingPage') }}">
-              <span class="icon icon-icon-video" aria-hidden="true"></span>
-              Video
-            </a>
-        </h2>
-      </div>
-    </div>
-  </div>
-</div>
-
-@endsection
-
 @section('top_content')
+
+@include('stickyNavigation', ['title' => trans('navigation.video'), 'icon' => 'icon-icon-video', 'titleLink' => action('VideosController@showVideoLandingPage'), 'colour' => 'red' ])
 
 <div class="video-player-wrap dark">
   <div class="container">

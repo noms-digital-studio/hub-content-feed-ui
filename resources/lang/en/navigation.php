@@ -1,7 +1,7 @@
 <?php
 
 return [
-  'title' => 'Back to The Hub',
+  'title' => 'Back to Digital Hub',
   'back' => 'Back to :page',
   'video' => 'Video',
   'radio' => 'Radio',
