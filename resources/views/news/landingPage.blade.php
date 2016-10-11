@@ -12,7 +12,6 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12">
-            <h1 align="center">News and Announcements</h1>
             <p align="center">The place to go if you want to find the latest news and accouncements about your prison.</p>
     			</div>
     		</div>

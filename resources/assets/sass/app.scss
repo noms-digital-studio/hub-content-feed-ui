@@ -51,13 +51,13 @@ body {
     background: #d13634 url(/img/video-landing.jpg) no-repeat 50%;
     background-size: cover;
     height: 483px;
-
   }
 
   &.yellow {
-    background: #FFD700 url(/img/img_news-announcements.jpg) no-repeat 50%;
+    background: url(/img/news-announcements.png) no-repeat 50%;
     background-size: cover;
-    height: 400px;
+    color: #fff;
+    font-size: 16px;
   }
 
   &.light-blue {
