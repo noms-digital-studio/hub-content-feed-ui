@@ -8,14 +8,12 @@
 
 <div class="header-nav-wrap yellow">
   <div class="container" id="header">
-    <div class="news-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <p align="center">The place to go if you want to find the latest news and accouncements about your prison.</p>
-    			</div>
-    		</div>
-    	</div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <p align="center">The place to go if you want to find the latest news and accouncements about your prison.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
