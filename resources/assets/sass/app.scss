@@ -45,6 +45,7 @@ body {
   color: #fff;
   font-size: 21px;
   text-align: center;
+  line-height: 24px;
 
   &.red {
     background: #d13634 url(/img/video-landing.jpg) no-repeat 50%;
@@ -57,10 +58,10 @@ body {
   }
 
   &.light-blue {
-    background: #226699 url(/img/radio-landing.jpg) no-repeat 50%;
+    background: url(/img/radio-landing.jpg) no-repeat 50%;
     background-size: cover;
-    height: 400px;
-    color: #fff;
+    padding-top: 63px;
+    padding-bottom: 63px;
   }
 
   &.yellow {
