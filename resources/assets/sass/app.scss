@@ -47,31 +47,26 @@ body {
   text-align: center;
   line-height: 24px;
 
-  &.red {
-    background: #d13634 url(/img/video-landing.jpg) no-repeat 50%;
+  &.video {
+    background: url(/img/video-landing.jpg) no-repeat 50%;
     background-size: cover;
-    height: 483px;
   }
 
-  &.blue {
-    background: rgb(14, 26, 53);
-  }
-
-  &.light-blue {
+  &.radio {
     background: url(/img/radio-landing.jpg) no-repeat 50%;
     background-size: cover;
     padding-top: 63px;
     padding-bottom: 63px;
   }
 
-  &.yellow {
+  &.news {
     background: url(/img/news-announcements.png) no-repeat 50%;
     background-size: cover;
     padding-top: 63px;
     padding-bottom: 63px;
   }
 
-    &.purple {
+    &.education {
     background: url(/img/edu_banner.jpg) no-repeat 50%;
     background-size: cover;
     margin-bottom: 50px;

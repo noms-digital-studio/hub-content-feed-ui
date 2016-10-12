@@ -6,7 +6,7 @@
 
 @include('stickyNavigation', ['title' => 'Wayland News', 'icon' => 'icon-icon-news', 'titleLink' => action('NewsController@showNewsLandingPage'), 'colour' => 'yellow' ])
 
-<div class="header-nav-wrap yellow">
+<div class="header-nav-wrap news">
   <div class="container" id="header">
     <div class="container">
       <div class="row">
