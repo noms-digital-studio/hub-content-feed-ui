@@ -40,32 +40,38 @@ body {
 }
 
 .header-nav-wrap {
-  padding: 3em 0 0;
   z-index: 1;
   margin-top: 96px;
+  color: #fff;
+  font-size: 21px;
+  text-align: center;
+  line-height: 24px;
+  padding: 64px 0;
+  text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.7);
 
-  &.blue {
-    background: rgb(14, 26, 53);
+  background: no-repeat 50%;
+  background-size: cover;
+
+  &.video {
+    background-color: $colour-red;
+    background-image: url(/img/video-landing.jpg);
+    padding: 0;
   }
 
-  &.red {
-    background: #d13634 url(/img/video-landing.jpg) no-repeat 50%;
-    background-size: cover;
-    height: 483px;
-
+  &.radio {
+    background-color: $colour-light-blue;
+    background-image: url(/img/radio-landing.jpg);
   }
 
-  &.yellow {
-    background: #FFD700 url(/img/img_news-announcements.jpg) no-repeat 50%;
-    background-size: cover;
-    height: 400px;
+  &.news {
+    background-color: $colour-yellow;
+    background-image: url(/img/news-announcements.jpg);
   }
 
-  &.light-blue {
-    background: #226699 url(/img/radio-landing.jpg) no-repeat 50%;
-    background-size: cover;
-    height: 400px;
-    color: #fff;
+  &.education {
+    background-color: $colour-purple;
+    background-image: url(/img/edu_banner.jpg);
+    margin-bottom: 50px;
   }
 }
 

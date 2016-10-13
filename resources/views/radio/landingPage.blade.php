@@ -6,13 +6,11 @@
 
 @include('stickyNavigation', ['title' => trans('navigation.radio'), 'icon' => 'icon-icon-radio', 'titleLink' => action('RadiosController@showRadioLandingPage'), 'colour' => 'blue' ])
 
-<div class="header-nav-wrap light-blue">
+<div class="header-nav-wrap radio">
 	<div class="container" id="header">
 		<div class="row">
 			<div class="col-xs-12">
-				<div class="radio-description">
-					<p>{{ trans('radio.description') }}</p>
-				</div>
+				<p>{{ trans('radio.description') }}</p>
 			</div>
 		</div>
 	</div>

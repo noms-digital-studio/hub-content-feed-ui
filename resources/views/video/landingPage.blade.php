@@ -6,7 +6,7 @@
 
 @include('stickyNavigation', ['title' => trans('navigation.video'), 'icon' => 'icon-icon-video', 'titleLink' => action('VideosController@showVideoLandingPage'), 'colour' => 'red' ])
 
-<div class="header-nav-wrap red">
+<div class="header-nav-wrap video">
   <div class="container" id="header">
       <div class="recent-video-wrap dark">
         <div class="container">

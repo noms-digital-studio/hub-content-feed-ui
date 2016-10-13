@@ -6,17 +6,18 @@
 
 @include('stickyNavigation', ['title' => 'NEC Courses', 'icon' => 'icon-icon-education', 'titleLink' => '', 'colour' => 'purple', 'titleLink' => action('PdfsController@showPdfLandingPage', $categories->parent->cat_id), 'colour' => 'purple' ])
 
-<div class="education-header">
-  <div class="container" id="header">
-    <div class="row">
-      <div class="col-xs-12">
-				<h1>{{ $categories->parent->cat_name }}</h1>
-				@if($categories->parent->cat_description)
-					{!! $categories->parent->cat_description !!}
-				@endif
+<div class="header-nav-wrap education">
+	<div class="container" id="header">
+  		<div class="education-header">
+			<div class="row">
+				<div class="col-xs-12">
+					@if($categories->parent->cat_description)
+						{!! $categories->parent->cat_description !!}
+					@endif
+				</div>
 			</div>
 		</div>
-  </div>
+	</div>
 </div>
 
 @endsection

@@ -6,16 +6,11 @@
 
 @include('stickyNavigation', ['title' => 'Wayland News', 'icon' => 'icon-icon-news', 'titleLink' => action('NewsController@showNewsLandingPage'), 'colour' => 'yellow' ])
 
-<div class="header-nav-wrap yellow">
+<div class="header-nav-wrap news">
   <div class="container" id="header">
-    <div class="news-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <h1 align="center">News and Announcements</h1>
-            <p align="center">The place to go if you want to find the latest news and accouncements about your prison.</p>
-          </div>
-        </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <p>The place to go if you want to find the latest news and accouncements about your prison.</p>
       </div>
     </div>
   </div>

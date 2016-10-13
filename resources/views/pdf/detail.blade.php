@@ -6,11 +6,10 @@
 
 @include('stickyNavigation', ['title' => 'NEC Courses', 'icon' => 'icon-icon-education', 'titleLink' => action('PdfsController@showPdfLandingPage', $pdfs->parent->parent_tid), 'colour' => 'purple' ])
 
-<div class="education-header">
+<div class="header-nav-wrap education">
   <div class="container" id="header">
 		<div class="row">
 			<div class="col-xs-12">
-				<h1>{{ $pdfs->parent->cat_name }}</h1>
 				{!! $pdfs->parent->cat_description !!}
 			</div>
 		</div>

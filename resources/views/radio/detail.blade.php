@@ -6,7 +6,7 @@
 
 @include('stickyNavigation', ['title' => trans('navigation.radio'), 'icon' => 'icon-icon-radio', 'titleLink' => action('RadiosController@showRadioLandingPage'), 'colour' => 'blue' ])
 
-<div class="header-nav-wrap radio-header" style="background-image: url({{ $radioShow->parent->channel_banner}})">
+<div class="radio-header" style="background-image: url({{ $radioShow->parent->channel_banner}})">
 	<div class="container" id="header">
 		<div class="row">
 			<div class="col-xs-12">
