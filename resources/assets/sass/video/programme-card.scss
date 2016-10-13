@@ -1,4 +1,4 @@
-$card-gutter: 15px;     // The distance between cards
+$card-gutter: 20px;     // The distance between cards
 $card-border-radius: 0.5em;
 
 .channel-programmes {
@@ -11,8 +11,8 @@ $card-border-radius: 0.5em;
 
 .card.programme-card {
     position: relative;
-    max-width: 20%;
-    width: 20%;
+    max-width: 25%;
+    width: 25%;
     display: flex;
     box-sizing: border-box;
     padding: 0 10px 20px 10px;
