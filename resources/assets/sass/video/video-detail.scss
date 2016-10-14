@@ -70,6 +70,22 @@
 .card.programme-card.episode-card {
     max-width: 25%;
     width: 25%;
+    .duration {
+        .icon {
+            zoom: 0.5;
+            height: 30px;
+            margin-right: 5px;
+        }
+        position: absolute;
+        right: 10px;
+        top: 131px;
+        font-size: 13px;
+        color: #a6a6a6;
+        background: #000;
+        opacity: 0.85;
+        padding: 2px 0px 2px 11px;
+        left: 208px;
+    }
     .programme-title {
         h6 {
             margin-right: 65px;
@@ -82,17 +98,5 @@
         margin-left: -35px;
         background-color: rgba(0,0,0,0.2);
         border-radius: 35px;
-    }
-    .duration {
-        .icon {
-            zoom: 0.5;
-            height: 30px;
-            margin-right: 5px;
-        }
-        position: absolute;
-        right: 0px;
-        top: 22px;
-        font-size: 14px;
-        color: #a6a6a6;
     }
 }
