@@ -1,32 +1,37 @@
 <div class="news-item {{ $newsItem->isSticky() ? 'important' : '' }}">
-  <h4 class="news-item--title">{{ $newsItem->getTitle() }}</h4>
+	<h4 class="news-item--title">{{ $newsItem->getTitle() }}</h4>
 
-  @if ($newsItem->isSticky())
+	@if ($newsItem->isSticky())
     <span class="news-item--icon icon icon-news-reminder"></span>
     <span class="news-item--pinned icon icon-news-pinned"></span>
-  @else
+	@else
     <span class="news-item--icon icon icon-news-general"></span>
-  @endif
+	@endif
 
-  <div class="news-item--body">
-    {!! $newsItem->getTrimmedDescription() !!}
-  </div>
+	<div class="news-item--trimmed" id="trimmed-{{ $newsItem->getId() }}">
+		<div class="news-item--body">
+			{!! $newsItem->getTrimmedDescription() !!}
+		</div>
 
-  <div class="news-item--posted">Posted: {{ $newsItem->getDate() }} at {{ $newsItem->getTime() }}</div>
+		<div class="news-item--posted">{{ trans('news.posted') }}: {{ $newsItem->getDate() }} {{ trans('news.at') }} {{ $newsItem->getTime() }}</div>
 
-  @if ($newsItem->hasLongDescription())
-    <div id="news-modal-{{ $newsItem->getId() }}" class="news-modal" style="display:none;">
-      <h4 class="news-modal--title">{{ $newsItem->getTitle() }}</h4>
+		@if ($newsItem->hasLongDescription())
+			<a href="#" class="btn btn-showMore" data-show="#expanded-{{ $newsItem->getId() }}" data-hide="#trimmed-{{ $newsItem->getId() }}">
+				{{ trans('news.showmore') }}
+			</a>
+		@endif
+	</div>
 
-      <div class="news-modal--body">
-        {!! $newsItem->getDescription() !!}
-      </div>
+	<div class="news-item--expanded btn-showLess" id="expanded-{{ $newsItem->getId() }}">
+		<div class="news-item--body">
+			{!! $newsItem->getDescription() !!}
+		</div>
 
-      <div class="news-modal--posted">Posted: {{ $newsItem->getDate() }} at {{ $newsItem->getTime() }}</div>
-    </div>
+		<div class="news-item--posted">{{ trans('news.posted') }}: {{ $newsItem->getDate() }} {{ trans('news.at') }} {{ $newsItem->getTime() }}</div>
 
-    <a href="#news-modal-{{ $newsItem->getId() }}" class="btn btn-read-more" rel="modal:open">
-      Show more
-    </a>
-  @endif
+		<a href="#" class="btn" data-hide="#expanded-{{ $newsItem->getId() }}" data-show="#trimmed-{{ $newsItem->getId() }}" >
+			{{ trans('news.showless') }}
+		</a>		
+	</div>
+
 </div>

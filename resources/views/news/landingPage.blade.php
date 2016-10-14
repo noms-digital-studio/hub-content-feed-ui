@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'News')
+@section('title', trans('news.title'))
 
 @section('header')
 
@@ -10,7 +10,7 @@
   <div class="container" id="header">
     <div class="row">
       <div class="col-xs-12">
-        <p>The place to go if you want to find the latest news and accouncements about your prison.</p>
+        <p>{{ trans('news.description') }}</p>
       </div>
     </div>
   </div>
@@ -32,13 +32,13 @@
 
     @foreach($news as $daysAgo => $group)
       @if ($daysAgo == 0)
-        <span class="posted-ago" id="posts-{{$daysAgo}}-ago"><span>Today</span></span>
+        <span class="posted-ago" id="posts-{{$daysAgo}}-ago"><span>{{ trans('news.today') }}</span></span>
       @elseif ($daysAgo == 1)
-        <span class="posted-ago" id="posts-{{$daysAgo}}-ago"><span>Yesterday</span></span>
+        <span class="posted-ago" id="posts-{{$daysAgo}}-ago"><span>{{ trans('news.yesterday') }}</span></span>
       @elseif ($daysAgo > 7)
-        <span class="posted-ago" id="posts-{{$daysAgo}}-ago"><span>Over 1 week ago</span></span>
+        <span class="posted-ago" id="posts-{{$daysAgo}}-ago"><span>{{ trans('news.overoneweekago') }}</span></span>
       @else
-        <span class="posted-ago" id="posts-{{$daysAgo}}-ago"><span>{{ $daysAgo }} days ago</span></span>
+        <span class="posted-ago" id="posts-{{$daysAgo}}-ago"><span>{{ $daysAgo }} {{ trans('news.daysago') }}</span></span>
       @endif
 
       @foreach($group as $newsItem)
@@ -54,17 +54,17 @@
     <h5>Jump to:</h5>
     <ul>
       @if (count($promoted))
-        <li><a href="#posts-important">Important ({{ count($promoted) }})</a></li>
+        <li><a href="#posts-important">{{ trans('news.important') }} ({{ count($promoted) }})</a></li>
       @endif
       @foreach($news as $daysAgo => $group)
         @if ($daysAgo == 0)
-          <li><a href="#posts-{{$daysAgo}}-ago">Today ({{ count($group) }})</a></li>
+          <li><a href="#posts-{{$daysAgo}}-ago">{{ trans('news.today') }} ({{ count($group) }})</a></li>
         @elseif ($daysAgo == 1)
-          <li><a href="#posts-{{$daysAgo}}-ago">Yesterday ({{ count($group) }})</a></li>
+          <li><a href="#posts-{{$daysAgo}}-ago">{{ trans('news.yesterday') }} ({{ count($group) }})</a></li>
         @elseif ($daysAgo > 7)
-          <li><a href="#posts-{{$daysAgo}}-ago">Over 1 week ago ({{ count($group) }})</a></li>
+          <li><a href="#posts-{{$daysAgo}}-ago">{{ trans('news.overoneweekago') }} ({{ count($group) }})</a></li>
         @else
-          <li><a href="#posts-{{$daysAgo}}-ago">{{ $daysAgo }} days ago ({{ count($group) }})</a></li>
+          <li><a href="#posts-{{$daysAgo}}-ago">{{ $daysAgo }} {{ trans('news.daysago') }} ({{ count($group) }})</a></li>
         @endif
       @endforeach
     </ul>
