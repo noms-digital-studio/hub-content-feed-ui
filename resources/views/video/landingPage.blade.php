@@ -1,6 +1,6 @@
 @extends('layouts.master'   )
 
-@section('title', 'Videos')
+@section('title', 'Video')
 
 @section('header')
 
@@ -12,7 +12,7 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12">
-              @include('video.recentVideo', ['recentVideos' => $recentVideos])
+                <p>{{ trans('video.description') }}</p>
             </div>
           </div>
         </div>
