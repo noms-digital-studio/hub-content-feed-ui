@@ -1,4 +1,4 @@
-<div class="card programme-card episode-card">
+<div class="card programme-card video-card episode-card">
 	<div class="shadow">
 		<a href="{{ action('VideosController@show', $episode->getId()) }}" id="programme-{{ $episode->getId() }}">
 			<div class="card-thumbnail">
