@@ -68,8 +68,10 @@
 }
 
 .card.programme-card.episode-card {
-    max-width: 25%;
-    width: 25%;
+    .card-thumbnail {
+        position: relative;
+    }
+
     .duration {
         .icon {
             zoom: 0.5;
@@ -77,25 +79,19 @@
             margin-right: 5px;
         }
         position: absolute;
-        right: 10px;
-        top: 131px;
         font-size: 13px;
         color: #a6a6a6;
         background: #000;
         opacity: 0.85;
-        padding: 2px 0px 2px 11px;
-        left: 208px;
+        padding: 2px 0px 2px 13px;
+        right: 0;
+        bottom: 0;
     }
-    .programme-title {
-        h6 {
-            margin-right: 65px;
-        }
-    }
+
     .icon-play-button-white {
         position: absolute;
-        left: 50%;
-        top: 45px;
-        margin-left: -35px;
+        top: 54px;
+        left: 97px;
         background-color: rgba(0,0,0,0.2);
         border-radius: 35px;
     }

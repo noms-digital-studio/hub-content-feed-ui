@@ -9,99 +9,110 @@ $card-border-radius: 0.5em;
     margin-right: -10px;
 }
 
+
+
 .card.programme-card {
-    position: relative;
     max-width: 25%;
     width: 25%;
-    display: flex;
-    box-sizing: border-box;
     padding: 0 10px 20px 10px;
+
     .shadow {
-        box-shadow: 0 1px 2px 2px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 1px 4px 0 #A1AAC1;
         border-radius: $card-border-radius;
         width: 100%;
         background-color: #fff;
     }
+
     img {
         max-width: 100%;
         width: 100%;
         display: block;
         border-radius: 0.5em 0.5em 0 0;
     }
-    .overlay {
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 10px;
-        right: 10px;
-        bottom: 20px;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: $card-border-radius;
-        a {
-            display: inline-block;
-            align-items: center;
+
+    .programme-title {
+        padding: 0.75em;
+        h6 {
+            margin: 0;
+            line-height: 21px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+    
+    //Video card additional styling
+    &.video-card { 
+        transition: all 100ms;        
+        &:hover {
+            transform: scale(1.1);
+            
+            .programme-title h6 {
+                color: #32B39C;
+            }
+
+            .shadow {
+                box-shadow: 0 2px 8px 0 #A1AAC1;
+            }
+        }
+    }
+
+    //Radio card additional styling
+    &.radio-card {
+        transition: all 100ms;
+        position: relative;
+        display: flex;
+        box-sizing: border-box;
+        line-height: 21px;    
+        .overlay {
+            opacity: 0;
             position: absolute;
             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            text-decoration: none !important;
-            padding: 10px;
-            &:hover {
-                text-decoration: none;
-            }
-            .programme-name {
-                font-weight: bold;
-                color: #000;
-            }
-            h4 {
-                flex-shrink: 1;
-                font-size: 12px;
-                line-height: 18px;
-                color: #000;
-                position: relative;
-                padding-left: 40px;
-                font-weight: bold;
-                margin-top: 40px;
-                .icon {
-                    zoom: 0.5;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
+            left: 10px;
+            right: 10px;
+            bottom: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: $card-border-radius;
+            overflow: hidden;
+            a {
+                background: transparent url(/img/tile-equaliser.png) bottom center no-repeat;
+                background-color: $colour-green;
+                background-size: contain;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                padding: 12px;
+                &:hover {
+                    text-decoration: none;
+                }
+                .programme-name {
+                    font-weight: 600;
+                    color: $colour-ink;
+                }
+                h4 {
+                    font-size: 16px;
+                    color: $colour-ink;
+                    position: absolute !important;
+                    bottom: -13px !important;
                 }
             }
         }
-    }
-    &:hover {
-        .overlay {
-            opacity: 1;
-        }
+        &:hover {
+            transform: scale(1.1);
+            .overlay {
+                opacity: 0.9;
+            }
 
-        .programme-title {
-            opacity: 0;
-        }
-    }
-    .programme-title {
-        position: relative;
-        bottom: $card-gutter * 0;
-        left: $card-gutter * 0;
-        right: $card-gutter * 0;
-        background: white;
-        margin: 0;
-        padding: 0.75em;
-        border-bottom-left-radius: $card-border-radius;
-        border-bottom-right-radius: $card-border-radius;
-        h6 {
-            margin: 0;
-        }
-    }
-}
+            .programme-title {
+                opacity: 0;
+            }
 
-.radio-card .overlay a {
-    background: transparent url(/img/equaliser.png) bottom center no-repeat;
-    background-size: contain;
-    h4 {
-        position: absolute !important;
-        bottom: -7px !important;
+            .shadow {
+                box-shadow: 0 2px 8px 0 #A1AAC1;
+            }
+        }
     }
 }
