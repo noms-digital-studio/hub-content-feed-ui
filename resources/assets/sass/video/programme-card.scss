@@ -60,10 +60,11 @@ $card-border-radius: 0.5em;
 
     //Radio card additional styling
     &.radio-card {
+        transition: all 100ms;
         position: relative;
         display: flex;
         box-sizing: border-box;
-    
+        line-height: 21px;    
         .overlay {
             opacity: 0;
             position: absolute;
@@ -73,48 +74,44 @@ $card-border-radius: 0.5em;
             bottom: 20px;
             background: rgba(255, 255, 255, 0.9);
             border-radius: $card-border-radius;
+            overflow: hidden;
             a {
-                background: transparent url(/img/equaliser.png) bottom center no-repeat;
+                background: transparent url(/img/tile-equaliser.png) bottom center no-repeat;
+                background-color: $colour-green;
                 background-size: contain;
                 position: absolute;
                 top: 0;
                 left: 0;
                 right: 0;
                 bottom: 0;
-                padding: 10px;
+                padding: 12px;
                 &:hover {
                     text-decoration: none;
                 }
                 .programme-name {
-                    font-weight: bold;
-                    color: #000;
+                    font-weight: 600;
+                    color: $colour-ink;
                 }
                 h4 {
-                    flex-shrink: 1;
-                    font-size: 12px;
-                    line-height: 18px;
-                    color: #000;
-                    padding-left: 40px;
-                    font-weight: bold;
-                    margin-top: 40px;
+                    font-size: 16px;
+                    color: $colour-ink;
                     position: absolute !important;
-                    bottom: -7px !important;
-                    .icon {
-                        zoom: 0.5;
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                    }
+                    bottom: -13px !important;
                 }
             }
         }
         &:hover {
+            transform: scale(1.1);
             .overlay {
-                opacity: 1;
+                opacity: 0.9;
             }
 
             .programme-title {
                 opacity: 0;
+            }
+
+            .shadow {
+                box-shadow: 0 2px 8px 0 #A1AAC1;
             }
         }
     }
