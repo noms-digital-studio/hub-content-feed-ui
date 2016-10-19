@@ -23,6 +23,7 @@
 	<a href="#" id="play-prev-show"><span class="icon icon-prev-small">{{ trans('radio.previousshow') }}</span></a>
 	<a href="#" id="play-next-show"><span class="icon icon-next-small">{{ trans('radio.nextshow') }}</span></a>
 
+	<div id="player-overlay"></div>
 	<div id="equaliser"></div>
 </div>
 

@@ -109,7 +109,7 @@
                     background: transparent;
                     .vjs-play-progress {
                         height: 100%;
-                        background:rgba(0,0,0,0.3);
+                        background:rgba(52,152,219,0.75);
                         &::before {
                             top: auto;
                             bottom: -0.5em;
@@ -190,4 +190,13 @@
         margin-top: 7px;
         color: #a6a6a6;
     }
+}
+
+#player-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.3);
 }

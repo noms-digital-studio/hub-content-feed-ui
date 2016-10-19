@@ -152,6 +152,9 @@ $(document).ready(function () {
 
                 $('.vjs-current-time').css({'left': currentTime + 'px'});
                 $('.vjs-duration').css({'left': duration + 'px'});
+                
+                //Make Radio player overlay scroll with progress bar
+                $('#player-overlay').css({'left': duration + 'px'});
             });
 
 
