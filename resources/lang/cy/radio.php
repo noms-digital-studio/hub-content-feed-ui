@@ -7,5 +7,6 @@ return [
   'episodestitle' => 'penodau',
   'previousshow' => 'Sioe blaenorol',
   'nextshow' => 'Sioe nesaf',
-  'playshow' => 'Chwarae'
+  'playshow' => 'Chwarae',
+  'back' => 'Yn ôl i Radio',
 ];

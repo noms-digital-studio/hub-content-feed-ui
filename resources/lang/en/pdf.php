@@ -2,5 +2,6 @@
 
 return [
 	'subjects' => 'Subjects',
-	'title' => 'Educational Courses'
+	'title' => 'Educational Courses',
+	'back' => 'Back to Subjects'
 ];
