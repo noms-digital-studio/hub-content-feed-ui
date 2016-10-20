@@ -7,7 +7,7 @@
 @include('stickyNavigation', ['title' => trans('navigation.video'), 'icon' => 'icon-icon-video', 'titleLink' => action('VideosController@showVideoLandingPage'), 'colour' => 'red' ])
 
 <div class="video-player-wrap dark">
-  <a href="{{ action('VideosController@showVideoLandingPage') }}" id="back-to-landing"><span class="icon icon-icon-back-white-small" aria-hidden="true"></span>{{ trans('video.back') }}</a>
+  <a href="{{ action('VideosController@showVideoLandingPage') }}" id="back-to-landing"><span class="arrow" aria-hidden="true"></span>{{ trans('video.back') }}</a>
   <div class="container">
     <div class="row">
       <div class="col-md-7">
