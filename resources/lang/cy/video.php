@@ -6,4 +6,5 @@ return [
   'episodes' => 'Penodau',
   'about' => 'Ynglŷn',
   'newvideo' => 'Fideo newydd',
+  'back' => 'Yn ôl ir Fideo',
 ];

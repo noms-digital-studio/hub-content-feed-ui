@@ -105,3 +105,32 @@ body {
     }
   }
 }
+
+#back-to-landing {
+    text-align: left;
+    display: inline-block;
+    z-index: 5;
+    position: absolute;
+    top: 2em;
+    left: 2em;
+    text-decoration: none;
+    font-size: 16px;
+    color: $colour-white;
+    background: $colour-ink;
+    border-radius: 10px;
+    padding: 10px;
+    line-height: 25px;
+    font-weight: 600;
+
+    &:hover {
+        color: #32B39C;
+    }
+
+    &:active {
+        color: #A1AAC1;
+    }
+
+    .icon {
+        margin-right: 10px;
+    }
+}

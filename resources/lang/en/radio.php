@@ -8,4 +8,5 @@ return [
   'previousshow' => 'Previous show',
   'nextshow' => 'Next show',
   'playshow' => 'Play',
+  'back' => 'Back to Radio',
 ];
