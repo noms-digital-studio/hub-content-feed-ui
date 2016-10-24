@@ -38,7 +38,7 @@
             top: 0;
             height: 100%;
             .vjs-play-control {
-                z-index: 99;
+                z-index: 30;
                 height: 70px;
                 width: 70px;
                 text-indent: -999px;
@@ -53,7 +53,7 @@
             }
             .vjs-mute-control {
                 position: relative;
-                z-index: 99;
+                z-index: 30;
                 height: 50px;
                 margin-left: -63px;
             }
@@ -62,7 +62,7 @@
                 position: absolute;
                 left: 50%;
                 width: 100px;
-                z-index: 99;
+                z-index: 30;
                 height: auto;
                 .vjs-slider-horizontal {
                     width: 100%;
@@ -141,7 +141,7 @@
     }
     #play-next-show {
       position: relative;
-      z-index: 99;
+      z-index: 30;
       margin-left: 60px;
       top: 38px;
       .icon-next-small-grey {
@@ -150,7 +150,7 @@
     }
     #play-prev-show {
       position: relative;
-      z-index: 99;
+      z-index: 30;
       margin-right: 60px;
       top: 38px;
       .icon-prev-small-grey {
