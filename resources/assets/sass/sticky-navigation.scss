@@ -134,35 +134,36 @@
 }
 
 .back-to-hub {
-    float: left;
-    margin-top: 22px;
-    margin-right: -150px;
-    margin-left: 12px;
+    font-weight: 600;
+    position: absolute;
+    font-size: 16px;
+    line-height: 18px;
+    text-decoration: none;
+    color: #425582;
+    top: 22px;
+    left: 27px;
 
-    .hub-content & {
-        margin-top: 30px;
-        position: relative;
-    }
-
-    :hover {
+    &:hover {
         color: #32B39C;
     }
 
     :active {
         color: #A1AAC1;
     }
+
+    .icon-icon-hub {
+        margin-right: 8px;
+        margin-bottom: -5px;
+        vertical-align: sub;
+    }
+
+    .hub-content & {
+        margin-top: 8px;
+        text-align: left;
+    }
 }
 
 .back-to-the-hub-text {
-    font-weight: 600;
-    display: inline-block;
-    position: absolute;
-    font-size: 16px;
-    line-height: 18px;
     width: 90px;
-    text-align: left;
-    text-decoration: none;
-    color: #425582;
-    top: 8px;
-    left: 60px;
+    display: inline-block;
 }
