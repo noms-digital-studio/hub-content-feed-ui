@@ -10,7 +10,7 @@
 	<div class="container" id="header">
 		<div class="row">
 			<div class="col-xs-12">
-				<p>{{ trans('radio.description') }}</p>
+				<h1>{{ trans('radio.description') }}</h1>
 			</div>
 		</div>
 	</div>
