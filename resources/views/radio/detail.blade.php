@@ -41,7 +41,7 @@
 				<li>
 					<a href="#" data-audio-src="{{ $show->radio_show_url }}" data-audio-title="{{ $show->title }}" class="play-radio-show" id="show-{{ $show->nid }}">
 						<span class="icon icon-play-button play-show-button">{{ trans('radio.playshow') }}</span>
-						{{ $show->title }}: {{ date('j/m/Y', $show->date) }}
+						{{ $show->title }}
 						<div class="duration">
 							@if($show->duration)
 								<span class="icon icon-clock play-show-icon-clock" aria-hidden="true"></span>
