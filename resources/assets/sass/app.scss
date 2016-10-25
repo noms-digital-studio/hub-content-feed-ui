@@ -61,6 +61,9 @@ body {
   &.radio {
     background-color: $colour-light-blue;
     background-image: url(/img/radio-landing.jpg);
+    h1 {
+        color: #fff;
+    }
   }
 
   &.news {
