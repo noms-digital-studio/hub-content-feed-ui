@@ -30,7 +30,7 @@
 				@foreach($pdfs->pdfs as $pdf)
 				<li>
 					<a class="pdf-link" href="{{ $pdf->pdf_url}}" id="course-{{ $pdf->nid }}" target="_blank">
-						<span class="icon icon-icon-certificate" aria-hidden="true"></span>
+						<span class="icon icon-icon-education" aria-hidden="true"></span>
 						{{ $pdf->title }}
 					</a>
 				</li>
