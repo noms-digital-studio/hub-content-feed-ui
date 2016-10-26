@@ -1,4 +1,4 @@
-$card-gutter: 20px;     // The distance between cards
+$card-gutter: 20px;     //The distance between cards
 $card-border-radius: 0.5em;
 
 .channel-programmes {
@@ -8,8 +8,6 @@ $card-border-radius: 0.5em;
     margin-left: -10px;
     margin-right: -10px;
 }
-
-
 
 .card.programme-card {
     max-width: 25%;
@@ -55,6 +53,13 @@ $card-border-radius: 0.5em;
             .shadow {
                 box-shadow: 0 2px 8px 0 #A1AAC1;
             }
+        }
+    }
+
+    //Video episode card additional styling
+    &.episode-card { 
+        .programme-title {
+            height: 87px;
         }
     }
 
