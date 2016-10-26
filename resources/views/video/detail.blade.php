@@ -69,7 +69,7 @@
   <div class="row">
     <div class="col-xs-12">
       <div class="channel-programmes channel-episodes">
-        <div>{!! $video->getCategories()->description !!}</div>
+        <div class="channel-description">{!! $video->getCategories()->description !!}</div>
       </div>
     </div>
   </div>
