@@ -67,9 +67,9 @@
 <!-- Information about the programme-->
 <div id="AboutInfo">
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-9 col-centered">
       <div class="channel-programmes channel-episodes">
-        <div class="channel-description">{!! $video->getCategories()->description !!}</div>
+        <div>{!! $video->getCategories()->description !!}</div>
       </div>
     </div>
   </div>
