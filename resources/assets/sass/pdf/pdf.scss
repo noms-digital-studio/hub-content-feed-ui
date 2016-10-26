@@ -41,6 +41,12 @@
                 .icon {
                     margin-right: 5px;
                 }
+                &:hover {
+                    color: $colour-green;
+                }
+                &:active {
+                    color: $colour-pastel-blue;
+                }
             }
         }
     }
