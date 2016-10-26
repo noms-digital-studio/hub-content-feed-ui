@@ -24,7 +24,12 @@
 	<div class="row">
 		<div class="col-xs-8 col-xs-offset-2">
       {!! $pdfs->parent->additional_description !!}
-			<div class="pdf-back"><a href="{{ action('PdfsController@showPdfLandingPage', $pdfs->parent->parent_tid) }}" id="back-to-cat"><span class="icon icon-icon-back" aria-hidden="true"></span>{{ trans('pdf.back') }}</a></div>
+			<div class="pdf-back">
+				<a href="{{ action('PdfsController@showPdfLandingPage', $pdfs->parent->parent_tid) }}" id="back-to-cat">
+					<span class="icon icon-icon-back" aria-hidden="true"></span>
+					{{ trans('pdf.back') }}
+				</a>
+			</div>
       <h3>{{ $pdfs->parent->parent_name }}</h3>
 			<ul>
 				@foreach($pdfs->pdfs as $pdf)
