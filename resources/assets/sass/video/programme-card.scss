@@ -13,6 +13,7 @@ $card-border-radius: 0.5em;
     max-width: 25%;
     width: 25%;
     padding: 0 10px 20px 10px;
+    display: flex;
 
     .shadow {
         box-shadow: 0 1px 4px 0 #A1AAC1;
@@ -53,13 +54,6 @@ $card-border-radius: 0.5em;
             .shadow {
                 box-shadow: 0 2px 8px 0 #A1AAC1;
             }
-        }
-    }
-
-    //Video episode card additional styling
-    &.episode-card { 
-        .programme-title {
-            height: 87px;
         }
     }
 
