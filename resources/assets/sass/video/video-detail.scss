@@ -41,7 +41,7 @@
     text-align: center;
     display: table;
     margin: 30px auto;
-    
+
     a {
         font-size: 20px;
         text-decoration: none;
@@ -50,11 +50,17 @@
         background: #fff;
         color: #000;
         width: 205px;
-
+        &:hover {
+            color: $colour-green;            
+        }
+        &:active {
+            color: $colour-mid-grey;
+        }
         &.active {
-            background: #32B39C;
+            background: $colour-green;
             color: #fff;
         }
+
 
         &:first-child {
             border-top-left-radius: 11px;

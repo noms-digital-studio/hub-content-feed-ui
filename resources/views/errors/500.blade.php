@@ -12,7 +12,7 @@
       <div class="title">0</div>
       <div class ="error">{{ trans('error.500-title') }}</div>
       <p>{{ trans('error.500-message') }}</p>
-      <a href="/" id="back">{{ trans('error.500-button') }}n</a>
+      <a href="/" id="back">{{ trans('error.500-button') }}</a>
     </div>
   </div>
 </div>
