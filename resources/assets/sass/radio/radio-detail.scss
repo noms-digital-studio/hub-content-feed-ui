@@ -160,8 +160,59 @@
 }
 
 .radio-container {
+   ul li {
+        padding: 0px;
+        overflow: hidden;
+        a {
+            padding: 15px;
+        }
+    }
+    li:not(.show-playing) {
+        a {
+            &:hover {
+                .play-show-button {
+                    background-position: -240px -180px;
+                }
+            }
+        
+            &:active {
+                background-color: $colour-pastel-blue;
+                color: $colour-white;
+
+                .play-show-button {
+                    background-position: -240px -138px;
+                }
+                .duration {
+                    color: $colour-white;
+                    .icon-clock {
+                        background-position: -256px -240px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .show-playing {
+        a {
+            &:hover {
+                .episode-list-icon {
+                    color: $colour-white;
+                }
+            }
+        }
+    }
+    
+    .episode-list-icon {
+        display: inline-block;
+    }
     .icon {
-        zoom: 0.5;
+        zoom: 0.8;
+    }
+    .icon-clock {
+        zoom: 0.6;
+    }
+    .play-show-icon-clock {
+        zoom: 0.6;
     }
     .show-playing {
         background-color: #1E90FF;
