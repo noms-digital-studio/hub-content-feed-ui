@@ -43,7 +43,9 @@
     @if(  count($categoryEpisodes) > 1 )
       <a href="#" id="EpisodeLink" class="active">{{ trans('video.episodes') }}</a>
     @endif
+    @if( $video->getCategories()->description )
       <a href="#" id="AboutLink" class="{{count($categoryEpisodes) > 1 ? '' : 'active'}}">{{ trans('video.about') }}</a>
+    @endif
     </div>
   </div>
 </div>
@@ -64,6 +66,7 @@
 </div>
 @endif
 
+@if( $video->getCategories()->description )
 <!-- Information about the programme-->
 <div id="AboutInfo">
   <div class="row">
@@ -74,5 +77,6 @@
     </div>
   </div>
 </div>
+@endif
 
 @endsection
