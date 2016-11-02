@@ -169,8 +169,18 @@
     }
     li:not(.show-playing) {
         a {
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+            }
+
             &:hover {
                 .play-show-button {
+                    //Change which play icon the css loads from the sprite
                     background-position: -240px -180px;
                 }
             }
@@ -181,8 +191,10 @@
 
                 .play-show-button {
                     background-position: -240px -138px;
+                    pointer-events: none;
                 }
                 .duration {
+                    pointer-events: none;
                     color: $colour-white;
                     .icon-clock {
                         background-position: -256px -240px;
