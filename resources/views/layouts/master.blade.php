@@ -32,11 +32,12 @@
         <div id="content" class="container">
             @yield('content')
         </div>
+
+		@if (Request::is('/') || Request::is('hub/*') || Request::is('/hub'))
+		@else
+        <footer class="footer">
+            (c) 2016 Ministry of Justice | Registered in England & Wales 1234567
+        </footer>
+		@endif
     </body>
-    @if (Request::is('/') || Request::is('hub/*') || Request::is('/hub'))
-    @else
-        <div class ="holder">
-            <div class ="footer">(c) 2016 Ministry of Justice | Registered in England & Wales 1234567</div>
-        </div>
-    @endif
 </html>
