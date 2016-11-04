@@ -35,6 +35,18 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+.footer {
+  font-size: 14px;
+  color: $colour-blue;
+  text-align: center;
+	width: 1118px;
+	margin: 20px auto;
+  padding-top: 20px;
+	bottom:0;
+	left:0;
+  border-top: 1px solid rgba(161,170,193,0.50);
+}
+
 .icon {
   display: inline-block;
   vertical-align: middle;
