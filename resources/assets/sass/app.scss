@@ -23,6 +23,7 @@
 @import "jquery.modal";
 @import "errors/errors";
 @import "sticky-navigation";
+@import "footer";
 
 html {
     min-height: 100%;
@@ -39,17 +40,6 @@ body {
     background: #efefef;
     font-family: "Open Sans", sans-serif;   
     margin-bottom: 60px;
-}
-
-.footer {
-    font-size: 14px;
-    color: $colour-blue;
-    text-align: center;       
-    padding: 20px 0;    
-    border-top: 1px solid $colour-mid-grey;
-    width: 100%;
-    position: absolute;
-    bottom: 0;        
 }
 
 .icon {
