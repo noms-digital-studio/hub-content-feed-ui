@@ -13,7 +13,6 @@
 
 .video-details {
     font-weight: 300;
-    height: 382px;
     position: relative;
 
     .video-title {
@@ -21,6 +20,7 @@
     }
 
     .video-duration {
+        float: left;
         &::before {
             content: '';
             display: inline-block;
@@ -102,4 +102,14 @@
         background-color: rgba(0,0,0,0.2);
         border-radius: 35px;
     }
+}
+
+.btn-videoShowMore, 
+.btn-videoShowLess {
+    float: right;
+    color: $colour-white;
+}
+
+.video-item--expanded {
+    display: none;
 }

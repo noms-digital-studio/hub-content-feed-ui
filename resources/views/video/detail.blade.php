@@ -17,16 +17,39 @@
         </video>
       </div>
 
-      <div class="col-md-4 video-details">
+      <div class="col-md-5 video-details">
         <span class="video-programme">{{ $video->getCategories()->name }}</span>
-
         <h2 class="video-title">{{ $video->getTitle() }}</h2>
+        <div class="video-item">
+          <!-- Show More Button -->
+          <div class="video-item--trimmed" id="trimmed">
+              {!! $video->getTrimmedDescription() !!}
 
-        <div class="video-description">{!! $video->getDescription() !!}</div>
+            @if($video->getDuration())
+              <div class="video-duration">{{ $video->getDuration() }}</div>
+            @endif
 
-        @if($video->getDuration())
-          <div class="video-duration">{{ $video->getDuration() }}</div>
-        @endif
+            @if ($video->hasLongDescription())
+              <a href="#" class="btn btn-videoShowMore">
+                Show More
+              </a>
+            @endif
+          </div>
+
+          <!-- Show Less Button -->
+          <div class="video-item--expanded" id="expanded">
+              {!! $video->getDescription() !!}
+
+              @if($video->getDuration())
+              <div class="video-duration">{{ $video->getDuration() }}</div>
+              @endif
+
+              <a href="#" class="btn btn-videoShowLess" >
+                Show Less
+              </a>		
+          </div>
+
+        </div>
 
       </div>
     </div>
@@ -34,6 +57,7 @@
 </div>
 
 @endsection
+
 
 @section('content')
 
