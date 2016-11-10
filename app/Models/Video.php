@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-define('LONG_DESCRIPTION_COUNT', 55);
+define('LONG_DESCRIPTION_COUNT', 65);
 
 class Video implements \JsonSerializable
 {
