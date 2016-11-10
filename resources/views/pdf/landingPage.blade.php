@@ -4,9 +4,9 @@
 
 @section('top_content')
 
-@include('stickyNavigation', ['title' => 'NEC Courses', 'icon' => 'icon-icon-education', 'titleLink' => '', 'colour' => 'purple', 'titleLink' => action('PdfsController@showPdfLandingPage', $categories->parent->cat_id), 'colour' => 'purple' ])
+@include('stickyNavigation', ['title' => $categories->parent->cat_name, 'icon' => 'icon-icon-education', 'colour' => 'purple', 'titleLink' => action('PdfsController@showPdfLandingPage', $categories->parent->cat_id), 'colour' => 'purple' ])
 
-<div class="header-nav-wrap education">
+<div class="header-nav-wrap education" style="background-image: url({{ $categories->parent->cat_banner }})">
 	<div class="container" id="header">
   		<div class="education-header">
 			<div class="row">
