@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+define('LONG_DESCRIPTION_COUNT', 65);
+
 class Video implements \JsonSerializable
 {
 
@@ -41,6 +43,25 @@ class Video implements \JsonSerializable
 	public function getDescription()
 	{
 		return $this->description;
+	}
+
+	public function hasLongDescription()
+	{
+		return str_word_count($this->description) > LONG_DESCRIPTION_COUNT;
+	}
+
+	public function getTrimmedDescription()
+	{
+		$numberOfWords = str_word_count($this->description);
+
+		if ($numberOfWords > LONG_DESCRIPTION_COUNT) {
+			$words = preg_split("/\s+/", $this->description);
+			$words = array_slice($words, 0, LONG_DESCRIPTION_COUNT);
+			return implode(" ", $words) . '...';
+		}
+		else {
+			return $this->description;
+		}
 	}
 
 	public function getThumbnail()

@@ -23,6 +23,15 @@ $(document).ready(function () {
 (function ($) {
     $(function () {
 
+        var videoZoom = 1;
+
+        //Increase size of player once played
+        $('#video_player').on('play', function () {
+            $('#video_player').css({'zoom': videoZoom});
+            $('#playerColSize').addClass('col-md-7').removeClass('col-md-5');
+            $('#textColSize').addClass('col-md-5').removeClass('col-md-7');
+        });
+
         var videoPlayerId = '#video_player';
         var radioPlayerId = '#radio-player';
         var showTitle = '';

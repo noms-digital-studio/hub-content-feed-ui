@@ -10,23 +10,46 @@
   <a href="{{ action('VideosController@showVideoLandingPage') }}" id="back-to-landing"><span class="arrow" aria-hidden="true"></span>{{ trans('video.back') }}</a>
   <div class="container">
     <div class="row">
-      <div class="col-md-7">
-        <video id="video_player" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" width="600" height="240" data-setup='{}' controls poster="{{$video->getThumbnail()}}">
+      <div class="col-md-5" id="playerColSize">
+        <video id="video_player" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" data-setup='{}' controls poster="{{$video->getThumbnail()}}">
           <source src="{{ $video->getUrl() }}">
           <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
         </video>
       </div>
 
-      <div class="col-md-4 video-details">
+      <div class="col-md-7 video-details" id="textColSize">
         <span class="video-programme">{{ $video->getCategories()->name }}</span>
-
         <h2 class="video-title">{{ $video->getTitle() }}</h2>
+        <div class="video-item">
+          <!-- Show More Button -->
+          <div class="video-item--trimmed" id="trimmed">
+              {!! $video->getTrimmedDescription() !!}
 
-        <div class="video-description">{!! $video->getDescription() !!}</div>
+            @if($video->getDuration())
+              <div class="video-duration">{{ $video->getDuration() }}</div>
+            @endif
 
-        @if($video->getDuration())
-          <div class="video-duration">{{ $video->getDuration() }}</div>
-        @endif
+            @if ($video->hasLongDescription())
+              <a href="#" class="btn btn-videoShowMore">
+                Show More
+              </a>
+            @endif
+          </div>
+
+          <!-- Show Less Button -->
+          <div class="video-item--expanded" id="expanded">
+              {!! $video->getDescription() !!}
+
+              @if($video->getDuration())
+              <div class="video-duration">{{ $video->getDuration() }}</div>
+              @endif
+
+              <a href="#" class="btn btn-videoShowLess" >
+                Show Less
+              </a>		
+          </div>
+
+        </div>
 
       </div>
     </div>
@@ -34,6 +57,7 @@
 </div>
 
 @endsection
+
 
 @section('content')
 
