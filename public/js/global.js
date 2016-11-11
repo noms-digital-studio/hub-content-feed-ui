@@ -145,10 +145,6 @@ $(document).ready(function () {
             });
 
             player.on('timeupdate', function (e) {
-                window.onload = function(){
-                    document.body.vjs-current-time 
-                }
-
                 var progressPosition = $('.vjs-progress-control .vjs-slider-horizontal .vjs-play-progress').width();
                 var currentTime = progressPosition - 27;
                 var duration = progressPosition;
