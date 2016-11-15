@@ -154,16 +154,16 @@ $(document).ready(function () {
             });
 
             player.on('timeupdate', function (e) {
-
                 var progressPosition = $('.vjs-progress-control .vjs-slider-horizontal .vjs-play-progress').width();
                 var currentTime = progressPosition - 27;
                 var duration = progressPosition;
 
-                $('.vjs-current-time').css({'left': currentTime + 'px'});
-                $('.vjs-duration').css({'left': duration + 'px'});
+                $('.vjs-current-time').css({'left': currentTime -30 + 'px'});
+                $('.vjs-duration').css({'left': duration -30 + 'px'});
                 
                 //Make Radio player overlay scroll with progress bar
-                $('#player-overlay').css({'left': duration + 'px'});
+                $('#player-overlay').css({'left': duration  + 'px'});
+            
             });
 
 
