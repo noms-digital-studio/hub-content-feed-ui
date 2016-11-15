@@ -6,6 +6,7 @@
         <script src="/js/video.min.js"></script>
         <script src="/js/global.js" type="text/javascript"></script>
 		<script src="/js/news.js" type="text/javascript"></script>
+        <script src="/js/video.js" type="text/javascript"></script>
         <script src="/js/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="/js/bootstrap.js" type="text/javascript"></script>
 
@@ -32,5 +33,12 @@
         <div id="content" class="container">
             @yield('content')
         </div>
+
+		@if (Request::is('/') || Request::is('hub/*') || Request::is('hub'))
+		@else
+        <footer class="footer">
+            &copy{{ trans('footer.message') }}
+        </footer>
+		@endif
     </body>
 </html>
