@@ -37,7 +37,7 @@ body {
 }
 
 body {
-    background: #efefef;
+    background: $colour-white;
     font-family: "Open Sans", sans-serif;   
     margin-bottom: 60px;
 }
@@ -50,7 +50,7 @@ body {
 .header-nav-wrap {
     z-index: 1;
     margin-top: 96px;
-    color: #fff;
+    color: $colour-white;
     font-size: 21px;
     text-align: center;
     line-height: 24px;
@@ -69,7 +69,7 @@ body {
         background-color: $colour-light-blue;
         background-image: url(/img/radio-landing.jpg);
         h1 {
-            color: #fff;
+            color: $colour-white;
         }
     }
 
@@ -100,10 +100,10 @@ body {
     }
 
     &.white {
-        color: #ffffff;
+        color: $colour-white;
 
         a {
-            color: #ffffff;
+            color: $colour-white;
         }
     }
 
