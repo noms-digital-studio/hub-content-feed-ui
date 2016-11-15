@@ -33,5 +33,12 @@
         <div id="content" class="container">
             @yield('content')
         </div>
+
+		@if (Request::is('/') || Request::is('hub/*') || Request::is('hub'))
+		@else
+        <footer class="footer">
+            &copy{{ trans('footer.message') }}
+        </footer>
+		@endif
     </body>
 </html>
