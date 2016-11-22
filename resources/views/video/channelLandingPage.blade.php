@@ -45,15 +45,16 @@
 <div id="EpisodeInfo">
 	<div class="row">
 		<div class="col-xs-12">
-			<div class="channel-programmes channel-episodes">
-				@foreach($data->programmes as $programme)
-				@include('video.programmeCard', ['programme' => $programme])
-				@endforeach
-			</div>
+			@if($data->programmes != null)
+				<div class="channel-programmes channel-episodes">
+					@foreach($data->programmes as $programme)
+					@include('video.programmeCard', ['programme' => $programme])
+					@endforeach
+				</div>
+			@endif
 		</div>
 	</div>
 </div>
-
 
 <!-- Information about the programme-->
 <div id="AboutInfo">
