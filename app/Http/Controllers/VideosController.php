@@ -22,4 +22,11 @@ class VideosController extends Controller {
 
     return view('video.detail', ['video' => $video, 'categoryEpisodes' => $categoryEpisodes]);
   }
+  
+  function showChannelLandingPage($tid) {
+	  
+	  $data = Videos::channelLandingPage($tid);
+	  
+	  return view('video.channelLandingPage', ['data' => $data]);	  
+  }
 }
