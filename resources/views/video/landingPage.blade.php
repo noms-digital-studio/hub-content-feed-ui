@@ -28,6 +28,11 @@
 @foreach($videos as $channel)
   <div class="channel">
     <h2>{{ $channel->channel }}</h2>
+    @if ($channel->landing_page != null)
+    <a href="{{ action('VideosController@showChannelLandingPage', $channel->tid) }}" class="btn btn-toChannel">
+        Go to Channel
+    </a>
+    @endif
 
     <div class="channel-programmes">
       @foreach($channel->programmes as $programme)
