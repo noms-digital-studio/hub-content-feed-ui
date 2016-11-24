@@ -14,12 +14,6 @@ $card-border-radius: 0.5em;
     }
 }
 
-.btn-toChannel {
-        position:relative;
-        top:-53px;
-        left:170px;
-}
-
 .card.programme-card {
     max-width: 25%;
     width: 25%;
@@ -125,5 +119,12 @@ $card-border-radius: 0.5em;
                 box-shadow: 0 2px 8px 0 #A1AAC1;
             }
         }
+    }
+}
+
+.channel {
+    h2 {
+        display:inline-block;
+        margin-right: 20px;
     }
 }
