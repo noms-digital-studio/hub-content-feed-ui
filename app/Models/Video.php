@@ -16,8 +16,11 @@ class Video implements \JsonSerializable
 	protected $categories;
 	protected $channel;
 	protected $tags = array();
+	protected $parent_channel;
+	protected $parent_channel_landing_page;
+	protected $parent_channel_id;
 
-	public function __construct($nid, $title, $description, $url, $thumbnail, $duration, $categories, $tags, $channel)
+	public function __construct($nid, $title, $description, $url, $thumbnail, $duration, $categories, $tags, $channel, $parent_channel = "", $parent_channel_landing_page = false, $parent_channel_id = "")
 	{
 		$this->nid = $nid;
 		$this->title = $title;
@@ -28,6 +31,9 @@ class Video implements \JsonSerializable
 		$this->categories = $categories;
 		$this->tags = $tags;
 		$this->channel = $channel;
+		$this->parent_channel = $parent_channel;
+		$this->parent_channel_landing_page = $parent_channel_landing_page;
+		$this->parent_channel_id = $parent_channel_id;
 	}
 
 	public function getId()
@@ -94,6 +100,21 @@ class Video implements \JsonSerializable
 		return $this->channel;
 	}
 
+	public function getParentChannel()
+	{
+		return $this->parent_channel;
+	}
+	
+	public function getParentChannelExistsValue()
+	{
+		return $this->parent_channel_landing_page;
+	}
+	
+	public function getParentChannelId()
+	{
+		return $this->parent_channel_id;
+	}
+	
 	public function jsonSerialize()
 	{
 		return array(
