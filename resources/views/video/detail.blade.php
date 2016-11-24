@@ -10,11 +10,10 @@
 	<div class="container">
 		<div class="row">
 			@if($video->getParentChannelExistsValue())
-				<a href="{{ action('VideosController@showChannelLandingPage', $video->getParentChannelId()) }}" id="back-to-landing"><span class="arrow" aria-hidden="true"></span>{{ trans('video.back') }} {{ $video->getParentChannel()}}</a>			
+				<a href="{{ action('VideosController@showChannelLandingPage', $video->getParentChannelId()) }}" id="back-to-landing"><span class="arrow" aria-hidden="true"></span>{{ trans('video.backTo') }} {{ $video->getParentChannel()}}</a>			
 			@else
 				<a href="{{ action('VideosController@showVideoLandingPage') }}" id="back-to-landing"><span class="arrow" aria-hidden="true"></span>{{ trans('video.back') }}</a>
-			@endif
-				
+			@endif				
 		</div>
 		<div class="row">
 			<div class="col-md-5" id="playerColSize">

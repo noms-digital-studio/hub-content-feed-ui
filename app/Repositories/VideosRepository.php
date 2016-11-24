@@ -62,6 +62,7 @@ class VideosRepository
 	{
 		$response = $this->client->get($this->locale . '/api/video/' . $nid);
 
+
 		$video = json_decode($response->getBody());
 
 		return new Video(
@@ -74,7 +75,8 @@ class VideosRepository
 			!empty($video->video_data->categories) ? $video->video_data->categories : "", 
 			$video->video_data->tags, !empty($video->video_data->channel_name) ? $video->video_data->channel_name : "",
 			$video->channel_data->channel_name,
-			$video->channel_data->channel_landing_page
+			$video->channel_data->channel_landing_page,
+			$video->channel_data->channel_id
 		);
 	}
 
@@ -127,5 +129,4 @@ class VideosRepository
 
 		return $responseTree;
 	}
-
 }
