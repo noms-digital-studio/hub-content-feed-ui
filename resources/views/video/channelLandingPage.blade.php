@@ -12,9 +12,9 @@
 	<a href="{{ action('VideosController@showVideoLandingPage') }}" id="back-to-landing"><span class="arrow" aria-hidden="true"></span>{{ trans('video.back') }}</a>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-5">
-				<video id="video_player" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" data-setup='{}' controls poster="">
-					<source src="">
+			<div class="col-md-5" id="playerColSize">
+				<video id="video_player" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="auto" data-setup='{}' controls poster="{{ $data->thumbnail_url }}">
+					<source src="{{ $data->video_url }}">
 					<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
 				</video>
 			</div>
@@ -61,7 +61,7 @@
 	<div class="row">
 		<div class="col-xs-9 col-centered">
 			<div class="channel-programmes channel-episodes">
-				MORE INFO
+				{!! $data->info !!}
 			</div>
 		</div>
 	</div>
