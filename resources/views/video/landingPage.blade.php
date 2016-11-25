@@ -28,7 +28,7 @@
 @foreach($videos as $channel)
   <div class="channel">
     <h2>{{ $channel->channel }}</h2>
-    @if ($channel->landing_page != null)
+    @if ($channel->landing_page)
     <a href="{{ action('VideosController@showChannelLandingPage', $channel->tid) }}" class="btn btn-toChannel">
         Go to Channel
     </a>
