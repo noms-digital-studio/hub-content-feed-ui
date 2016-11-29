@@ -22,16 +22,7 @@ $(document).ready(function () {
 
 (function ($) {
     $(function () {
-
         var videoZoom = 1;
-
-        //Increase size of player once played
-        $('#video_player').on('play', function () {
-            $('#video_player').css({'zoom': videoZoom});
-            $('#playerColSize').addClass('col-md-7').removeClass('col-md-5');
-            $('#textColSize').addClass('col-md-5').removeClass('col-md-7');
-        });
-
         var videoPlayerId = '#video_player';
         var radioPlayerId = '#radio-player';
         var showTitle = '';
@@ -46,6 +37,13 @@ $(document).ready(function () {
             //Set up videoPlayer
             var player = videojs('#video_player', {}, function () {
             });
+
+            //Increase size of player once played
+            player.on('click', function () {
+                $('#video_player').css({'zoom': videoZoom});
+                $('#playerColSize').addClass('col-md-7').removeClass('col-md-5');
+                $('#textColSize').addClass('col-md-5').removeClass('col-md-7');
+             });
 
             //Check if radio player exists on page
         } else if ($(radioPlayerId).length) {
