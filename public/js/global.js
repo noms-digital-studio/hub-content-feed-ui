@@ -164,15 +164,43 @@ $(document).ready(function () {
                 var currentTime = progressPosition - 27;
                 var duration = progressPosition;
                 var distance = $(window).width() - ($('.vjs-progress-control .vjs-slider-horizontal .vjs-play-progress').offset().left + $('.vjs-progress-control .vjs-slider-horizontal .vjs-play-progress').width());
-                
-               // $('.result').html(distance);
+                var durationWidth = $('.vjs-duration-display').width();
+
+                //Timer visible at the start of the show 
+                if(currentTime < 0){
+                    currentTime = 1;
+                    duration = 27;
+                }
+
+                //Handles timer layout for short and long shows 
+                //No current time and duration overlay or gap based on show duration
+                //Appropriete timer stop point for long and short shows
         
-                if( distance >= 50){
-                    $('.vjs-current-time').css({'left': currentTime  + 'px'});
-                    $('.vjs-duration').css({'left': duration + 'px'});
+                if( durationWidth >= 36 ){
+                    $('.vjs-duration').css({'margin-left': + 14 + 'px'});
+
+                    if( distance >= 50){
+                        $('.vjs-current-time').css({'left': currentTime  + 'px'});
+                        $('.vjs-duration').css({'left': duration + 'px'});
+                    }
+                        
+                } else if( durationWidth >= 27 ){
+                    $('.vjs-duration').css({'margin-left': + 5 + 'px'});
+
+                    if( distance >= 40){
+                        $('.vjs-current-time').css({'left': currentTime  + 'px'});
+                        $('.vjs-duration').css({'left': duration + 'px'});
+                    }
+
+                } else if(durationWidth < 26){
+                    $('.vjs-duration').css({'margin-left': 'auto'});
+                    if( distance >= 30){
+                        $('.vjs-current-time').css({'left': currentTime  + 'px'});
+                        $('.vjs-duration').css({'left': duration + 'px'});
+                    }
                 }
                 //Make Radio player overlay scroll with progress bar
-                $('#player-overlay').css({'left': duration  + 'px'});               
+                $('#player-overlay').css({'left': progressPosition  + 'px'});               
                
             });
 
