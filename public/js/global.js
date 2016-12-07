@@ -151,14 +151,6 @@ $(document).ready(function () {
                 selectedShow.find('.icon.icon-pause-button-white').removeClass('icon-pause-button-white').addClass('icon-play-button-white');
             });
 
-            function timerReset(){
-                var progressPosition = $('.vjs-progress-control .vjs-slider-horizontal .vjs-play-progress').width();
-                var currentTime = progressPosition - 27;
-                var duration = progressPosition;
-                    $('.vjs-current-time').css({'left': currentTime  + 'px'});
-                    $('.vjs-duration').css({'left': duration + 'px'});
-            }
-
             player.on('timeupdate', function (e) {
                 var progressPosition = $('.vjs-progress-control .vjs-slider-horizontal .vjs-play-progress').width();
                 var currentTime = progressPosition - 27;
@@ -176,7 +168,7 @@ $(document).ready(function () {
                 //No current time and duration overlay or gap based on show duration
                 //Appropriete timer stop point for long and short shows
         
-                if( durationWidth >= 36 ){
+                if( durationWidth >= 33 ){
                     $('.vjs-duration').css({'margin-left': + 14 + 'px'});
 
                     if( distance >= 50){
@@ -184,7 +176,7 @@ $(document).ready(function () {
                         $('.vjs-duration').css({'left': duration + 'px'});
                     }
                         
-                } else if( durationWidth >= 27 ){
+                } else if( durationWidth >= 25 ){
                     $('.vjs-duration').css({'margin-left': + 5 + 'px'});
 
                     if( distance >= 40){
