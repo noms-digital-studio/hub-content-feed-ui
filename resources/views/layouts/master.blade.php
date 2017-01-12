@@ -5,13 +5,13 @@
         <script src="/js/bxslider/jquery.bxslider.min.js"></script>
         <script src="/js/video.min.js"></script>
         <script src="/js/global.js" type="text/javascript"></script>
-		<script src="/js/news.js" type="text/javascript"></script>
+        <script src="/js/news.js" type="text/javascript"></script>
         <script src="/js/video.js" type="text/javascript"></script>
         <script src="/js/jquery.modal.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="/js/bootstrap.js" type="text/javascript"></script>
 
-		@if (Request::is('/') || Request::is('hub/*'))
-		<title>Digital Hub</title>
+        @if (Request::is('/') || Request::is('hub/*'))
+        <title>Digital Hub</title>
         @else
         <title>Digital Hub - @yield('title')</title>
         @endif        
@@ -23,7 +23,14 @@
     </head>
 
     <body>
-        @if (Request::is('/') || Request::is('hub/*'))
+        @if (Request::is('/') || Request::is('hub/*') || Request::is('cy'))        
+        <div class="top-navigation hub-top-navigation">
+            <div class="row">
+                <div class="col-xs-12">
+                    @include('languageDropdown')
+                </div>
+            </div>
+        </div>
         @else
         @yield('header')
         @endif
@@ -34,11 +41,11 @@
             @yield('content')
         </div>
 
-		@if (Request::is('/') || Request::is('hub/*') || Request::is('hub'))
-		@else
+        @if (Request::is('/') || Request::is('hub/*') || Request::is('hub'))
+        @else
         <footer class="footer">
             &copy{{ trans('footer.message') }}
         </footer>
-		@endif
+        @endif
     </body>
 </html>
