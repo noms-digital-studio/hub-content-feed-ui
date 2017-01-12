@@ -1,5 +1,5 @@
 <?php
 
 return [
-  'message' => ' 2016 Y Weinyddiaeth Gyfiawnder',
+  'message' => ' Y Weinyddiaeth Gyfiawnder',
 ];

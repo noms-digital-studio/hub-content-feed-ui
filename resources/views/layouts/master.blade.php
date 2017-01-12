@@ -37,7 +37,7 @@
 		@if (Request::is('/') || Request::is('hub/*') || Request::is('hub'))
 		@else
         <footer class="footer">
-            &copy{{ trans('footer.message') }}
+            &copy <?php echo date("Y"); ?> {{ trans('footer.message') }}
         </footer>
 		@endif
     </body>
