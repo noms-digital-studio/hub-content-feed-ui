@@ -37,9 +37,9 @@
 <div class="row">
     <div class="col-xs-12">
         <div class="episodes-menu channel-landing-tabs">			
-            <a href="#" id="EpisodeLink" class="active">{{ trans('video.courses') }}</a>
+            <a href="#" id="EpisodeLink" class="active">{{ $data->left_tab_label }}</a>
             @if( $data->info != null )
-                <a href="#" id="AboutLink" class="">{{ trans('video.moreInfo') }}</a>			
+                <a href="#" id="AboutLink" class="">{{ $data->right_tab_label }}</a>			
             @endif
         </div>
     </div>
