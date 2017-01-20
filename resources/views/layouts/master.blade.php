@@ -24,15 +24,17 @@
 
     <body>
         @if (Request::is('/') || Request::is('hub/*') || Request::is('cy'))        
-            <div class="top-navigation hub-top-navigation">
-                <div class="row">
-                    <div class="col-xs-12">
-                        @include('languageDropdown')
-                    </div>
-                </div>
-            </div>
+{{--            
+--             <div class="top-navigation hub-top-navigation"> 
+--         <div class="row">
+--              <div class="col-xs-12">
+--                  @include('languageDropdown')
+--                </div>
+--              </div>
+--            </div> 
+--}}
         @else
-            @yield('header')
+        @yield('header')
         @endif
 
         @yield('top_content')
