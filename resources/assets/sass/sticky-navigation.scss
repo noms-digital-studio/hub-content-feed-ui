@@ -133,6 +133,29 @@
     }
 }
 
+.hub-top-navigation {
+    background: none;
+    border: none;
+    box-shadow: none;
+    .dropdown {
+        bottom: 0;
+        top: 40px;
+        &.open {
+            button {
+                border-radius: 10px 10px 0 0;
+            }
+        }
+        button {
+            &:focus {
+                outline: none;
+            }
+        }
+        .dropdown-menu {
+            border-radius: 0 0 10px 10px;            
+        }
+    }
+}
+
 .back-to-hub {
     font-weight: 600;
     position: absolute;

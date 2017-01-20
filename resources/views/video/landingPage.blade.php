@@ -23,7 +23,6 @@
         </div>
     </div>
 </div>
-</div>
 
 @endsection
 
@@ -34,7 +33,7 @@
     <h2>{{ $channel->channel }}</h2>
     @if ($channel->landing_page)
     <a href="{{ action('VideosController@showChannelLandingPage', $channel->tid) }}" class="btn btn-toChannel">
-        Go to Channel
+        {{ trans('video.goToChannel') }}
     </a>
     @endif
 

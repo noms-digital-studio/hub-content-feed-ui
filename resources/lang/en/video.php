@@ -11,4 +11,5 @@ return [
 	'courses' => 'Courses',
 	'moreInfo' => 'More Info',
 	'backTo' => 'Back to',
+        'goToChannel' => 'Go to channel'
 ];
