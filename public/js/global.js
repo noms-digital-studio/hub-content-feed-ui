@@ -18,6 +18,7 @@ $(document).ready(function () {
     if (!$("#AboutLink").hasClass("active")) {
         $("#AboutInfo").hide();
     }
+
 });
 
 (function ($) {
@@ -43,7 +44,7 @@ $(document).ready(function () {
                 $('#video_player').css({'zoom': videoZoom});
                 $('#playerColSize').addClass('col-md-7').removeClass('col-md-5');
                 $('#textColSize').addClass('col-md-5').removeClass('col-md-7');
-             });
+            });
 
             //Check if radio player exists on page
         } else if ($(radioPlayerId).length) {
@@ -159,7 +160,7 @@ $(document).ready(function () {
                 var durationWidth = $('.vjs-duration-display').width();
 
                 //Timer visible at the start of the show 
-                if(currentTime < 0){
+                if (currentTime < 0) {
                     currentTime = 1;
                     duration = 27;
                 }
@@ -167,33 +168,33 @@ $(document).ready(function () {
                 //Handles timer layout for short and long shows 
                 //No current time and duration overlay or gap based on show duration
                 //Appropriete timer stop point for long and short shows
-        
-                if( durationWidth >= 33 ){
-                    $('.vjs-duration').css({'margin-left': + 14 + 'px'});
 
-                    if( distance >= 50){
-                        $('.vjs-current-time').css({'left': currentTime  + 'px'});
-                        $('.vjs-duration').css({'left': duration + 'px'});
-                    }
-                        
-                } else if( durationWidth >= 25 ){
-                    $('.vjs-duration').css({'margin-left': + 5 + 'px'});
+                if (durationWidth >= 33) {
+                    $('.vjs-duration').css({'margin-left': +14 + 'px'});
 
-                    if( distance >= 40){
-                        $('.vjs-current-time').css({'left': currentTime  + 'px'});
+                    if (distance >= 50) {
+                        $('.vjs-current-time').css({'left': currentTime + 'px'});
                         $('.vjs-duration').css({'left': duration + 'px'});
                     }
 
-                } else if(durationWidth < 26){
+                } else if (durationWidth >= 25) {
+                    $('.vjs-duration').css({'margin-left': +5 + 'px'});
+
+                    if (distance >= 40) {
+                        $('.vjs-current-time').css({'left': currentTime + 'px'});
+                        $('.vjs-duration').css({'left': duration + 'px'});
+                    }
+
+                } else if (durationWidth < 26) {
                     $('.vjs-duration').css({'margin-left': 'auto'});
-                    if( distance >= 30){
-                        $('.vjs-current-time').css({'left': currentTime  + 'px'});
+                    if (distance >= 30) {
+                        $('.vjs-current-time').css({'left': currentTime + 'px'});
                         $('.vjs-duration').css({'left': duration + 'px'});
                     }
                 }
                 //Make Radio player overlay scroll with progress bar
-                $('#player-overlay').css({'left': progressPosition  + 'px'});               
-               
+                $('#player-overlay').css({'left': progressPosition + 'px'});
+
             });
 
 
@@ -289,5 +290,10 @@ $(document).ready(function () {
             });
         }
 
+        if(location.pathname.split("/")[1] == 'cy') {
+            $('#dropdownMenu1').html("Welsh <span class='icon icon-dropdown'></span>");
+        }
+
     });
+
 }(jQuery));
