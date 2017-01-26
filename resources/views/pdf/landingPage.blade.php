@@ -4,7 +4,25 @@
 
 @section('top_content')
 
-@include('stickyNavigation', ['title' => $categories->parent->cat_name, 'icon' => 'icon-icon-education', 'colour' => 'purple', 'titleLink' => action('PdfsController@showPdfLandingPage', $categories->parent->cat_id), 'colour' => 'purple' ])
+<div class="top-navigation">
+    <div class="row">
+        <div class="col-xs-12">
+            <a href="{{ $categories->parent->back_link }}" class="back-to-hub">
+                <span class="icon icon-icon-hub" aria-hidden="true"></span>
+                <div class="back-to-the-hub-text">
+                    {{ trans('navigation.title') }}
+                </div>
+            </a>
+
+            <div class="navigation-title purple">
+                <a href="{{ action('PdfsController@showPdfLandingPage', $categories->parent->cat_id) }}">
+                    <span class="icon icon-icon-education" aria-hidden="true"></span>
+                    {{ $categories->parent->cat_name }}
+                </a>
+            </div>            
+        </div>
+    </div>
+</div>
 
 <div class="header-nav-wrap education" style="background-image: url({{ $categories->parent->cat_banner }})">
 	<div class="container" id="header">
