@@ -23,9 +23,8 @@
     </head>
 
     <body>
-        @if (Request::is('/') || Request::is('hub/*') || Request::is('cy'))        
-{{--            
---             <div class="top-navigation hub-top-navigation"> 
+        @if ( Route::currentRouteName() == 'hub.sub' || Route::currentRouteName() == 'hub.landing' )          
+{{--             <div class="top-navigation hub-top-navigation"> 
 --         <div class="row">
 --              <div class="col-xs-12">
 --                  @include('languageDropdown')
@@ -43,7 +42,7 @@
             @yield('content')
         </div>
 
-        @if (Request::is('/') || Request::is('hub/*') || Request::is('hub'))
+        @if ( Route::currentRouteName() == 'hub.sub' || Route::currentRouteName() == 'hub.landing' )          
         @else
         <footer class="footer">
             &copy <?php echo date("Y"); ?> {{ trans('footer.message') }}

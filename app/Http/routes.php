@@ -12,8 +12,8 @@
  */
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function() {
-    Route::get('/', 'HubLinksController@getItem');
-    Route::get('/hub/{id?}', 'HubLinksController@getItem');
+    Route::get('/', ['as' => 'hub.landing', 'uses' => 'HubLinksController@getItem']);    
+    Route::get('/hub/{id?}', ['as' => 'hub.sub', 'uses' => 'HubLinksController@getItem']);    
 
     Route::get('/video', ['as' => 'video.landing', 'uses' => 'VideosController@showVideoLandingPage']);
     Route::get('/video/{nid}', ['as' => 'video.detail', 'uses' => 'VideosController@show']);

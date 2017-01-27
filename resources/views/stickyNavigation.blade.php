@@ -1,7 +1,7 @@
 <div class="top-navigation">
     <div class="row">
         <div class="col-xs-12">
-            <a href="/" class="back-to-hub">
+            <a href="{{ action('HubLinksController@getItem') }}" class="back-to-hub">
                 <span class="icon icon-icon-hub" aria-hidden="true"></span>
                 <div class="back-to-the-hub-text">
                     {{ trans('navigation.title') }}
