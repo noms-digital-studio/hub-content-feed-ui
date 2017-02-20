@@ -212,8 +212,8 @@ return [
         'LaravelLocalization' => Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
 
         'Videos' => App\Facades\Videos::class,
-		'HubLinks' => App\Facades\HubLinks::class,
-		'Pdfs' => App\Facades\Pdfs::class,
+		    'HubLinks' => App\Facades\HubLinks::class,
+		    'Pdfs' => App\Facades\Pdfs::class,
         'News' => App\Facades\News::class,
     ],
 
@@ -226,6 +226,6 @@ return [
     */
 
 
-    'api_uri' => env('API_URI', 'http://localhost'),
+    'api_uri' => env('API_URI', 'http://localhost:8080/'),
 
 ];
