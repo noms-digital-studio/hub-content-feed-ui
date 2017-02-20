@@ -15,7 +15,7 @@ class PdfsRepository
     public function __construct()
     {
         $this->client = new Client(array(
-            'base_uri' => $_ENV['API_URI'],
+            'base_uri' => config('app.api_uri'),
             'timeout' => 60.0
         ));
 

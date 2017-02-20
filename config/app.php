@@ -159,8 +159,8 @@ return [
         Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
 
         App\Providers\VideosRepositoryServiceProvider::class,
-		App\Providers\HubLinksRepositoryServiceProvider::class,
-		App\Providers\PdfsRepositoryServiceProvider::class,
+		    App\Providers\HubLinksRepositoryServiceProvider::class,
+		    App\Providers\PdfsRepositoryServiceProvider::class,
         App\Providers\NewsRepositoryServiceProvider::class,
         App\Providers\RadiosRepositoryServiceProvider::class,
     ],
@@ -224,6 +224,8 @@ return [
     | Here you configure the path to the BE api
     |
     */
-    'api_uri' => env('API_URI'),
+
+
+    'api_uri' => env('API_URI', 'http://localhost'),
 
 ];
