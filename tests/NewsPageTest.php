@@ -26,7 +26,8 @@ class NewsPageTest extends TestCase
           1,
           "Planned C Wing Lockdown Today at 12:30",
           "Please be aware that there is a planned lockdown for the C wing today at 12:30. Lockdown is due to general maintenance for the wing and security checks. More updates will be posted and we apologies for any inconvenience this may cause. Thank you.",
-          $this->twoDaysAgo
+          $this->twoDaysAgo,
+          1
       );
 
 		$this->mockOtherNews = array(
@@ -34,19 +35,22 @@ class NewsPageTest extends TestCase
         1,
         "Planned C Wing Lockdown Today at 12:30",
         "Please be aware that there is a planned lockdown for the C wing today at 12:30. Lockdown is due to general maintenance for the wing and security checks. More updates will be posted and we apologies for any inconvenience this may cause. Thank you.",
-        $this->twoDaysAgo
+        $this->twoDaysAgo,
+        0
 			),
 			new NewsItem(
         2,
         "Changes to Canteen Menu",
         "As of 28th July we'll be adding a few new items to the canteen menu. We've added a new chicken burger and several pasta dishes to the menu. You'll see them on your meal order forms starting next week.",
-        $this->threeDaysAgo
+        $this->threeDaysAgo,
+        1
 			),
       new NewsItem(
         3,
         "Summer Football Tournament",
         "We are pleased to announce that a summer football tournament is being arranged for the 10th and 11th August. The games will follow 5-a-side format and each time will be allowed substitutes. Players can register their interest in the tournament by putting an App in to their wing. Players will be able to register as a team or individually. Individual players will be grouped into teams once all application are in. The tournament will run over both days with the final match being played on the afternoon of the 11th. The format of the tournament will be decided once we know how many teams are entering. More details will be posted closer to the time of the tournament but in the mean time, get those Apps in and we'll see you on the football pitch.",
-        $this->threeDaysAgo
+        $this->threeDaysAgo,
+        0
 			)
       );
     }

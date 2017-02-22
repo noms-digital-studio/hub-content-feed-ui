@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-define('LONG_DESCRIPTION_COUNT', 87);
+// define('LONG_DESCRIPTION_COUNT', 87);
 
 class News implements \JsonSerializable
 {
