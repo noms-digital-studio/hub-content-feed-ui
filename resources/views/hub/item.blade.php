@@ -30,7 +30,12 @@
                 @else
                 <a href="{{ $link->url }}" target="_blank" rel="noopener" id="term-{{ $link->nid }}">
                     @endif
-                    <img src="/img/{{ $link->thumbnail }}" alt="{{ $link->title }}" />
+                    @if(!Request::is('hub/*'))
+                      <img src="/img/{{ $link->thumbnail }}" alt="{{ $link->title }}" />
+                    @else
+                      <img src="{{ $link->thumbnail }}" alt="{{ $link->title }}" />
+                    @endif
+
                     <h4>{{ $link->title }}</h4>
                 </a>
         </li>
