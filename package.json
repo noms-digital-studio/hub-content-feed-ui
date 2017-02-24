@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "gulp",
+    "postinstall": "gulp",
     "prod": "gulp --production",
     "dev": "gulp watch"
   },
