@@ -11,6 +11,6 @@ deployment:
   staging:
     branch: master
     commands:
-      - git push git@heroku.com:hub-content-feed-ui.git $CIRCLE_SHA1:master
+      - git push git@heroku.com:hub-content-feed-ui.git $CIRCLE_SHA1:refs/heads/master
       - heroku ps:scale web=1 --app hub-content-feed-ui
       - curl -v -X POST https://circleci.com/api/v1.1/project/github/NOMS-DIGITAL-STUDIO/hub-function-test?circle-token=$CIRCLE_TOKEN
