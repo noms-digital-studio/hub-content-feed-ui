@@ -9,6 +9,7 @@ Homestead.json
 .vagrant
 *.swp
 .idea/
+*.iml
 nbproject
 /nbproject/private/
 /nbproject
