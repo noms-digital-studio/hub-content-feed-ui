@@ -1,5 +1,5 @@
 dependencies:
-  pre:
+  override:
     - npm install -g gulp
     - composer install
     - composer run-script post-root-package-install
