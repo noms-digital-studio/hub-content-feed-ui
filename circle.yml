@@ -1,7 +1,6 @@
 dependencies:
   pre:
-    - npm install
-    - gulp
+    - npm install -g gulp
   post:
     - python ./install-packages
 test:
