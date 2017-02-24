@@ -2,7 +2,9 @@ dependencies:
   pre:
     - npm install -g gulp
   post:
-    - python ./install-packages
+    - composer install
+    - composer run-script post-root-package-install
+    - composer run-script post-create-project-cmd
 test:
   override:
      - "true"
