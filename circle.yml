@@ -1,8 +1,7 @@
 dependencies:
   override:
     - npm install
-    - npm install -g gulp
-    - gulp
+    - npm run build
     - composer install
     - composer run-script post-root-package-install
     - composer run-script post-create-project-cmd
